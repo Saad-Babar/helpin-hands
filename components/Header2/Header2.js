@@ -47,20 +47,20 @@ const Header2 = (props) => {
                         <div className="col-12">
                             <div className="header__wrapper">
                                 <div className="header__logo">
-                                    <Link onClick={ClickHandler} href="/home" className="header__logo__link">
+                                    <Link onClick={ClickHandler} href="/home-4" className="header__logo__link">
                                         <Image src={logo} alt="Gainioz" className="header__logo__image" />
                                     </Link>
                                 </div>
                                 <div className="header__menu header__menu--style2">
                                     <nav className="mainMenu">
                                         <ul>
-                                            <li className="dropdown"><Link onClick={ClickHandler} href="/home">Home</Link>
-                                                <ul className="dropdown_menu dropdown_menu-2">
+                                            <li className="dropdown"><Link onClick={ClickHandler} href="/home-4">Home</Link>
+                                                {/* <ul className="dropdown_menu dropdown_menu-2">
                                                     <li className="dropdown_item-1"><Link onClick={ClickHandler} href="/home">Home 1</Link></li>
                                                     <li className="dropdown_item-2"><Link onClick={ClickHandler} href="/home-2">Home 2</Link></li>
                                                     <li className="dropdown_item-3"><Link onClick={ClickHandler} href="/home-3">Home 3</Link></li>
                                                     <li className="dropdown_item-4"><Link onClick={ClickHandler} href="/home-4">Home 4</Link></li>
-                                                </ul>
+                                                </ul> */}
                                             </li>
                                             <li><Link onClick={ClickHandler} href="/about">About</Link></li>
                                             <li className="dropdown">

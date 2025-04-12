@@ -1,14 +1,14 @@
 import { useRef, useEffect } from 'react';
 import { Navigation } from 'swiper';
-import tImg1 from '/public/images/auth/reviewAuth1.png'
-import tImg2 from '/public/images/auth/reviewAuth2.png'
-import tImg3 from '/public/images/auth/reviewAuth3.png'
-import tImg4 from '/public/images/auth/reviewAuth4.png'
-import tImg5 from '/public/images/auth/reviewAuth5.png'
+import tImg1 from '/public/images/auth/enjoying-giving-back-to-community.png'
+import tImg2 from '/public/images/auth/female-hand-puts-money-in-glass-jar-on-orange-back.png'
+import tImg3 from '/public/images/auth/portrait-of-a-volunteer-holding-cardboard-box-with.png'
+import tImg4 from '/public/images/auth/dark-haired-young-cute-reporter-standing-in-the.jpg'
+import tImg5 from '/public/images/auth/an-asian-woman-collecting-garbage-and-holding-a-re.png'
 import shape1 from '/public/images/shapes/testi-shape1.svg'
 import shape2 from '/public/images/shapes/testi-shape2.svg'
 import shape3 from '/public/images/shapes/testi-shape4.svg'
-import man from '/public/images/man/testi-man1.jpg'
+import man from '/public/images/man/a-cute-five-year-old-boy-with-dark-hair-looks-thou.jpg'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';

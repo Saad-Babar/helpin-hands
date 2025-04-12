@@ -10,7 +10,7 @@ const Hero4 = (props) => {
 
     return (
 
-        <section className="hero hero--style5" style={{ backgroundImage: `url(${'/images/update/home4-hero-bg1.jpg'})` }}>
+        <section className="hero hero--style5" style={{ backgroundImage: `url(${'/images/update/african-women-s-hands-holding-a-cup-of-coffee.jpg'})` }}>
             <div className="container">
                 <div className="row align-items-center justify-content-between">
                     <div className="col-xl-6 col-lg-8 mb-30">

@@ -1,8 +1,8 @@
 // images
-import blogImg1 from "/public/images/blog/blog1.jpg";
+import blogImg1 from "/public/images/blog/bblog.jpg";
 import blogImg2 from "/public/images/blog/blog2.jpg";
 import blogImg3 from "/public/images/blog/blog3.jpg";
-import blogImg4 from "/public/images/update/blog4.jpg";
+import blogImg4 from "/public/images/update/Untitled design (4).jpg";
 import blogImg5 from "/public/images/update/blog5.jpg";
 import blogImg6 from "/public/images/update/blog6.jpg";
 
