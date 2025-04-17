@@ -65,6 +65,7 @@ const Header = (props) => {
                                                 </ul> */}
                                             </li>
                                             <li><Link onClick={ClickHandler} href="/about">About</Link></li>
+                                            <li><Link onClick={ClickHandler} href="/register">Register</Link></li>
                                             <li className="dropdown">
                                                 <Link onClick={ClickHandler} href="/donation-listing">Donations</Link>
                                                 <ul className="dropdown_menu dropdown_menu-2">

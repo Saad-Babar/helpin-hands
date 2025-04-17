@@ -8,7 +8,10 @@ import RegisterSection from '../../components/RegisterSection';
 
 const ContactPage = (props) => {
 
+    // In any page file
+    // console.log(process.env.MONGODB_URI); 
     return (
+        
         <Fragment>
             <Header hclass={'header--styleFour'}/>
             <main className="main">

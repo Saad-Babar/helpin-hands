@@ -1,7 +1,10 @@
+"use client";
 import React, { useState } from 'react'
 import SimpleReactValidator from 'simple-react-validator';
 
 const RegisterForm = (props) => {
+
+    const [error, setError]=useState("");
 
     const [forms, setForms] = useState({
         name: '',
@@ -22,21 +25,55 @@ const RegisterForm = (props) => {
         }
     };
 
-    const submitHandler = e => {
+    const submitHandler = async (e) => {
         e.preventDefault();
-        if (validator.allValid()) {
-            validator.hideMessages();
-            setForms({
-                name: '',
-                email: '',
-                subject: '',
-                phone: '',
-                message: ''
-            })
-        } else {
-            validator.showMessages();
+        
+        if (!validator.allValid()) {
+          validator.showMessages();
+          return;
         }
-    };
+      
+        try {
+          setError(''); // Clear previous errors
+          const response = await fetch('/api/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(forms),
+          });
+      
+          const contentType = response.headers.get('content-type');
+          let responseData;
+      
+          if (contentType?.includes('application/json')) {
+            responseData = await response.json();
+          } else {
+            const text = await response.text();
+            console.error('Unexpected response:', text);
+            throw new Error(`Server returned: ${text.substring(0, 100)}...`);
+          }
+      
+          if (!response.ok) {
+            throw new Error(
+              responseData.error || 
+              responseData.message || 
+              `Registration failed (Status ${response.status})`
+            );
+          }
+      
+          // Success case
+          setForms({ name: '', email: '', subject: '', phone: '', message: '' });
+          alert('Registration successful!');
+          
+        } catch (error) {
+          console.error('Full client-side error:', error);
+          setError(error.message);
+          
+          // Show more detailed error if available
+          if (error.message.includes('500')) {
+            setError('Server error. Please check console for details.');
+          }
+        }
+      };
 
     return (
         <form id="contact-form" className="it-contact-form commentsPost commentsPost--style2 pt-45 pb-25" onSubmit={(e) => submitHandler(e)}>
@@ -50,7 +87,7 @@ const RegisterForm = (props) => {
                             className="form-control"
                             onBlur={(e) => changeHandler(e)}
                             onChange={(e) => changeHandler(e)}
-                            placeholder="Enter your name*" />
+                            placeholder="Enter your name*"/>
                         {validator.message('name', forms.name, 'required|alpha_space')}
                     </div>
                 </div>
@@ -76,7 +113,7 @@ const RegisterForm = (props) => {
                             className="form-control"
                             onBlur={(e) => changeHandler(e)}
                             onChange={(e) => changeHandler(e)}
-                            placeholder="Enter your  number*" />
+                            placeholder="Enter your Phone number*" />
                         {validator.message('phone', forms.phone, 'required|phone')}
                     </div>
                 </div>
@@ -140,6 +177,10 @@ const RegisterForm = (props) => {
                                 </defs>
                             </svg>
                         </button>
+                        { error &&(
+                            <div className='bg-black rounded'>{error}</div>
+                        )
+                        }
                     </div>
                 </div>
             </div>
