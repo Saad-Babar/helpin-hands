@@ -2,25 +2,55 @@
 import React, { useState, useEffect } from 'react';
 import SimpleReactValidator from 'simple-react-validator';
 
-const RegisterForm = (props) => {
+const RegisterForm = ({ onShowNotification }) => {
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
-    const [notification, setNotification] = useState({ message: '', type: '', visible: false });
 
     const [forms, setForms] = useState({
-        name: '',
+        fname: '',
+        lname: '',
         email: '',
-        subject: '',
         phone: '',
-        message: ''
+        password: '',
+        con_password: '',
+        role: '',
+        address: '',
+        document: null, // For file input
     });
 
     const [validator] = useState(new SimpleReactValidator({
-        className: 'errorMessage'
+        className: 'errorMessage',
+        validators: {
+            confirm: {  // Custom validator for password confirmation
+                message: 'The password confirmation does not match.',
+                rule: (val, params, validatorInstance) => { // Receive validatorInstance
+                    // Get the current value of the password input
+                    const passwordValue = document.querySelector('#pass').value;
+                    return val === passwordValue;
+                }
+            },
+            file: {
+                message: 'Please upload a file.',
+                rule: (val, params, validatorInstance) => { // Receive validatorInstance
+                    return val instanceof File;
+                }
+            },
+        }
     }));
 
     const changeHandler = e => {
-        setForms({ ...forms, [e.target.name]: e.target.value });
+        const { name, value, type, files } = e.target;
+        setForms(prevState => ({
+            ...prevState,
+            [name]: type === 'file' ? files[0] : value
+        }));
+    
+        if (name === 'password' || name === 'con_password') {
+            console.log('Input Name:', name);
+            console.log('Input Value:', value);
+            console.log('Current forms state:', forms); // Log the entire forms state
+        }
+    
         if (validator.allValid()) {
             validator.hideMessages();
         } else {
@@ -28,53 +58,38 @@ const RegisterForm = (props) => {
         }
     };
 
-    const showNotification = (message, type) => {
-        setNotification({ message, type, visible: true });
-        setTimeout(() => {
-            setNotification({ ...notification, visible: false });
-        }, 3000); // Adjust duration as needed
-    };
-
     const submitHandler = async (e) => {
         e.preventDefault();
         setLoading(true);
         setError('');
-        setNotification({ ...notification, visible: false }); // Hide previous notification
-
+    
         try {
-            // Validate form
-            if (!validator.allValid()) {
-                validator.showMessages();
-                setLoading(false);
-                return;
+            // ... (form validation) ...
+    
+            const formData = new FormData();
+            for (const key in forms) {
+                formData.append(key, forms[key]);
             }
-
+    
             const response = await fetch('/api/register', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(forms),
+                body: formData,
             });
-
-            const data = await response.json();
-
+    
             if (!response.ok) {
-                if (data.error === 'EMAIL_EXISTS') {
-                    showNotification(data.message, 'warning');
-                    setForms({ ...forms, email: '' }); // Clear only the email field
-                    return;
-                }
-                throw new Error(data.message || 'Registration failed');
+                const errorData = await response.json();
+                console.error('Registration failed on backend:', errorData); // Log the full error data
+                throw new Error(errorData?.message || 'Registration failed');
             }
-
-            // Success
-            setForms({ name: '', email: '', phone: '', subject: '', message: '' });
-            showNotification('Registration successful!', 'success');
-
+    
+            const data = await response.json();
+            // ... (success handling) ...
+    
         } catch (error) {
-            console.error('Registration error:', error);
-            setError(error.message); // Keep this for potential other errors
-            showNotification(error.message || 'Registration failed', 'danger');
-
+            console.error('Frontend registration error:', error);
+            setError(error.message);
+            onShowNotification(error.message || 'Registration failed', 'danger');
+    
         } finally {
             setLoading(false);
         }
@@ -82,31 +97,45 @@ const RegisterForm = (props) => {
 
     return (
         <div>
-            {notification.visible && (
-                <div className={`fixed top-4 right-4 z-50 alert alert-${notification.type} shadow-lg`} role="alert">
-                    {notification.message}
-                </div>
-            )}
             <form id="contact-form" className="it-contact-form commentsPost commentsPost--style2 pt-45 pb-25" onSubmit={submitHandler}>
                 <div className="row g-4">
-                    {/* ... your form fields here ... */}
                     <div className="col-md-6">
                         <div className="commentsPost__input">
+                            <label htmlFor="fname" className="form-label">Enter Your First Name*</label>
                             <input
-                                value={forms.name}
+                                id="fname"
+                                value={forms.fname}
                                 type="text"
-                                name="name"
+                                name="fname"
                                 className="form-control"
                                 onBlur={changeHandler}
                                 onChange={changeHandler}
-                                placeholder="Enter your name*"
+                                placeholder="Enter your First Name*"
                             />
-                            {validator.message('name', forms.name, 'required|alpha_space')}
+                            {validator.message('First Name', forms.fname, 'required|alpha_space')}
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="commentsPost__input">
+                            <label htmlFor="lname" className="form-label">Enter Your Last Name*</label>
                             <input
+                                id="lname"
+                                value={forms.lname}
+                                type="text"
+                                name="lname"
+                                className="form-control"
+                                onBlur={changeHandler}
+                                onChange={changeHandler}
+                                placeholder="Enter your Last Name*"
+                            />
+                            {validator.message('Last Name', forms.lname, 'required|alpha_space')}
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="commentsPost__input">
+                            <label htmlFor="email" className="form-label">Enter Your Email*</label>
+                            <input
+                                id="email"
                                 value={forms.email}
                                 type="email"
                                 name="email"
@@ -120,7 +149,9 @@ const RegisterForm = (props) => {
                     </div>
                     <div className="col-md-6">
                         <div className="commentsPost__input">
+                            <label htmlFor="phone" className="form-label">Enter Your Phone Number*</label>
                             <input
+                                id="phone"
                                 value={forms.phone}
                                 type="tel"
                                 name="phone"
@@ -134,39 +165,86 @@ const RegisterForm = (props) => {
                     </div>
                     <div className="col-md-6">
                         <div className="commentsPost__input">
+                            <label htmlFor="pass" className="form-label">Create Your Password*</label>
                             <input
-                                value={forms.subject}
-                                type="text"
-                                name="subject"
+                                id="pass"
+                                value={forms.password}
+                                type="password"
+                                name="password"
                                 className="form-control"
                                 onBlur={changeHandler}
                                 onChange={changeHandler}
-                                placeholder="Subject*"
+                                placeholder="Create Password*"
                             />
-                            {validator.message('subject', forms.subject, 'required')}
+                            {validator.message('password', forms.password, 'required')}
                         </div>
                     </div>
-                    <div className="col-12">
+                    <div className="col-md-6">
                         <div className="commentsPost__input">
-                            <textarea
+                            <label htmlFor="cpass" className="form-label">Re-Enter Your Password*</label>
+                            <input
+                                id="cpass"
+                                value={forms.con_password}
+                                type="password"
+                                name="con_password"
+                                className="form-control"
                                 onBlur={changeHandler}
                                 onChange={changeHandler}
-                                value={forms.message}
-                                name="message"
-                                className="form-control"
-                                placeholder="Enter your Message*"
+                                placeholder="Confirm Password*"
                             />
-                            {validator.message('message', forms.message, 'required')}
+                            {validator.message('Confirm Password', forms.con_password, 'required|confirm')}
                         </div>
                     </div>
-                    <div className="col-12">
-                        <div className="commentsPost__check">
-                            <div className="form-group form-check">
-                                <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                <label className="form-check-label" htmlFor="exampleCheck1">
-                                    Save my name, email, and website in this browser for the next time I comment.
-                                </label>
+                    <div className="col-md-6">
+                        <div className="commentsPost__input">
+                            <label htmlFor="role" className="form-label">Select Your Role*</label>
+                            <select
+                                id="role"
+                                name="role"
+                                className="form-select"
+                                value={forms.role}
+                                onChange={changeHandler}
+                                onBlur={changeHandler}
+                            >
+                                <option value="">-- Select Your Role --</option>
+                                <option value="Individual Donor">Individual Donor</option>
+                                <option value="Store Owner">Store Owner</option>
+                                <option value="NGO / Receiver">NGO / Receiver</option>
+                                <option value="Rider">Rider</option>
+                            </select>
+                            <div className="text-danger">
+                                {validator.message('Your Role', forms.role, 'required')}
                             </div>
+                        </div>
+                    </div>
+                    <div className="col-md-12">
+                        <div className="commentsPost__input">
+                            <label htmlFor="address" className="form-label">Enter your Address*</label>
+                            <input
+                                id="address"
+                                value={forms.address}
+                                type="text"
+                                name="address"
+                                className="form-control"
+                                onBlur={changeHandler}
+                                onChange={changeHandler}
+                                placeholder="Enter your Address*"
+                            />
+                            {validator.message('address', forms.address, 'required')}
+                        </div>
+                    </div>
+                    <div className="col-md-12">
+                        <div className="commentsPost__input">
+                            <label htmlFor="cnic" className="form-label">Upload Your CNIC*</label>
+                            <input
+                                id="cnic"
+                                type="file"
+                                name="document"
+                                className="form-control"
+                                onChange={changeHandler}
+                                onBlur={changeHandler}
+                            />
+                            {validator.message('document', forms.document, 'required|file')}
                         </div>
                     </div>
                     <div className="col-12">
@@ -177,7 +255,7 @@ const RegisterForm = (props) => {
                                 disabled={loading}
                             >
                                 <span className="btn__text">
-                                    {loading ? 'Processing...' : 'Send message'}
+                                    {loading ? 'Processing...' : 'Register'}
                                 </span>
                                 <i className="fa-solid fa-heart btn__icon"></i>
                                 <span className="it-btn__inner">
@@ -189,14 +267,7 @@ const RegisterForm = (props) => {
                                     </span>
                                 </span>
                                 <svg className="it-btn__animation" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                                    <defs>
-                                        <filter>
-                                            <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
-                                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo">
-                                            </feColorMatrix>
-                                            <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
-                                        </filter>
-                                    </defs>
+                                    {/* ... SVG code ... */}
                                 </svg>
                             </button>
                         </div>
