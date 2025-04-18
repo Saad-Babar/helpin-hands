@@ -42,6 +42,14 @@ const Header = (props) => {
 
     return (
         <div>
+
+
+
+
+
+
+
+
             <header className={`header header--styleOne sticky-on  ${isSticky ? 'sticky' : ''}  ${props.hclass}`}>
                 <div id="sticky-placeholder"></div>
                 <div className="container container--custom">
@@ -152,7 +160,9 @@ const Header = (props) => {
                         </div>
                     </div>
                 </div>
+                
             </header>
+            
             {/* header--mobile */}
             <div className="header header--mobile cc-header-menu mean-container position-relative" id="meanmenu">
                 <div className="mean-bar headerBurgerMenu">
