@@ -1,10 +1,13 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react'; // Import useRef here
 import SimpleReactValidator from 'simple-react-validator';
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.min.css";
 
 const RegisterForm = ({ onShowNotification }) => {
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
+    const fileInputRef = useRef(null); // Declare the ref inside the component
 
     const [forms, setForms] = useState({
         fname: '',
@@ -15,23 +18,22 @@ const RegisterForm = ({ onShowNotification }) => {
         con_password: '',
         role: '',
         address: '',
-        document: null, // For file input
+        document: '',
     });
 
     const [validator] = useState(new SimpleReactValidator({
         className: 'errorMessage',
         validators: {
-            confirm: {  // Custom validator for password confirmation
+            confirm: {
                 message: 'The password confirmation does not match.',
-                rule: (val, params, validatorInstance) => { // Receive validatorInstance
-                    // Get the current value of the password input
+                rule: (val, params, validatorInstance) => {
                     const passwordValue = document.querySelector('#pass').value;
                     return val === passwordValue;
                 }
             },
             file: {
                 message: 'Please upload a file.',
-                rule: (val, params, validatorInstance) => { // Receive validatorInstance
+                rule: (val, params, validatorInstance) => {
                     return val instanceof File;
                 }
             },
@@ -44,13 +46,13 @@ const RegisterForm = ({ onShowNotification }) => {
             ...prevState,
             [name]: type === 'file' ? files[0] : value
         }));
-    
+
         if (name === 'password' || name === 'con_password') {
             console.log('Input Name:', name);
             console.log('Input Value:', value);
-            console.log('Current forms state:', forms); // Log the entire forms state
+            console.log('Current forms state:', forms);
         }
-    
+
         if (validator.allValid()) {
             validator.hideMessages();
         } else {
@@ -62,43 +64,60 @@ const RegisterForm = ({ onShowNotification }) => {
         e.preventDefault();
         setLoading(true);
         setError('');
-    
+
+        if (!validator.allValid()) {
+            validator.showMessages();
+            setLoading(false);
+            toast.error("Please fill out all fields correctly.");
+            return;
+        }
+
         try {
-            // ... (form validation) ...
-    
             const formData = new FormData();
             for (const key in forms) {
                 formData.append(key, forms[key]);
             }
-    
+
             const response = await fetch('/api/register', {
                 method: 'POST',
                 body: formData,
             });
-    
-            if (!response.ok) {
-                const errorData = await response.json();
-                console.error('Registration failed on backend:', errorData); // Log the full error data
-                throw new Error(errorData?.message || 'Registration failed');
-            }
-    
+
             const data = await response.json();
-            // ... (success handling) ...
-    
+
+            if (!response.ok) {
+                console.error('Registration error:', data?.message || 'Registration failed');
+                toast.error(data?.message || 'Registration failed');
+                setError(data?.message || 'Registration failed');
+                return;
+            }
+
+            toast.success('Registration successful!');
+            setForms({
+                fname: '', lname: '', email: '', phone: '',
+                password: '', con_password: '', role: '', address: '', document: ''
+            });
+            if (fileInputRef.current) {
+                fileInputRef.current.value = '';
+            }
+
         } catch (error) {
-            console.error('Frontend registration error:', error);
+            console.error('Registration error:', error);
+            toast.error(error.message || 'Registration failed');
             setError(error.message);
-            onShowNotification(error.message || 'Registration failed', 'danger');
-    
         } finally {
             setLoading(false);
         }
     };
 
+
     return (
         <div>
+            {/* Toast Container should ideally be in _app.js or layout, but for component use, we include it here */}
+            <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} />
             <form id="contact-form" className="it-contact-form commentsPost commentsPost--style2 pt-45 pb-25" onSubmit={submitHandler}>
                 <div className="row g-4">
+
                     <div className="col-md-6">
                         <div className="commentsPost__input">
                             <label htmlFor="fname" className="form-label">Enter Your First Name*</label>
@@ -243,6 +262,7 @@ const RegisterForm = ({ onShowNotification }) => {
                                 className="form-control"
                                 onChange={changeHandler}
                                 onBlur={changeHandler}
+                                ref={fileInputRef} // Attach the ref here
                             />
                             {validator.message('document', forms.document, 'required|file')}
                         </div>
