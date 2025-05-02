@@ -5,9 +5,9 @@ import Header from '../../components/header/Header';
 import PageTitle from '../../components/pagetitle/PageTitle';
 import Scrollbar from '../../components/scrollbar/scrollbar';
 import Footer from '../../components/footer/Footer';
-import RegisterSection from '../../components/RegisterSection';
-import RegisterForm from '../../components/RegisterForm/RegisterForm';
+import LoginForm from '../../components/LoginForm/LoginForm';
 import { ToastContainer } from 'react-toastify'; // Make sure this import exists in RegisterForm
+import LoginSection from '../../components/LoginSection';
 
 import jwt from 'jsonwebtoken';
 
@@ -42,7 +42,7 @@ const ContactPage = (props) => {
         <Fragment>
             <Header hclass={'header--styleFour'} />
             <main className="main">
-                <PageTitle pageTitle={'Register'} pagesub={'Register'} />
+                <PageTitle pageTitle={'Login'} pagesub={'Login'} />
 
                 {/* REMOVE this entire section for the custom notification */}
                 {/* {notification.visible && (
@@ -57,20 +57,20 @@ const ContactPage = (props) => {
                             <div className="sectionTitle text-center">
                                 <span className="sectionTitle__small justify-content-center">
                                     <i className="fa-solid fa-heart btn__icon"></i>
-                                    Register
+                                    Login
                                 </span>
                                 <h2 className="sectionTitle__big">Join Our Mission to Reduce Food Waste</h2>
                                 <p className="text-muted" style={{ fontSize: '14px' }}>
-                                    Please fill in your accurate details to register. Duplicate accounts are not allowed.
+                                    Log in to access your account.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <RegisterSection>
-                    <RegisterForm /> {/* Remove the onShowNotification prop */}
-                </RegisterSection>
+                <LoginSection>
+                    <LoginForm /> {/* Remove the onShowNotification prop */}
+                </LoginSection>
             </main>
             <Footer />
             <Scrollbar />

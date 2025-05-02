@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import bcrypt from 'bcryptjs';
 
 const userSchema = new mongoose.Schema({
     name: {
@@ -16,21 +17,21 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    password: { // Add password field
+    password: {
         type: String,
         required: true
     },
-    role: {       // Add role field
+    role: {
         type: String,
         required: true
     },
-    address: {    // Add address field
+    address: {
         type: String,
         required: true
     },
-    document: {   // Add document field for the file path
+    document: {
         type: String,
-        required: false // Or true, depending on your requirements
+        required: false
     },
     subject: {
         type: String,
@@ -46,13 +47,23 @@ const userSchema = new mongoose.Schema({
     }
 });
 
-// userSchema.index({ email: 1 }, { unique: true });
+// ✅ Hash password before saving
+userSchema.pre('save', async function (next) {
+    if (!this.isModified('password')) return next();
+    try {
+        const salt = await bcrypt.genSalt(10);
+        this.password = await bcrypt.hash(this.password, salt);
+        next();
+    } catch (err) {
+        next(err);
+    }
+});
 
-// Enhanced duplicate error handler
+// ✅ Handle duplicate email error
 userSchema.post('save', function (error, doc, next) {
     if (error.name === 'MongoServerError' && error.code === 11000) {
         const err = new Error('Email already registered');
-        err.isDuplicate = true;   // Custom flag for easy detection
+        err.isDuplicate = true;
         next(err);
     } else {
         next(error);

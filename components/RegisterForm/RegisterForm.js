@@ -292,6 +292,9 @@ const RegisterForm = ({ onShowNotification }) => {
                             </button>
                         </div>
                     </div>
+                    <div className="col-12">
+                        <span>Already have an account? <a href='/login'>Login Here.</a></span>
+                    </div>
                 </div>
             </form>
         </div>

@@ -6,4 +6,7 @@ const nextConfig = {
     // Other Next.js config options can go here
   }
   
-  module.exports = nextConfig
+  module.exports = {
+    nextConfig,
+    middleware: true,
+};
