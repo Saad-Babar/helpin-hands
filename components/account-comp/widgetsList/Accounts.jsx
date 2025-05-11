@@ -7,11 +7,11 @@ import { FiArrowRight } from 'react-icons/fi';
 import Image from 'next/image';
 
 const accountsData = [
-    { imageSrc: '/images/payment/mastercard.svg', cardName: 'Mastercard', amount: '$3,365', lastDigits: '3456' },
-    { imageSrc: '/images/payment/visa.svg', cardName: 'Visa Card', amount: '$2,245', lastDigits: '4236' },
-    { imageSrc: '/images/payment/discover.svg', cardName: 'Discover', amount: '$1,687', lastDigits: '5236' },
-    { imageSrc: '/images/payment/american-express.svg', cardName: 'AM Express', amount: '$2,558', lastDigits: '4235' },
-    { imageSrc: '/images/payment/jcb.svg', cardName: 'JCB Card', amount: '$2,359', lastDigits: '3457' }
+    { imageSrc: '/admin-images/payment/mastercard.svg', cardName: 'Mastercard', amount: '$3,365', lastDigits: '3456' },
+    { imageSrc: '/admin-images/payment/visa.svg', cardName: 'Visa Card', amount: '$2,245', lastDigits: '4236' },
+    { imageSrc: '/admin-images/payment/discover.svg', cardName: 'Discover', amount: '$1,687', lastDigits: '5236' },
+    { imageSrc: '/admin-images/payment/american-express.svg', cardName: 'AM Express', amount: '$2,558', lastDigits: '4235' },
+    { imageSrc: '/admin-images/payment/jcb.svg', cardName: 'JCB Card', amount: '$2,359', lastDigits: '3457' }
 ];
 
 const Accounts = ({ title }) => {

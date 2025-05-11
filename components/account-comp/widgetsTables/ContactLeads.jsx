@@ -8,11 +8,11 @@ import Image from 'next/image'
 
 
 const contactData = [
-    { name: 'Archie Tones', email: 'archie.tones@emial.com', avatar: '/images/avatar/12.png', date: '15 June, 2023', status: 'Deal Won', amount: '$15.65K', color:"success" },
-    { name: 'Holmes Cherry', email: 'holmes.cherry@emial.com', avatar: '/images/avatar/11.png', date: '20 June, 2023', status: 'Intro Call', amount: '$10.24K', color:"warning" },
-    { name: 'Kenneth Hune', email: 'kenneth.hune@emial.com', avatar: '/images/avatar/10.png', date: '18 June, 2023', status: 'Stuck', amount: '$12.47K', color:"primary" },
-    { name: 'Malanie Hanvey', email: 'malanie.hanvey@emial.com', avatar: '/images/avatar/9.png', date: '22 June, 2023', status: 'Cancelled', amount: '$10.88K', color:"danger" },
-    { name: 'Valentine Maton', email: 'valentine.maton@emial.com', avatar: '/images/avatar/8.png', date: '25 June, 2023', status: 'Progress', amount: '$13.85K', color:"primary" },
+    { name: 'Archie Tones', email: 'archie.tones@emial.com', avatar: '/admin-images/avatar/12.png', date: '15 June, 2023', status: 'Deal Won', amount: '$15.65K', color:"success" },
+    { name: 'Holmes Cherry', email: 'holmes.cherry@emial.com', avatar: '/admin-images/avatar/11.png', date: '20 June, 2023', status: 'Intro Call', amount: '$10.24K', color:"warning" },
+    { name: 'Kenneth Hune', email: 'kenneth.hune@emial.com', avatar: '/admin-images/avatar/10.png', date: '18 June, 2023', status: 'Stuck', amount: '$12.47K', color:"primary" },
+    { name: 'Malanie Hanvey', email: 'malanie.hanvey@emial.com', avatar: '/admin-images/avatar/9.png', date: '22 June, 2023', status: 'Cancelled', amount: '$10.88K', color:"danger" },
+    { name: 'Valentine Maton', email: 'valentine.maton@emial.com', avatar: '/admin-images/avatar/8.png', date: '25 June, 2023', status: 'Progress', amount: '$13.85K', color:"primary" },
 ];
 
 const ContactLeads = ({ title }) => {

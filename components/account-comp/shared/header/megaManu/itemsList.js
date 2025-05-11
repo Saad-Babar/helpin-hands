@@ -76,23 +76,23 @@ export const appsList = [
         col: [
             {
                 app_name: "App Store",
-                icon: "/images/brand/app-store.png"
+                icon: "/admin-images/brand/app-store.png"
             },
             {
                 app_name: "Spotify",
-                icon: "/images/brand/spotify.png"
+                icon: "/admin-images/brand/spotify.png"
             },
             {
                 app_name: "Figma",
-                icon: "/images/brand/figma.png"
+                icon: "/admin-images/brand/figma.png"
             },
             {
                 app_name: "Shopify",
-                icon: "/images/brand/shopify.png"
+                icon: "/admin-images/brand/shopify.png"
             },
             {
                 app_name: "Paypal",
-                icon: "/images/brand/paypal.png"
+                icon: "/admin-images/brand/paypal.png"
             },
         ]
     },
@@ -100,23 +100,23 @@ export const appsList = [
         col: [
             {
                 app_name: "Gmail",
-                icon: "/images/brand/gmail.png"
+                icon: "/admin-images/brand/gmail.png"
             },
             {
                 app_name: "Dropbox",
-                icon: "/images/brand/dropbox.png"
+                icon: "/admin-images/brand/dropbox.png"
             },
             {
                 app_name: "Google Drive",
-                icon: "/images/brand/google-drive.png"
+                icon: "/admin-images/brand/google-drive.png"
             },
             {
                 app_name: "Github",
-                icon: "/images/brand/github.png"
+                icon: "/admin-images/brand/github.png"
             },
             {
                 app_name: "Gitlab",
-                icon: "/images/brand/gitlab.png"
+                icon: "/admin-images/brand/gitlab.png"
             },
         ]
     },
@@ -124,23 +124,23 @@ export const appsList = [
         col: [
             {
                 app_name: "Facebook",
-                icon: "/images/brand/facebook.png"
+                icon: "/admin-images/brand/facebook.png"
             },
             {
                 app_name: "Pinterest",
-                icon: "/images/brand/pinterest.png"
+                icon: "/admin-images/brand/pinterest.png"
             },
             {
                 app_name: "Instagram",
-                icon: "/images/brand/instagram.png"
+                icon: "/admin-images/brand/instagram.png"
             },
             {
                 app_name: "Twitter",
-                icon: "/images/brand/twitter.png"
+                icon: "/admin-images/brand/twitter.png"
             },
             {
                 app_name: "Youtube",
-                icon: "/images/brand/youtube.png"
+                icon: "/admin-images/brand/youtube.png"
             },
         ]
     }
@@ -240,32 +240,32 @@ export const authenticationPageList = [
 
 export const authenticationTabSlider = [
     {
-        src:"/images/banner/6.jpg",
+        src:"/admin-images/banner/6.jpg",
         title:"Shopify eCommerce Store",
         description:"Some representative placeholder content for the first slide."
     },
     {
-        src:"/images/banner/5.jpg",
+        src:"/admin-images/banner/5.jpg",
         title:"iOS Apps Development",
         description:"Some representative placeholder content for the second slide."
     },
     {
-        src:"/images/banner/4.jpg",
+        src:"/admin-images/banner/4.jpg",
         title:"Figma Dashboard Design",
         description:"Some representative placeholder content for the third slide."
     },
     {
-        src:"/images/banner/3.jpg",
+        src:"/admin-images/banner/3.jpg",
         title:"React Dashboard Design",
         description:"Some representative placeholder content for the fourth slide."
     },
     {
-        src:"/images/banner/2.jpg",
+        src:"/admin-images/banner/2.jpg",
         title:"Standup Team Meeting",
         description:"Some representative placeholder content for the five slide."
     },
     {
-        src:"/images/banner/1.jpg",
+        src:"/admin-images/banner/1.jpg",
         title:"Zoom Team Meeting",
         description:"Some representative placeholder content for the six slide."
     },

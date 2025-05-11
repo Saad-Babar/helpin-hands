@@ -10,9 +10,9 @@ const ReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 
 const countryStatsData = [
-    { country: 'Australia', clicks: '2,258', flag: "/images/flags/4x3/au.svg" },
-    { country: 'United States', clicks: '2,025', flag: "/images/flags/4x3/us.svg" },
-    { country: 'Bangladesh', clicks: '1,836', flag: "/images/flags/4x3/bd.svg" },
+    { country: 'Australia', clicks: '2,258', flag: "/admin-images/flags/4x3/au.svg" },
+    { country: 'United States', clicks: '2,025', flag: "/admin-images/flags/4x3/us.svg" },
+    { country: 'Bangladesh', clicks: '1,836', flag: "/admin-images/flags/4x3/bd.svg" },
 ];
 
 const TopCountryChart = () => {

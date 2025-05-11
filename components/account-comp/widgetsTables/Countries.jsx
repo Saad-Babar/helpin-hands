@@ -8,13 +8,13 @@ import { FiChevronDown, FiChevronUp } from 'react-icons/fi'
 import Image from 'next/image'
 
 const countriesData = [
-    { name: 'United States', flag: '/images/flags/4x3/us.svg', percentage: '76.57%', count: '968k', trending: "up" },
-    { name: 'India', flag: '/images/flags/4x3/in.svg', percentage: '35.00%', count: '758k', trending: "down" },
-    { name: 'United Kingdom', flag: '/images/flags/4x3/gb.svg', percentage: '76.57%', count: '691k', trending: "down" },
-    { name: 'Australia', flag: '/images/flags/4x3/au.svg', percentage: '35.00%', count: '558k', trending: "up" },
-    { name: 'Bangladesh', flag: '/images/flags/4x3/bd.svg', percentage: '76.57%', count: '492k', trending: "down" },
-    { name: 'Germany', flag: '/images/flags/4x3/de.svg', percentage: '35.00%', count: '387k', trending: "up" },
-    { name: 'Turkey', flag: '/images/flags/4x3/tr.svg', percentage: '76.57%', count: '322k', trending: "down" }
+    { name: 'United States', flag: '/admin-images/flags/4x3/us.svg', percentage: '76.57%', count: '968k', trending: "up" },
+    { name: 'India', flag: '/admin-images/flags/4x3/in.svg', percentage: '35.00%', count: '758k', trending: "down" },
+    { name: 'United Kingdom', flag: '/admin-images/flags/4x3/gb.svg', percentage: '76.57%', count: '691k', trending: "down" },
+    { name: 'Australia', flag: '/admin-images/flags/4x3/au.svg', percentage: '35.00%', count: '558k', trending: "up" },
+    { name: 'Bangladesh', flag: '/admin-images/flags/4x3/bd.svg', percentage: '76.57%', count: '492k', trending: "down" },
+    { name: 'Germany', flag: '/admin-images/flags/4x3/de.svg', percentage: '35.00%', count: '387k', trending: "up" },
+    { name: 'Turkey', flag: '/admin-images/flags/4x3/tr.svg', percentage: '76.57%', count: '322k', trending: "down" }
 ]
 
 const Countries = ({ title }) => {

@@ -9,11 +9,11 @@ import { FiArrowRight } from 'react-icons/fi'
 import Image from 'next/image'
 
 const storeData = [
-    { logo: '/images/logo/adwords.png', storeName: 'hazymemory.store', storeUrl: 'http://hazymemory.store', marketValue: '$86,954USD', reviews: '5,698', badgeText: 'Trending', badgeColor: 'primary' },
-    { logo: '/images/logo/app-store.png', storeName: 'slickthings.store', storeUrl: 'http://slickthings.store', marketValue: '$77,597USD', reviews: '7,875', badgeText: 'Topper', badgeColor: 'success' },
-    { logo: '/images/logo/google-wallet.png', storeName: 'southernstyle.store', storeUrl: 'http://southernstyle.store', marketValue: '$67,578USD', reviews: '9,748', badgeText: 'Feature', badgeColor: 'warning' },
-    { logo: '/images/logo/pawprint.png', storeName: 'happydesire.store', storeUrl: 'http://happydesire.store', marketValue: '$60,447USD', reviews: '6,425', badgeText: 'Exclusive', badgeColor: 'danger' },
-    { logo: '/images/logo/shopping.png', storeName: 'alikedesire.store', storeUrl: 'http://alikedesire.store', marketValue: '$59,697USD', reviews: '4,968', badgeText: 'Trending', badgeColor: 'primary' },
+    { logo: '/admin-images/logo/adwords.png', storeName: 'hazymemory.store', storeUrl: 'http://hazymemory.store', marketValue: '$86,954USD', reviews: '5,698', badgeText: 'Trending', badgeColor: 'primary' },
+    { logo: '/admin-images/logo/app-store.png', storeName: 'slickthings.store', storeUrl: 'http://slickthings.store', marketValue: '$77,597USD', reviews: '7,875', badgeText: 'Topper', badgeColor: 'success' },
+    { logo: '/admin-images/logo/google-wallet.png', storeName: 'southernstyle.store', storeUrl: 'http://southernstyle.store', marketValue: '$67,578USD', reviews: '9,748', badgeText: 'Feature', badgeColor: 'warning' },
+    { logo: '/admin-images/logo/pawprint.png', storeName: 'happydesire.store', storeUrl: 'http://happydesire.store', marketValue: '$60,447USD', reviews: '6,425', badgeText: 'Exclusive', badgeColor: 'danger' },
+    { logo: '/admin-images/logo/shopping.png', storeName: 'alikedesire.store', storeUrl: 'http://alikedesire.store', marketValue: '$59,697USD', reviews: '4,968', badgeText: 'Trending', badgeColor: 'primary' },
 ]
 const Store = ({ title }) => {
     const { refreshKey, isRemoved, isExpanded, handleRefresh, handleExpand, handleDelete } = useCardTitleActions();

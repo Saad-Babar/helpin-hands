@@ -18,11 +18,11 @@ export const optionsMiscellaneous = [
     { label: "Tips & Tricks", icon: <FiLifeBuoy /> },
 ]
 const avatarDataArray = [
-    { type: 'image', user_img: '/images/avatar/2.png', user_name: 'Janette Dalton' },
-    { type: 'image', user_img: '/images/avatar/3.png', user_name: 'Michael Ksen' },
-    { type: 'image', user_img: '/images/avatar/4.png', user_name: 'Socrates Itumay' },
-    { type: 'image', user_img: '/images/avatar/5.png', user_name: 'Marianne Audrey' },
-    { type: 'image', user_img: '/images/avatar/6.png', user_name: 'Marianne Audrey' },
+    { type: 'image', user_img: '/admin-images/avatar/2.png', user_name: 'Janette Dalton' },
+    { type: 'image', user_img: '/admin-images/avatar/3.png', user_name: 'Michael Ksen' },
+    { type: 'image', user_img: '/admin-images/avatar/4.png', user_name: 'Socrates Itumay' },
+    { type: 'image', user_img: '/admin-images/avatar/5.png', user_name: 'Marianne Audrey' },
+    { type: 'image', user_img: '/admin-images/avatar/6.png', user_name: 'Marianne Audrey' },
 ];
 const salesInfoData = [
     { title: 'Weekly Bestseller', description: '10+ weekly bestseller', icon: 'feather-airplay', color: "primary", avatarDataArray },

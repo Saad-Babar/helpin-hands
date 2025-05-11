@@ -9,10 +9,10 @@ const ProjectsTab = () => {
                 <CategoriesSidebar />
                 <div className="col-xxl-10">
                     <div className="row g-4">
-                        <ProjectCard avatar={"/images/avatar/1.png"} thumbnail={"/images/banner/1.jpg"} name={"Alexandra Della"} title={"Shopify eCommerce Store"} description={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint nam ullam iure eum sed rerum libero quis doloremque maiores veritatis?"} />
-                        <ProjectCard avatar={"/images/avatar/2.png"} thumbnail={"/images/banner/2.jpg"} name={"Green Cute"} title={"iOS Apps Development"} description={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint nam ullam iure eum sed rerum libero quis doloremque maiores veritatis?"} />
-                        <ProjectCard avatar={"/images/avatar/3.png"} thumbnail={"/images/banner/3.jpg"} name={"Malanie Hanvey"} title={"Figma Dashboard Design"} description={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint nam ullam iure eum sed rerum libero quis doloremque maiores veritatis?"} />
-                        <ProjectCard avatar={"/images/avatar/4.png"} thumbnail={"/images/banner/4.jpg"} name={"Kenneth Hune"} title={"React Dashboard Design"} description={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint nam ullam iure eum sed rerum libero quis doloremque maiores veritatis?"} />
+                        <ProjectCard avatar={"/admin-images/avatar/1.png"} thumbnail={"/admin-images/banner/1.jpg"} name={"Alexandra Della"} title={"Shopify eCommerce Store"} description={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint nam ullam iure eum sed rerum libero quis doloremque maiores veritatis?"} />
+                        <ProjectCard avatar={"/admin-images/avatar/2.png"} thumbnail={"/admin-images/banner/2.jpg"} name={"Green Cute"} title={"iOS Apps Development"} description={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint nam ullam iure eum sed rerum libero quis doloremque maiores veritatis?"} />
+                        <ProjectCard avatar={"/admin-images/avatar/3.png"} thumbnail={"/admin-images/banner/3.jpg"} name={"Malanie Hanvey"} title={"Figma Dashboard Design"} description={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint nam ullam iure eum sed rerum libero quis doloremque maiores veritatis?"} />
+                        <ProjectCard avatar={"/admin-images/avatar/4.png"} thumbnail={"/admin-images/banner/4.jpg"} name={"Kenneth Hune"} title={"React Dashboard Design"} description={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint nam ullam iure eum sed rerum libero quis doloremque maiores veritatis?"} />
                     </div>
                 </div>
             </div>

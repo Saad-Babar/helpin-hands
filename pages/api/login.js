@@ -29,7 +29,7 @@ export default async function handler(req, res) {
     const token = jwt.sign(
       { userId: user._id, email: user.email, role: user.role },
       process.env.JWT_SECRET,
-      { expiresIn: '1m' }
+      { expiresIn: '5m' }
     );
 
     const serialized = serialize('token', token, {
@@ -37,9 +37,9 @@ export default async function handler(req, res) {
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'strict',
       path: '/',
-      // maxAge: 60 * 1, 1 min
-      maxAge: 60 * 60 * 24 * 7, // 7 days
-    });
+      maxAge: 60 * 5
+      // maxAge: 60 * 60 * 24 * 7, // 7 days
+    }); 
 
     res.setHeader('Set-Cookie', serialized);
     res.status(200).json({ message: 'Login successful' });

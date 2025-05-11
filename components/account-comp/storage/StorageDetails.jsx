@@ -24,7 +24,7 @@ const StorageDetails = () => {
                     <div className="tab-pane fade active show" id="fileDetailsTab">
                         <div className="p-4 d-flex align-items-center justify-content-center">
                             <img
-                                src="/images/storage-icons/undefined.png"
+                                src="/admin-images/storage-icons/undefined.png"
                                 className="img-fluid wd-200"
                                 alt=""
                             />
@@ -128,7 +128,7 @@ const StorageDetails = () => {
                             </div>
                             <div className="p-4">
                                 <Comment
-                                    avatarSrc="/images/avatar/3.png"
+                                    avatarSrc="/admin-images/avatar/3.png"
                                     name="Marianne Audrey"
                                     date="(Mar 2, 5:26 am)"
                                     content="Lorem ipsum dolor sit amet, consec tetuer adipi scing elit aenean commodo scing elit aenean commodo"
@@ -140,7 +140,7 @@ const StorageDetails = () => {
                                     content="Lorem ipsum dolor sit amet, consec tetuer adipi scing elit aenean commodo scing elit aenean commodo"
                                 />
                                 <Comment
-                                    avatarSrc="/images/avatar/4.png"
+                                    avatarSrc="/admin-images/avatar/4.png"
                                     name="Holland Scott"
                                     date="(Mar 2, 2:21 pm)"
                                     content="Lorem ipsum dolor sit amet, consec tetuer adipi scing elit aenean commodo scing elit aenean commodo"

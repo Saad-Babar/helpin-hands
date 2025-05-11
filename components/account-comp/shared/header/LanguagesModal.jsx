@@ -7,7 +7,7 @@ const LanguagesModal = () => {
   return (
     <div className="dropdown nxl-h-item nxl-header-language d-none d-sm-flex">
       <div className="nxl-head-link me-0 nxl-language-link" data-bs-toggle="dropdown" data-bs-auto-close="outside">
-        <img src="/images/flags/4x3/us.svg" alt="" className="img-fluid wd-20" />
+        <img src="/admin-images/flags/4x3/us.svg" alt="" className="img-fluid wd-20" />
       </div>
       <div className="dropdown-menu dropdown-menu-end nxl-h-dropdown nxl-language-dropdown">
         <div className="dropdown-divider mt-0"></div>

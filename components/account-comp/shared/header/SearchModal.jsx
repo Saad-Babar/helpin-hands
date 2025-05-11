@@ -33,31 +33,31 @@ const userSearch = [
         id: 1,
         name: "Alexandra Della",
         email: "alex.della@outlook.com",
-        src: "/images/avatar/1.png",
+        src: "/admin-images/avatar/1.png",
     },
     {
         id: 2,
         name: "Green Cute",
         email: "green.cute@outlook.com",
-        src: "/images/avatar/2.png",
+        src: "/admin-images/avatar/2.png",
     },
     {
         id: 3,
         name: "Malanie Hanvey",
         email: "malanie.anvey@outlook.com",
-        src: "/images/avatar/3.png",
+        src: "/admin-images/avatar/3.png",
     },
     {
         id: 4,
         name: "Kenneth Hune",
         email: "kenth.hune@outlook.com",
-        src: "/images/avatar/4.png",
+        src: "/admin-images/avatar/4.png",
     },
     {
         id: 5,
         name: "Archie Cantones",
         email: "archie.cones@outlook.com",
-        src: "/images/avatar/5.png",
+        src: "/admin-images/avatar/5.png",
     },
 
 ]
@@ -66,19 +66,19 @@ const filesList = [
         id: 1,
         file_name: "Project Style CSS",
         size: "05.74 MB",
-        src: "/images/file-icons/css.png"
+        src: "/admin-images/file-icons/css.png"
     },
     {
         id: 2,
         file_name: "Dashboard Project Zip",
         size: "46.83 MB",
-        src: "/images/file-icons/zip.png"
+        src: "/admin-images/file-icons/zip.png"
     },
     {
         id: 3,
         file_name: "Project Document PDF",
         size: "12.85 MB",
-        src: "/images/file-icons/pdf.png"
+        src: "/admin-images/file-icons/pdf.png"
     },
 
 ]

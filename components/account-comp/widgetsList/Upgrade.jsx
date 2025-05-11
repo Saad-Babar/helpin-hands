@@ -17,7 +17,7 @@ const Upgrade = () => {
                     </div>
                     <div className="text-center">
                         <div className="wd-150 mx-auto my-4">
-                            <Image width={150} height={150} sizes='100vw' src="/images/general/rocket.png" className="img-fluid" alt="img" />
+                            <Image width={150} height={150} sizes='100vw' src="/admin-images/general/rocket.png" className="img-fluid" alt="img" />
                         </div>
                         <div className="fw-bolder text-uppercase text-dark text-spacing-1">Need more space?</div>
                         <p className="px-5 fs-12 text-muted text-truncate-2-line">Get more space by upgrading your storage plan today! It's easy to upgrade by click the upgrade button.</p>

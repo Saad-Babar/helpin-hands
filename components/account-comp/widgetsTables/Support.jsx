@@ -7,11 +7,11 @@ import useCardTitleActions from '../../../hooks/useCardTitleActions'
 import Image from 'next/image'
 
 const supportData = [
-    { name: 'Alexandra Della', message: "My item doesn't ship to correct address", avatar: '/images/avatar/1.png', time: '2 hours ago' },
-    { name: 'Green Cute', message: 'Can you please refund back my money', avatar: '/images/avatar/2.png', time: '3 hours ago' },
-    { name: 'Marianne Audrey', message: 'You shipped the wrong color, I need it to be', avatar: '/images/avatar/3.png', time: '4 hours ago' },
-    { name: 'Holland Scott', message: 'Thank you very much for quick support!', avatar: '/images/avatar/4.png', time: '5 hours ago' },
-    { name: 'Gregory Miller', message: 'You shipped the wrong color, I need it to be', avatar: '/images/avatar/5.png', time: '6 hours ago' }
+    { name: 'Alexandra Della', message: "My item doesn't ship to correct address", avatar: '/admin-images/avatar/1.png', time: '2 hours ago' },
+    { name: 'Green Cute', message: 'Can you please refund back my money', avatar: '/admin-images/avatar/2.png', time: '3 hours ago' },
+    { name: 'Marianne Audrey', message: 'You shipped the wrong color, I need it to be', avatar: '/admin-images/avatar/3.png', time: '4 hours ago' },
+    { name: 'Holland Scott', message: 'Thank you very much for quick support!', avatar: '/admin-images/avatar/4.png', time: '5 hours ago' },
+    { name: 'Gregory Miller', message: 'You shipped the wrong color, I need it to be', avatar: '/admin-images/avatar/5.png', time: '6 hours ago' }
 ];
 
 const Support = ({ title }) => {
