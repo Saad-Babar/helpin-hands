@@ -1,5 +1,5 @@
 import React from 'react'
-import getIcon from '@/utils/getIcon';
+import getIcon from '../../../utils/getIcon';
 
 const statisticsData = [
     { color: 'primary', icon: 'feather-log-in', title: 'Logged Hours', value: '00:00' },

@@ -1,11 +1,11 @@
 'use client'
 import React from 'react'
-import CardHeader from '@/components/shared/CardHeader'
-import CardLoader from '@/components/shared/CardLoader'
-import useCardTitleActions from '@/hooks/useCardTitleActions'
-import { productsData } from '@/utils/fackData/productsData'
+import CardHeader from '../shared/CardHeader'
+import CardLoader from '../shared/CardLoader'
+import useCardTitleActions from '../../../hooks/useCardTitleActions'
+import { productsData } from '../../../utils/fackData/productsData'
 import { FiEdit, FiEye, FiTrash2 } from 'react-icons/fi'
-import Pagination from '@/components/shared/Pagination'
+import Pagination from '../shared/Pagination'
 import Image from 'next/image'
 
 

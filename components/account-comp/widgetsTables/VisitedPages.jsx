@@ -1,9 +1,9 @@
 'use client'
 import React from 'react'
-import CardHeader from '@/components/shared/CardHeader'
-import Pagination from '@/components/shared/Pagination'
-import CardLoader from '@/components/shared/CardLoader'
-import useCardTitleActions from '@/hooks/useCardTitleActions'
+import CardHeader from '../shared/CardHeader'
+import Pagination from '../shared/Pagination'
+import CardLoader from '../shared/CardLoader'
+import useCardTitleActions from '../../../hooks/useCardTitleActions'
 
 const tableData = [
     { page: '/app/widgets.html', visits: 2514, percentage: '23%', status: 'up' },

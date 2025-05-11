@@ -1,6 +1,6 @@
 
 import React from 'react'
-import HelpBanner from '@/components/helpBanner';
+import HelpBanner from '../../../../../components/account-comp/helpBanner';
 import { FiArrowRight, FiFileText } from 'react-icons/fi';
 
 const categoryData = [

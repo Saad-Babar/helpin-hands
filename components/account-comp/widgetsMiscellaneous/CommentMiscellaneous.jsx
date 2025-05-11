@@ -2,9 +2,9 @@
 import React from 'react'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
-import ImageGroup from '@/components/shared/ImageGroup'
-import { estimateAreaChartOptions } from '@/utils/chartsLogic/estimateAreaChartOptions'
-import { upcomingScheduleList } from '@/utils/fackData/upcomingScheduleList'
+import ImageGroup from '../shared/ImageGroup'
+import { estimateAreaChartOptions } from '../../../utils/chartsLogic/estimateAreaChartOptions'
+import { upcomingScheduleList } from '../../../utils/fackData/upcomingScheduleList'
 const ReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 const CommentMiscellaneous = () => {

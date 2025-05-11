@@ -1,9 +1,9 @@
 'use client'
 import React from 'react'
-import useCardTitleActions from '@/hooks/useCardTitleActions';
-import CardHeader from '@/components/shared/CardHeader';
-import CardLoader from '@/components/shared/CardLoader';
-import { performanceCandlestickChartOptions } from '@/utils/chartsLogic/performanceCandlestickChartOptions';
+import useCardTitleActions from '../../../hooks/useCardTitleActions';
+import CardHeader from '../shared/CardHeader';
+import CardLoader from '../shared/CardLoader';
+import { performanceCandlestickChartOptions } from '../../../utils/chartsLogic/performanceCandlestickChartOptions';
 import dynamic from 'next/dynamic'
 const ReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false })
 

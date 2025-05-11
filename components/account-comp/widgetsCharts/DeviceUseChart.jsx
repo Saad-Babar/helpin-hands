@@ -1,11 +1,11 @@
 'use client'
 import React from 'react'
 import dynamic from 'next/dynamic'
-import CardHeader from '@/components/shared/CardHeader'
-import useCardTitleActions from '@/hooks/useCardTitleActions'
-import CardLoader from '@/components/shared/CardLoader'
-import { deviceUseChartOptions } from '@/utils/chartsLogic/deviceUseChartOptions'
-import getIcon from '@/utils/getIcon'
+import CardHeader from '../shared/CardHeader'
+import useCardTitleActions from '../../../hooks/useCardTitleActions'
+import CardLoader from '../shared/CardLoader'
+import { deviceUseChartOptions } from '../../../utils/chartsLogic/deviceUseChartOptions'
+import getIcon from '../../../utils/getIcon'
 const ReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 const deviceStatsData = [

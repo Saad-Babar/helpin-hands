@@ -1,10 +1,10 @@
 'use client'
 import { usePathname } from "next/navigation";
-import Header from "@/components/shared/header/Header";
-import NavigationManu from "@/components/shared/navigationMenu/NavigationMenu";
-import SupportDetails from "@/components/supportDetails";
+import Header from "../../../components/account-comp/shared/header/Header";
+import NavigationManu from "../../../components/account-comp/shared/navigationMenu/NavigationMenu";
+import SupportDetails from "../../../components/account-comp/supportDetails";
 import dynamic from "next/dynamic";
-import useBootstrapUtils from "@/hooks/useBootstrapUtils";
+import useBootstrapUtils from "../../../hooks/useBootstrapUtils";
 
 // const useBootstrapUtils = dynamic(() => import('@/hooks/useBootstrapUtils'), { ssr: false })
 

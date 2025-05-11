@@ -1,5 +1,5 @@
 import React from 'react'
-import getIcon from '@/utils/getIcon';
+import getIcon from '../../../utils/getIcon';
 const data = [
     { color: 'primary', value: '8,475', description: 'New Customers', icon: "feather-users" },
     { color: 'success', value: '4,586', description: 'New Clients', icon: "feather-user-plus" },

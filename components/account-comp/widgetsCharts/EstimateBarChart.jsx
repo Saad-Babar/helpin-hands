@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
-import getIcon from '@/utils/getIcon';
-import { estimateBarChartOptions } from '@/utils/chartsLogic/estimateBarChartOptions';
+import getIcon from '../../../utils/getIcon';
+import { estimateBarChartOptions } from '../../../utils/chartsLogic/estimateBarChartOptions';
 import dynamic from 'next/dynamic'
 const ReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false })
 

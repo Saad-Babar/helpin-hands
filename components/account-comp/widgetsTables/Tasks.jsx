@@ -1,11 +1,11 @@
 'use client'
 import React, { useState } from 'react'
-import CardHeader from '@/components/shared/CardHeader'
-import Pagination from '@/components/shared/Pagination'
-import CardLoader from '@/components/shared/CardLoader'
-import useCardTitleActions from '@/hooks/useCardTitleActions'
-import { taskAssigneeOptions, taskPriorityOptions, taskStatusOptions } from '@/utils/options'
-import SelectDropdown from '@/components/shared/SelectDropdown'
+import CardHeader from '../shared/CardHeader'
+import Pagination from '../shared/Pagination'
+import CardLoader from '../shared/CardLoader'
+import useCardTitleActions from '../../../hooks/useCardTitleActions'
+import { taskAssigneeOptions, taskPriorityOptions, taskStatusOptions } from '../../../utils/options'
+import SelectDropdown from '../shared/SelectDropdown'
 
 const tasksData = [
     { taskNumber: '01', taskName: 'Meeting with beta testers ', taskDate: '20/02/2023', taskDescription: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.', status: taskStatusOptions, priority: taskPriorityOptions, assignee: taskAssigneeOptions },

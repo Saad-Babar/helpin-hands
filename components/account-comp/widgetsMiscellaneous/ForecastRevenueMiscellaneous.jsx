@@ -1,11 +1,11 @@
 'use client'
 import React from 'react'
 import Link from 'next/link'
-import CardHeader from '@/components/shared/CardHeader'
+import CardHeader from '../shared/CardHeader'
 import { CircularProgressbar } from 'react-circular-progressbar'
-import CardLoader from '@/components/shared/CardLoader'
-import getIcon from '@/utils/getIcon'
-import useCardTitleActions from '@/hooks/useCardTitleActions'
+import CardLoader from '../shared/CardLoader'
+import getIcon from '../../../utils/getIcon'
+import useCardTitleActions from '../../../hooks/useCardTitleActions'
 const ForecasRevenuetMiscellaneous = () => {
     const percent = 63
     const { refreshKey, isRemoved, isExpanded, handleRefresh, handleExpand, handleDelete } = useCardTitleActions();

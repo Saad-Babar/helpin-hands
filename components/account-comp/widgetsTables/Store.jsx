@@ -1,9 +1,9 @@
 'use client'
 import React from 'react'
-import CardHeader from '@/components/shared/CardHeader'
-import CardLoader from '@/components/shared/CardLoader'
-import useCardTitleActions from '@/hooks/useCardTitleActions'
-import Pagination from '@/components/shared/Pagination'
+import CardHeader from '../shared/CardHeader'
+import CardLoader from '../shared/CardLoader'
+import useCardTitleActions from '../../../hooks/useCardTitleActions'
+import Pagination from '../shared/Pagination'
 import { FaStar } from "react-icons/fa";
 import { FiArrowRight } from 'react-icons/fi'
 import Image from 'next/image'

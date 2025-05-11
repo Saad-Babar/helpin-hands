@@ -1,5 +1,5 @@
 import React from 'react'
-import getIcon from '@/utils/getIcon';
+import getIcon from '../../../utils/getIcon';
 const paymentData = [
     { status: "Paid", total: 100, completed: 78, percentage: 36.85, icon: "feather-arrow-up", color: "success" },
     { status: "Unpaid", total: 50, completed: 38, percentage: 23.45, icon: "feather-arrow-down", color: "danger" },

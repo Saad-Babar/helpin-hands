@@ -1,4 +1,3 @@
-import "../assets/scss/theme.scss";
 import 'react-circular-progressbar/dist/styles.css';
 import "react-perfect-scrollbar/dist/css/styles.css";
 import "react-datepicker/dist/react-datepicker.css";

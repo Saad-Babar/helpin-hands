@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
-import getIcon from '@/utils/getIcon';
+import getIcon from '../../../utils/getIcon';
 
 const SelectDropdown = ({ options, selectedOption, onSelectOption, className, defaultSelect }) => {
     const [isOpen, setIsOpen] = useState(false);

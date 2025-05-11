@@ -1,11 +1,11 @@
 'use client'
 import React, { Fragment } from 'react'
-import CardHeader from '@/components/shared/CardHeader';
-import useCardTitleActions from '@/hooks/useCardTitleActions';
+import CardHeader from '../shared/CardHeader';
+import useCardTitleActions from '../../../hooks/useCardTitleActions';
 import {FiEye, FiScissors, FiShare2, FiX } from 'react-icons/fi';
-import CardLoader from '@/components/shared/CardLoader';
-import { userList } from '@/utils/fackData/userList';
-import Dropdown from '@/components/shared/Dropdown';
+import CardLoader from '../shared/CardLoader';
+import { userList } from '../../../utils/fackData/userList';
+import Dropdown from '../shared/Dropdown';
 import Image from 'next/image';
 
 const options = [

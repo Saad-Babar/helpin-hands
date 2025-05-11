@@ -1,8 +1,8 @@
 'use client'
 import React from 'react'
-import CardHeader from '@/components/shared/CardHeader'
-import CardLoader from '@/components/shared/CardLoader'
-import useCardTitleActions from '@/hooks/useCardTitleActions'
+import CardHeader from '../shared/CardHeader'
+import CardLoader from '../shared/CardLoader'
+import useCardTitleActions from '../../../hooks/useCardTitleActions'
 import { FiMoreVertical } from 'react-icons/fi';
 
 const trafficData = [

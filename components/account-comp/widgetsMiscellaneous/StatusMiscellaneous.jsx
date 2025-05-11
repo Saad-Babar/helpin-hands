@@ -1,8 +1,8 @@
 'use client'
 import React, { Fragment } from 'react'
 import dynamic from 'next/dynamic';
-import { estimateAreaChartOptions } from '@/utils/chartsLogic/estimateAreaChartOptions'
-import getIcon from '@/utils/getIcon';
+import { estimateAreaChartOptions } from '../../../utils/chartsLogic/estimateAreaChartOptions'
+import getIcon from '../../../utils/getIcon';
 const ReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 const salesData = [

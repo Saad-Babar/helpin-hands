@@ -1,9 +1,9 @@
 'use client'
 import React, { Fragment } from 'react'
-import CardHeader from '@/components/shared/CardHeader';
-import useCardTitleActions from '@/hooks/useCardTitleActions';
-import CardLoader from '@/components/shared/CardLoader';
-import getIcon from '@/utils/getIcon';
+import CardHeader from '../shared/CardHeader';
+import useCardTitleActions from '../../../hooks/useCardTitleActions';
+import CardLoader from '../shared/CardLoader';
+import getIcon from '../../../utils/getIcon';
 
 const trendingItemsData = [
     { color: 'primary', icon: 'feather-airplay', title: 'Weekly Bestseller', names: 'Mark, Rowling, Esther', amount: '$99,685', salesCount: '698' },

@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import dynamic from 'next/dynamic'
-import { earningsExpensesChartOption } from '@/utils/chartsLogic/earningsExpensesChartOption'
+import { earningsExpensesChartOption } from '../../../utils/chartsLogic/earningsExpensesChartOption'
 import { YearDropdown } from './EstimateAreaChartTwo'
 const ReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false })
 const EstimateAreaChartThree = () => {

@@ -1,8 +1,8 @@
 'use client'
 import React, { Fragment } from 'react'
-import CardHeader from '@/components/shared/CardHeader';
-import useCardTitleActions from '@/hooks/useCardTitleActions';
-import CardLoader from '@/components/shared/CardLoader';
+import CardHeader from '../shared/CardHeader';
+import useCardTitleActions from '../../../hooks/useCardTitleActions';
+import CardLoader from '../shared/CardLoader';
 import { FaStar } from 'react-icons/fa6';
 
 const clientData = [

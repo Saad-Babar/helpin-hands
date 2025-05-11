@@ -1,5 +1,5 @@
 import React from 'react'
-import CircleProgress from '@/components/shared/CircleProgress'
+import CircleProgress from '../shared/CircleProgress'
 import Link from 'next/link';
 
 const projectData = [

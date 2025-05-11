@@ -1,8 +1,8 @@
 import React from 'react'
-import PageHeader from '@/components/shared/pageHeader/PageHeader'
-import PaymentTable from '@/components/payment/PaymentTable'
-import PaymentHeader from '@/components/payment/PaymentHeader'
-import Footer from '@/components/shared/Footer'
+import PageHeader from '../../../../../components/account-comp/shared/pageHeader/PageHeader'
+import PaymentTable from '../../../../../components/account-comp/payment/PaymentTable'
+import PaymentHeader from '../../../../../components/account-comp/payment/PaymentHeader'
+import Footer from '../../../../../components/account-comp/shared/Footer'
 
 const page = () => {
     return (

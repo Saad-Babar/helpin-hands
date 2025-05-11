@@ -1,14 +1,14 @@
 'use client'
 import React, { useState } from 'react'
-import CardHeader from '@/components/shared/CardHeader'
+import CardHeader from '../shared/CardHeader'
 import { FiCamera, FiClipboard, FiEdit, FiGrid, FiMail, FiMapPin, FiMoreHorizontal, FiMoreVertical, FiPhoneCall } from 'react-icons/fi'
-import CircleProgress from '@/components/shared/CircleProgress'
-import SelectDropdown from '@/components/shared/SelectDropdown'
-import { projectsData } from '@/utils/fackData/projectsData'
-import ImageGroup from '@/components/shared/ImageGroup'
-import getIcon from '@/utils/getIcon'
-import CardLoader from '@/components/shared/CardLoader'
-import useCardTitleActions from '@/hooks/useCardTitleActions'
+import CircleProgress from '../shared/CircleProgress'
+import SelectDropdown from '../shared/SelectDropdown'
+import { projectsData } from '../../../utils/fackData/projectsData'
+import ImageGroup from '../shared/ImageGroup'
+import getIcon from '../../../utils/getIcon'
+import CardLoader from '../shared/CardLoader'
+import useCardTitleActions from '../../../hooks/useCardTitleActions'
 
 
 const projectStatusOptions = [

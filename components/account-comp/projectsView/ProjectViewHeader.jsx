@@ -1,6 +1,6 @@
 import React from 'react'
 import { FiMoreVertical, FiPlus, FiShare2 } from 'react-icons/fi'
-import getIcon from '@/utils/getIcon'
+import getIcon from '../../../utils/getIcon'
 import Link from 'next/link'
 
 const socialLinkOptions = [

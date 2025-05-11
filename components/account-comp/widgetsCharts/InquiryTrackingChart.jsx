@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
-import CardHeader from '@/components/shared/CardHeader'
-import { inquiryTrackingChartOption } from '@/utils/chartsLogic/inquiryTrackingChartOption'
+import CardHeader from '../shared/CardHeader'
+import { inquiryTrackingChartOption } from '../../../utils/chartsLogic/inquiryTrackingChartOption'
 import dynamic from 'next/dynamic'
 const ReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false })
 const InquiryTrackingChart = () => {

@@ -1,9 +1,9 @@
 'use client'
 import React from 'react'
-import CardHeader from '@/components/shared/CardHeader'
-import Pagination from '@/components/shared/Pagination'
-import useCardTitleActions from '@/hooks/useCardTitleActions'
-import CardLoader from '@/components/shared/CardLoader'
+import CardHeader from '../shared/CardHeader'
+import Pagination from '../shared/Pagination'
+import useCardTitleActions from '../../../hooks/useCardTitleActions'
+import CardLoader from '../shared/CardLoader'
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi'
 import Image from 'next/image'
 

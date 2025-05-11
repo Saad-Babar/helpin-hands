@@ -1,9 +1,9 @@
 'use client'
 import React from 'react'
 import dynamic from 'next/dynamic';
-import getIcon from '@/utils/getIcon';
-import Dropdown from '@/components/shared/Dropdown';
-import { conversionStatusChartOptions } from '@/utils/chartsLogic/conversionStatusChartOptions';
+import getIcon from '../../../utils/getIcon';
+import Dropdown from '../shared/Dropdown';
+import { conversionStatusChartOptions } from '../../../utils/chartsLogic/conversionStatusChartOptions';
 import { optionsMiscellaneous } from './SellingStatusMiscellaneous';
 const ReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false })
 

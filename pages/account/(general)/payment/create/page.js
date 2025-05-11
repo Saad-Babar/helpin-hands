@@ -1,6 +1,6 @@
 import React from 'react'
-import PageHeader from '@/components/shared/pageHeader/PageHeader'
-import InvoiceCreate from '@/components/payment/InvoiceCreate'
+import PageHeader from '../../../../../components/account-comp/shared/pageHeader/PageHeader'
+import InvoiceCreate from '../../../../../components/account-comp/payment/InvoiceCreate'
 
 const page = () => {
   return (

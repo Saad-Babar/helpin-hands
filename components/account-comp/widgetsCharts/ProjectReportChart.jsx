@@ -1,10 +1,10 @@
 'use client'
 import React from 'react'
 import dynamic from 'next/dynamic'
-import CardHeader from '@/components/shared/CardHeader'
-import { projectStatisticsChartOption } from '@/utils/chartsLogic/projectStatisticsChartOption'
-import CardLoader from '@/components/shared/CardLoader'
-import useCardTitleActions from '@/hooks/useCardTitleActions'
+import CardHeader from '../shared/CardHeader'
+import { projectStatisticsChartOption } from '../../../utils/chartsLogic/projectStatisticsChartOption'
+import CardLoader from '../shared/CardLoader'
+import useCardTitleActions from '../../../hooks/useCardTitleActions'
 const ReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 const ProjectReportChart = () => {

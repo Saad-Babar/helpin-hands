@@ -1,11 +1,11 @@
 'use client'
 import React from 'react'
-import Pagination from '@/components/shared/Pagination'
-import CardHeader from '@/components/shared/CardHeader'
-import { projectsData } from '@/utils/fackData/projectsData'
+import Pagination from '../shared/Pagination'
+import CardHeader from '../shared/CardHeader'
+import { projectsData } from '../../../utils/fackData/projectsData'
 import { FiArrowRight } from 'react-icons/fi'
-import CardLoader from '@/components/shared/CardLoader'
-import useCardTitleActions from '@/hooks/useCardTitleActions'
+import CardLoader from '../shared/CardLoader'
+import useCardTitleActions from '../../../hooks/useCardTitleActions'
 import Image from 'next/image'
 
 const ProjectsTwo = ({ title, className }) => {

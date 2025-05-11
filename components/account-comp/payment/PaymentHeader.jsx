@@ -1,6 +1,6 @@
 import React from 'react'
 import { FiBarChart, FiFilter, FiPaperclip, FiPlus } from 'react-icons/fi'
-import Dropdown from '@/components/shared/Dropdown'
+import Dropdown from '../shared/Dropdown'
 import { fileType, filterAction } from '../proposal/ProposalHeadr'
 import PaymentStatistics from '../widgetsStatistics/PaymentStatistics';
 import Link from 'next/link';

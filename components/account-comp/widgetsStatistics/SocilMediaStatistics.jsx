@@ -1,5 +1,5 @@
 import React from 'react'
-import getIcon from '@/utils/getIcon';
+import getIcon from '../../../utils/getIcon';
 const socialMediaData = [
     { platform: 'facebook', users: '5,165 +', icon: 'fa-facebook', color: 'primary' },
     { platform: 'twitter', users: '4,254 +', icon: 'fa-twitter', color: 'teal' },

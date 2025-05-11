@@ -1,6 +1,6 @@
 import React from 'react'
 import { FiDollarSign, FiDownload, FiEdit, FiFacebook, FiGithub, FiInstagram, FiLinkedin, FiPrinter, FiSend, FiTwitter } from 'react-icons/fi'
-import Dropdown from '@/components/shared/Dropdown'
+import Dropdown from '../shared/Dropdown'
 
 export const invoiceTempletOptions = [
     { icon: '', label: "Default" },

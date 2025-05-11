@@ -1,7 +1,7 @@
-import CustomersHeader from '@/components/customers/CustomersHeader'
-import CustomersTable from '@/components/customers/CustomersTable'
-import Footer from '@/components/shared/Footer'
-import PageHeader from '@/components/shared/pageHeader/PageHeader'
+import CustomersHeader from '../../../../../components/account-comp/customers/CustomersHeader'
+import CustomersTable from '../../../../../components/account-comp/customers/CustomersTable'
+import Footer from '../../../../../components/account-comp/shared/Footer'
+import PageHeader from '../../../../../components/account-comp/shared/pageHeader/PageHeader'
 import React from 'react'
 
 const page = () => {

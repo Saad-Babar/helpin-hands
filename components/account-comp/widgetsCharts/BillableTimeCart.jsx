@@ -1,8 +1,8 @@
 'use client'
 import React from 'react'
 import dynamic from 'next/dynamic'
-import CardHeader from '@/components/shared/CardHeader'
-import { billableTimeChartOption } from '@/utils/chartsLogic/billableTimeChartOption'
+import CardHeader from '../shared/CardHeader'
+import { billableTimeChartOption } from '../../../utils/chartsLogic/billableTimeChartOption'
 const ReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false })
 const BillableTimeChart = () => {
     const chartOptions = billableTimeChartOption()

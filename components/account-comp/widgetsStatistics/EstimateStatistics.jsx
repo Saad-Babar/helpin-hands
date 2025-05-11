@@ -1,5 +1,5 @@
 import React from 'react'
-import getIcon from '@/utils/getIcon';
+import getIcon from '../../../utils/getIcon';
 import { FiFigma } from 'react-icons/fi';
 
 const statisticsData = [

@@ -1,10 +1,10 @@
 'use client'
 import React, { Fragment } from 'react'
-import CardHeader from '@/components/shared/CardHeader'
-import useCardTitleActions from '@/hooks/useCardTitleActions'
-import CardLoader from '@/components/shared/CardLoader'
+import CardHeader from '../shared/CardHeader'
+import useCardTitleActions from '../../../hooks/useCardTitleActions'
+import CardLoader from '../shared/CardLoader'
 import { FiLink2 } from 'react-icons/fi'
-import { topCountryClickChartOptions } from '@/utils/chartsLogic/topCountryClickChartOption'
+import { topCountryClickChartOptions } from '../../../utils/chartsLogic/topCountryClickChartOption'
 import dynamic from 'next/dynamic'
 const ReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false })
 

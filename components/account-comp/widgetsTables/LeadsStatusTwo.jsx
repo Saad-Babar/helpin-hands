@@ -1,10 +1,10 @@
 'use client'
 import React from 'react'
 import Link from 'next/link'
-import CardHeader from '@/components/shared/CardHeader'
-import { leadsStatusData } from '@/utils/fackData/leadsStatusData'
-import CardLoader from '@/components/shared/CardLoader'
-import useCardTitleActions from '@/hooks/useCardTitleActions'
+import CardHeader from '../shared/CardHeader'
+import { leadsStatusData } from '../../../utils/fackData/leadsStatusData'
+import CardLoader from '../shared/CardLoader'
+import useCardTitleActions from '../../../hooks/useCardTitleActions'
 import Image from 'next/image'
 
 const LeadsStatusTwo = () => {

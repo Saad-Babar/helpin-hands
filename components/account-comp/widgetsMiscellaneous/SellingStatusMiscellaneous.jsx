@@ -2,10 +2,10 @@
 import React from 'react'
 import dynamic from 'next/dynamic';
 import { FiAtSign, FiBell, FiCalendar, FiLifeBuoy, FiSettings, FiTrash2 } from 'react-icons/fi'
-import Dropdown from '@/components/shared/Dropdown';
-import ImageGroup from '@/components/shared/ImageGroup';
-import getIcon from '@/utils/getIcon';
-import { sellingStatusChartOptions } from '@/utils/chartsLogic/sellingStatusChartOptions';
+import Dropdown from '../shared/Dropdown';
+import ImageGroup from '../shared/ImageGroup';
+import getIcon from '../../../utils/getIcon';
+import { sellingStatusChartOptions } from '../../../utils/chartsLogic/sellingStatusChartOptions';
 const ReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 export const optionsMiscellaneous = [

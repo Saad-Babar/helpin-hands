@@ -1,7 +1,7 @@
 import React from 'react'
-import PageHeader from '@/components/shared/pageHeader/PageHeader'
-import PaymentHeader from '@/components/payment/PaymentHeader'
-import InvoiceView from '@/components/payment/InvoiceView'
+import PageHeader from '../../../../../components/account-comp/shared/pageHeader/PageHeader'
+import PaymentHeader from '../../../../../components/account-comp/payment/PaymentHeader'
+import InvoiceView from '../../../../../components/account-comp/payment/InvoiceView'
 
 const page = () => {
   return (

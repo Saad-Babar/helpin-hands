@@ -1,7 +1,7 @@
 import React from 'react'
-import PageHeader from '@/components/shared/pageHeader/PageHeader'
-import CustomersCreateHeader from '@/components/customersCreate/CustomersCreateHeader'
-import CustomerCreateContent from '@/components/customersCreate/CustomerCreateContent'
+import PageHeader from '../../../../../components/account-comp/shared/pageHeader/PageHeader'
+import CustomersCreateHeader from '../../../../../components/account-comp/customersCreate/CustomersCreateHeader'
+import CustomerCreateContent from '../../../../../components/account-comp/customersCreate/CustomerCreateContent'
 
 const page = () => {
   return (

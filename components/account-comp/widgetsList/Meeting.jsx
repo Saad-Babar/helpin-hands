@@ -1,9 +1,9 @@
 'use client'
 import React from 'react'
-import CardHeader from '@/components/shared/CardHeader';
-import useCardTitleActions from '@/hooks/useCardTitleActions';
+import CardHeader from '../shared/CardHeader';
+import useCardTitleActions from '../../../hooks/useCardTitleActions';
 import { FiArrowRight, FiClock, FiMessageSquare } from 'react-icons/fi';
-import CardLoader from '@/components/shared/CardLoader';
+import CardLoader from '../shared/CardLoader';
 
 const meetings = [
     { color: 'primary', title: 'Meeting with new clients.', time: '12:30 AM' },

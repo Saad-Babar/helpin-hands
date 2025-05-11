@@ -1,10 +1,10 @@
 'use client'
 import React, { Fragment } from 'react'
-import CardHeader from '@/components/shared/CardHeader';
-import useCardTitleActions from '@/hooks/useCardTitleActions';
-import CardLoader from '@/components/shared/CardLoader';
-import { profileActivityData2 } from '@/utils/fackData/profileActivityData';
-import ImageGroup from '@/components/shared/ImageGroup';
+import CardHeader from '../shared/CardHeader';
+import useCardTitleActions from '../../../hooks/useCardTitleActions';
+import CardLoader from '../shared/CardLoader';
+import { profileActivityData2 } from '../../../utils/fackData/profileActivityData';
+import ImageGroup from '../shared/ImageGroup';
 
 const Activity = ({ title }) => {
 

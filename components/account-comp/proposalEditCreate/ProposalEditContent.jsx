@@ -1,17 +1,17 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import DatePicker from "react-datepicker";
-import SelectDropdown from '@/components/shared/SelectDropdown'
-import MultiSelectImg from '@/components/shared/MultiSelectImg'
-import MultiSelectTags from '@/components/shared/MultiSelectTags'
-import Loading from '@/components/shared/Loading'
+import SelectDropdown from '../shared/SelectDropdown'
+import MultiSelectImg from '../shared/MultiSelectImg'
+import MultiSelectTags from '../shared/MultiSelectTags'
+import Loading from '../shared/Loading'
 import AddProposal from './AddProposal'
-import { currencyOptionsData } from '@/utils/fackData/currencyOptionsData'
-import useDatePicker from '@/hooks/useDatePicker';
+import { currencyOptionsData } from '../../../utils/fackData/currencyOptionsData'
+import useDatePicker from '../../../hooks/useDatePicker';
 import { addDays } from 'date-fns';
-import { timezonesData } from '@/utils/fackData/timeZonesData';
-import { propasalLeadOptions, propsalDiscountOptions, propsalRelatedOptions, propsalStatusOptions, propsalVisibilityOptions, taskAssigneeOptions, taskLabelsOptions } from '@/utils/options';
-import useLocationData from '@/hooks/useLocationData';
+import { timezonesData } from '../../../utils/fackData/timeZonesData';
+import { propasalLeadOptions, propsalDiscountOptions, propsalRelatedOptions, propsalStatusOptions, propsalVisibilityOptions, taskAssigneeOptions, taskLabelsOptions } from '../../../utils/options';
+import useLocationData from '../../../hooks/useLocationData';
 
 const previtems = [
     {

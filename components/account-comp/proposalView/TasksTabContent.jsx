@@ -1,11 +1,11 @@
 // 'use client'
 import React from 'react'
 import { FiActivity, FiAirplay, FiArrowRight, FiAtSign, FiBarChart2, FiBell, FiCalendar, FiCheck, FiCheckCircle, FiClipboard, FiClock, FiDollarSign, FiEdit, FiEdit3, FiFileText, FiLifeBuoy, FiPlus, FiPower, FiSettings, FiStar, FiTrash2 } from 'react-icons/fi'
-import Dropdown from '@/components/shared/Dropdown'
+import Dropdown from '../shared/Dropdown'
 import CheckList from '../CheckList'
-import MultiSelectImg from '@/components/shared/MultiSelectImg'
-import MultiSelectTags from '@/components/shared/MultiSelectTags'
-import { taskAssigneeOptions } from '@/utils/options'
+import MultiSelectImg from '../shared/MultiSelectImg'
+import MultiSelectTags from '../shared/MultiSelectTags'
+import { taskAssigneeOptions } from '../../../utils/options'
 
 const checkListOptions = [
     { label: "New", icon: <FiAtSign /> },

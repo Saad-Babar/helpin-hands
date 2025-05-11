@@ -1,9 +1,9 @@
 'use client'
 import React, { useState } from 'react'
 import EmailTagInput from '../emails/EmailTagInput'
-import useJoditConfig from '@/hooks/useJoditConfig';
+import useJoditConfig from '../../../hooks/useJoditConfig';
 import JoditEditor from 'jodit-react';
-import { confirmDelete } from '@/utils/confirmDelete';
+import { confirmDelete } from '../../../utils/confirmDelete';
 
 const ProposalSent = () => {
     const config = useJoditConfig()

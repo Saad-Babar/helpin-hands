@@ -1,10 +1,10 @@
 'use client'
 import React from 'react'
-import { estimateBarChartTwoOptions } from '@/utils/chartsLogic/estimateBarChartTwoOptions';
-import { earningsExpensesChartOption } from '@/utils/chartsLogic/earningsExpensesChartOption';
-import useCardTitleActions from '@/hooks/useCardTitleActions';
-import CardHeader from '@/components/shared/CardHeader';
-import CardLoader from '@/components/shared/CardLoader';
+import { estimateBarChartTwoOptions } from '../../../utils/chartsLogic/estimateBarChartTwoOptions';
+import { earningsExpensesChartOption } from '../../../utils/chartsLogic/earningsExpensesChartOption';
+import useCardTitleActions from '../../../hooks/useCardTitleActions';
+import CardHeader from '../shared/CardHeader';
+import CardLoader from '../shared/CardLoader';
 import { YearDropdown } from './EstimateAreaChartTwo';
 import dynamic from 'next/dynamic'
 const ReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false })

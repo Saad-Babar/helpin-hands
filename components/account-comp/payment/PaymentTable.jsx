@@ -1,9 +1,9 @@
 'use client'
 import React, { useEffect } from 'react'
 import { FiAlertOctagon, FiArchive, FiClock, FiEdit3, FiEye, FiMoreHorizontal, FiPrinter, FiTrash2 } from 'react-icons/fi'
-import Dropdown from '@/components/shared/Dropdown';
-import { paymentTableData } from '@/utils/fackData/paymentTableData';
-import Table from '@/components/shared/table/Table';
+import Dropdown from '../shared/Dropdown';
+import { paymentTableData } from '../../../utils/fackData/paymentTableData';
+import Table from '../shared/table/Table';
 import Link from 'next/link';
 
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import { reportSalesStatisticsData } from '@/utils/fackData/reportSalesStatisticsData';
-import getIcon from '@/utils/getIcon';
+import { reportSalesStatisticsData } from '../../../utils/fackData/reportSalesStatisticsData';
+import getIcon from '../../../utils/getIcon';
 import Link from 'next/link';
 
 

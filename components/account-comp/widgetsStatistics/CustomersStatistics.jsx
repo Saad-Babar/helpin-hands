@@ -1,5 +1,5 @@
 import React from 'react'
-import getIcon from '@/utils/getIcon';
+import getIcon from '../../../utils/getIcon';
 
 const customerData = [
     { icon: 'feather-users', title: 'Total Customers', count: '26,595', percentage: '36.85%', arrowIcon: 'feather-arrow-up', color: 'primary', trend: "up" },

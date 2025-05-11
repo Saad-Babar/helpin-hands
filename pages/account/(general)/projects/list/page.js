@@ -1,7 +1,7 @@
 import React from 'react'
-import PageHeader from '@/components/shared/pageHeader/PageHeader'
-import ProjectsListHeader from '@/components/projectsList/ProjectsListHeader'
-import ProjectTable from '@/components/projectsList/ProjectTable'
+import PageHeader from '../../../../../components/account-comp/shared/pageHeader/PageHeader'
+import ProjectsListHeader from '../../../../../components/account-comp/projectsList/ProjectsListHeader'
+import ProjectTable from '../../../../../components/account-comp/projectsList/ProjectTable'
 
 const page = () => {
     return (

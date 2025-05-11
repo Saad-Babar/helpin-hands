@@ -1,5 +1,5 @@
 import React from 'react'
-import getIcon from '@/utils/getIcon';
+import getIcon from '../../../utils/getIcon';
 
 const statisticsData = [
     { icon: 'feather-users', number: '8,475', title: 'New Customers', color: 'primary' },

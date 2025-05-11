@@ -1,9 +1,9 @@
 'use client'
 import React from 'react'
-import CardHeader from '@/components/shared/CardHeader';
-import useCardTitleActions from '@/hooks/useCardTitleActions';
-import CardLoader from '@/components/shared/CardLoader';
-import Pagination from '@/components/shared/Pagination';
+import CardHeader from '../shared/CardHeader';
+import useCardTitleActions from '../../../hooks/useCardTitleActions';
+import CardLoader from '../shared/CardLoader';
+import Pagination from '../shared/Pagination';
 
 const ticketData = [
     { ticketNumber: '987456', title: 'Meeting with beta testers', date: '20/02/2023', description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.' },

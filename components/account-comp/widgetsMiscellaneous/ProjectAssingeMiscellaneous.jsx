@@ -1,6 +1,6 @@
 import React from 'react'
-import { recentDealData } from '@/utils/fackData/recentDealData'
-import CircleProgress from '@/components/shared/CircleProgress'
+import { recentDealData } from '../../../utils/fackData/recentDealData'
+import CircleProgress from '../shared/CircleProgress'
 import Link from 'next/link'
 
 const ProjectAssingeMiscellaneous = () => {

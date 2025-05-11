@@ -1,9 +1,9 @@
 'use client'
 import React from 'react'
-import CardHeader from '@/components/shared/CardHeader';
-import useCardTitleActions from '@/hooks/useCardTitleActions';
-import CardLoader from '@/components/shared/CardLoader';
-import { profileActivityData } from '@/utils/fackData/profileActivityData';
+import CardHeader from '../shared/CardHeader';
+import useCardTitleActions from '../../../hooks/useCardTitleActions';
+import CardLoader from '../shared/CardLoader';
+import { profileActivityData } from '../../../utils/fackData/profileActivityData';
 import { FiCheck, FiEye, FiMoreVertical } from 'react-icons/fi';
 
 const ActivityTwo = ({ title }) => {

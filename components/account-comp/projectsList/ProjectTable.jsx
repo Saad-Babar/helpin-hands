@@ -1,10 +1,10 @@
 'use client'
 import React, { useState, memo, useEffect } from 'react'
-import Table from '@/components/shared/table/Table';
+import Table from '../shared/table/Table';
 import { FiAlertOctagon, FiArchive, FiClock, FiEdit3, FiEye, FiMoreHorizontal, FiPrinter, FiTrash2 } from 'react-icons/fi'
-import Dropdown from '@/components/shared/Dropdown';
-import SelectDropdown from '@/components/shared/SelectDropdown';
-import { projectTableData } from '@/utils/fackData/projectTableData';
+import Dropdown from '../shared/Dropdown';
+import SelectDropdown from '../shared/SelectDropdown';
+import { projectTableData } from '../../../utils/fackData/projectTableData';
 
 const actions = [
     { label: "Edit", icon: <FiEdit3 /> },

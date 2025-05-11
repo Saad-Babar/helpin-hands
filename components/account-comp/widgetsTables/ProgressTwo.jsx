@@ -1,11 +1,11 @@
 'use client'
 import React from 'react'
-import Pagination from '@/components/shared/Pagination'
-import CardHeader from '@/components/shared/CardHeader'
-import useCardTitleActions from '@/hooks/useCardTitleActions'
-import CardLoader from '@/components/shared/CardLoader'
+import Pagination from '../shared/Pagination'
+import CardHeader from '../shared/CardHeader'
+import useCardTitleActions from '../../../hooks/useCardTitleActions'
+import CardLoader from '../shared/CardLoader'
 import { FiBell, FiClock, FiMessageSquare } from 'react-icons/fi'
-import { projectsData } from '@/utils/fackData/projectsData'
+import { projectsData } from '../../../utils/fackData/projectsData'
 
 
 const ProgressTwo = ({ title }) => {

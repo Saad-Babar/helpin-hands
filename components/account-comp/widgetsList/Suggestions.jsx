@@ -1,11 +1,11 @@
 'use client'
 import React, { Fragment } from 'react'
 import Link from 'next/link'
-import CardHeader from '@/components/shared/CardHeader'
-import useCardTitleActions from '@/hooks/useCardTitleActions'
-import CardLoader from '@/components/shared/CardLoader'
+import CardHeader from '../shared/CardHeader'
+import useCardTitleActions from '../../../hooks/useCardTitleActions'
+import CardLoader from '../shared/CardLoader'
 import { FiPlus, FiUserPlus } from 'react-icons/fi'
-import { teamMembersList } from '@/utils/fackData/teamMembersList'
+import { teamMembersList } from '../../../utils/fackData/teamMembersList'
 import Image from 'next/image'
 
 

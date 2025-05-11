@@ -1,11 +1,11 @@
 'use client'
 import React from 'react'
 import Link from 'next/link'
-import CardHeader from '@/components/shared/CardHeader'
-import useCardTitleActions from '@/hooks/useCardTitleActions'
-import CardLoader from '@/components/shared/CardLoader'
+import CardHeader from '../shared/CardHeader'
+import useCardTitleActions from '../../../hooks/useCardTitleActions'
+import CardLoader from '../shared/CardLoader'
 import { FiPlus } from 'react-icons/fi'
-import getIcon from '@/utils/getIcon'
+import getIcon from '../../../utils/getIcon'
 
 const socialLinks = [
     { icon: 'feather-facebook', link: 'https://www.facebook.com/', text: 'https://www.facebook.com/', followers: '9.47K' },

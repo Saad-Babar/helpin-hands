@@ -1,8 +1,8 @@
 'use client'
 import React from 'react'
-import CardHeader from '@/components/shared/CardHeader';
-import useCardTitleActions from '@/hooks/useCardTitleActions';
-import CardLoader from '@/components/shared/CardLoader';
+import CardHeader from '../shared/CardHeader';
+import useCardTitleActions from '../../../hooks/useCardTitleActions';
+import CardLoader from '../shared/CardLoader';
 
 const invoiceData = [
     { status: 'Draft', count: 5, percentage: 23.42, color: 'primary' },

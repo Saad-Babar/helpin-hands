@@ -1,9 +1,9 @@
 'use client'
 import React from 'react'
 import { FiBarChart2, FiCalendar, FiCheckCircle, FiClock, FiLink2 } from 'react-icons/fi'
-import ImageGroup from '@/components/shared/ImageGroup'
-import getIcon from '@/utils/getIcon'
-import { projectViewAreaChartOptions } from '@/utils/chartsLogic/projectViewAreaChartOptions'
+import ImageGroup from '../shared/ImageGroup'
+import getIcon from '../../../utils/getIcon'
+import { projectViewAreaChartOptions } from '../../../utils/chartsLogic/projectViewAreaChartOptions'
 import dynamic from 'next/dynamic'
 const ReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false })
 

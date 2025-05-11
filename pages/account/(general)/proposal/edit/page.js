@@ -1,9 +1,9 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
-import ProposalEditContent from '@/components/proposalEditCreate/ProposalEditContent'
-import ProposalEditHeader from '@/components/proposalEditCreate/ProposalEditHeader'
-import PageHeader from '@/components/shared/pageHeader/PageHeader'
-const ProposalSent = dynamic(() => import('@/components/proposalEditCreate/ProposalSent'), { ssr: false })
+import ProposalEditContent from '../../../../../components/account-comp/proposalEditCreate/ProposalEditContent'
+import ProposalEditHeader from '../../../../../components/account-comp/proposalEditCreate/ProposalEditHeader'
+import PageHeader from '../../../../../components/account-comp/shared/pageHeader/PageHeader'
+const ProposalSent = dynamic(() => import('../../../../../components/account-comp/proposalEditCreate/ProposalSent'), { ssr: false })
 const page = () => {
     return (
         <>

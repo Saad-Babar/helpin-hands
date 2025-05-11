@@ -1,10 +1,10 @@
 'use client'
 import React from 'react'
-import CardHeader from '@/components/shared/CardHeader'
-import CardLoader from '@/components/shared/CardLoader'
-import useCardTitleActions from '@/hooks/useCardTitleActions'
-import Pagination from '@/components/shared/Pagination'
-import Dropdown from '@/components/shared/Dropdown'
+import CardHeader from '../shared/CardHeader'
+import CardLoader from '../shared/CardLoader'
+import useCardTitleActions from '../../../hooks/useCardTitleActions'
+import Pagination from '../shared/Pagination'
+import Dropdown from '../shared/Dropdown'
 import Image from 'next/image'
 
 const actionOptions = [

@@ -1,6 +1,6 @@
 import React from 'react'
 import { FiFilter, FiPlus } from 'react-icons/fi'
-import Checkbox from '@/components/shared/Checkbox';
+import Checkbox from '../Checkbox';
 import Link from 'next/link';
 
 

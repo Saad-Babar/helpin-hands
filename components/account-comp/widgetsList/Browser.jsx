@@ -1,11 +1,11 @@
 'use client'
 import React from 'react'
-import CardHeader from '@/components/shared/CardHeader'
-import { browserList } from '@/utils/fackData/browserList'
-import useCardTitleActions from '@/hooks/useCardTitleActions'
-import CardLoader from '@/components/shared/CardLoader'
-import getIcon from '@/utils/getIcon'
-import HorizontalProgress from '@/components/shared/HorizontalProgress'
+import CardHeader from '../shared/CardHeader'
+import { browserList } from '../../../utils/fackData/browserList'
+import useCardTitleActions from '../../../hooks/useCardTitleActions'
+import CardLoader from '../shared/CardLoader'
+import getIcon from '../../../utils/getIcon'
+import HorizontalProgress from '../shared/HorizontalProgress'
 import Link from 'next/link'
 
 const Browser = ({title}) => {

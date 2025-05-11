@@ -1,10 +1,10 @@
 'use client'
 import React from 'react'
 import Link from 'next/link';
-import CardHeader from '@/components/shared/CardHeader'
-import CircleProgress from '@/components/shared/CircleProgress';
-import CardLoader from '@/components/shared/CardLoader';
-import useCardTitleActions from '@/hooks/useCardTitleActions';
+import CardHeader from '../shared/CardHeader'
+import CircleProgress from '../shared/CircleProgress';
+import CardLoader from '../shared/CardLoader';
+import useCardTitleActions from '../../../hooks/useCardTitleActions';
 
 const goalData = [
     { value: 40, revenue: "$550/$1250", title: "Marketing Goal", color: "#ea4d4d" },

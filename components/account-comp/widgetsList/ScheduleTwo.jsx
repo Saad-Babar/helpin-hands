@@ -1,10 +1,10 @@
 'use client'
 import React from 'react'
 import Link from 'next/link'
-import CardHeader from '@/components/shared/CardHeader'
-import ImageGroup from '@/components/shared/ImageGroup'
-import CardLoader from '@/components/shared/CardLoader'
-import useCardTitleActions from '@/hooks/useCardTitleActions'
+import CardHeader from '../shared/CardHeader'
+import ImageGroup from '../shared/ImageGroup'
+import CardLoader from '../shared/CardLoader'
+import useCardTitleActions from '../../../hooks/useCardTitleActions'
 const ScheduleTwo = ({ title, data }) => {
     const { refreshKey, isRemoved, isExpanded, handleRefresh, handleExpand, handleDelete } = useCardTitleActions();
 

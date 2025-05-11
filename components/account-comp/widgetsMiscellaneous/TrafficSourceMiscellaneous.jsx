@@ -1,10 +1,10 @@
 'use client'
 import React from 'react'
 import dynamic from 'next/dynamic';
-import Dropdown from '@/components/shared/Dropdown';
+import Dropdown from '../shared/Dropdown';
 import { optionsMiscellaneous } from './SellingStatusMiscellaneous';
-import getIcon from '@/utils/getIcon';
-import { trafficChartOptions } from '@/utils/chartsLogic/trafficChartOptions';
+import getIcon from '../../../utils/getIcon';
+import { trafficChartOptions } from '../../../utils/chartsLogic/trafficChartOptions';
 const ReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 const trafficData = [

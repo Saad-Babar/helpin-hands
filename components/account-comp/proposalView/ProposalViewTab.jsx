@@ -1,6 +1,6 @@
 import React from 'react'
 import { FiBookOpen, FiCast, FiCheckCircle, FiCheckSquare, FiCopy, FiCrop, FiDollarSign, FiEdit, FiEye, FiLink, FiMail, FiPlus, FiSend, FiTrash2 } from 'react-icons/fi';
-import Dropdown from '@/components/shared/Dropdown';
+import Dropdown from '../shared/Dropdown';
 
 const moreAction = [
     { label: "View", icon: <FiEye /> },

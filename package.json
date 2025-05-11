@@ -3,7 +3,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "build:scss": "sass admin-assets/scss/theme.scss public/admin-assets/css/theme.css",
+  "watch:scss": "sass --watch admin-assets/scss/theme.scss public/admin-assets/css/theme.css",
+  "dev:full": "npm-run-all --parallel dev watch:scss"
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^4.5.1",
@@ -50,7 +53,6 @@
     "reactstrap": "^9.1.5",
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.3.0",
-    "sass": "^1.54.4",
     "sharp": "^0.34.1",
     "simple-react-validator": "^1.5.0",
     "slick-carousel": "^1.8.1",
@@ -59,6 +61,8 @@
     "yet-another-react-lightbox": "^3.17.5"
   },
   "devDependencies": {
-    "@types/node": "22.15.3"
+    "@types/node": "22.15.3",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.87.0"
   }
 }

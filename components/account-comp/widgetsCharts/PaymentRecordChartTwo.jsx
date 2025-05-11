@@ -1,9 +1,9 @@
 'use client'
 import React from 'react'
-import CardHeader from '@/components/shared/CardHeader';
-import { paymentRecordChartOption } from '@/utils/chartsLogic/paymentRecordChartOption';
-import useCardTitleActions from '@/hooks/useCardTitleActions';
-import CardLoader from '@/components/shared/CardLoader';
+import CardHeader from '../shared/CardHeader';
+import { paymentRecordChartOption } from '../../../utils/chartsLogic/paymentRecordChartOption';
+import useCardTitleActions from '../../../hooks/useCardTitleActions';
+import CardLoader from '../shared/CardLoader';
 import dynamic from 'next/dynamic'
 const ReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false })
 

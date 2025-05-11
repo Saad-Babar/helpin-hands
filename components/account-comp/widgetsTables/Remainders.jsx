@@ -2,11 +2,11 @@
 import React from 'react'
 import Link from 'next/link'
 import { FiArrowRight } from 'react-icons/fi'
-import CardHeader from '@/components/shared/CardHeader'
-import Pagination from '@/components/shared/Pagination'
-import { projectsData } from '@/utils/fackData/projectsData'
-import CardLoader from '@/components/shared/CardLoader'
-import useCardTitleActions from '@/hooks/useCardTitleActions'
+import CardHeader from '../shared/CardHeader'
+import Pagination from '../shared/Pagination'
+import { projectsData } from '../../../utils/fackData/projectsData'
+import CardLoader from '../shared/CardLoader'
+import useCardTitleActions from '../../../hooks/useCardTitleActions'
 
 const Remainders = ({title}) => {
     const data = projectsData.remaindersProjects

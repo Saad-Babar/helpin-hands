@@ -1,8 +1,8 @@
 import React from 'react'
-import PageHeader from '@/components/shared/pageHeader/PageHeader'
-import LeadsViewHeader from '@/components/leadsViewCreate/LeadsViewHeader'
-import LeadsViewContent from '@/components/leadsViewCreate/LeadsViewContent'
-import LeadsViewTab from '@/components/leadsViewCreate/LeadsViewTab'
+import PageHeader from '../../../../../components/account-comp/shared/pageHeader/PageHeader'
+import LeadsViewHeader from '../../../../../components/account-comp/leadsViewCreate/LeadsViewHeader'
+import LeadsViewContent from '../../../../../components/account-comp/leadsViewCreate/LeadsViewContent'
+import LeadsViewTab from '../../../../../components/account-comp/leadsViewCreate/LeadsViewTab'
 
 const page = () => {
   return (

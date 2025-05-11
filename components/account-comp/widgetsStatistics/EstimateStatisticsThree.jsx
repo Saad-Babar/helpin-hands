@@ -1,5 +1,5 @@
 import React from 'react'
-import Dropdown from '@/components/shared/Dropdown';
+import Dropdown from '../shared/Dropdown';
 import { FiChevronDown, FiChevronUp, FiMoreHorizontal } from 'react-icons/fi';
 
 const data = [
