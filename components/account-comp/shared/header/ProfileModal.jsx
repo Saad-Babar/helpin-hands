@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React, { Fragment } from 'react'
 import { FiActivity, FiBell, FiChevronRight, FiDollarSign, FiLogOut, FiSettings, FiUser } from "react-icons/fi"
-
+import LogoutButton from './LogoutButton'
 const activePosition = ["Active", "Always", "Bussy", "Inactive", "Disabled", "Cutomization"]
 const subscriptionsList = ["Plan", "Billings", "Referrals", "Payments", "Statements", "Subscriptions"]
 const ProfileModal = () => {
@@ -96,10 +96,8 @@ const ProfileModal = () => {
                     <span>Account Settings</span>
                 </a>
                 <div className="dropdown-divider"></div>
-                <a href="./auth-login-minimal.html" className="dropdown-item">
-                    <i> <FiLogOut /></i>
-                    <span>Logout</span>
-                </a>
+                <LogoutButton></LogoutButton>
+
             </div>
         </div>
     )
