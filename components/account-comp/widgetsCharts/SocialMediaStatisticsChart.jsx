@@ -2,10 +2,10 @@
 import React from 'react'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
-import CardHeader from '@/components/shared/CardHeader'
-import { socialRadarChartOption } from '@/utils/chartsLogic/socialRadarChartOption'
-import CardLoader from '@/components/shared/CardLoader'
-import useCardTitleActions from '@/hooks/useCardTitleActions'
+import CardHeader from '../shared/CardHeader'
+import { socialRadarChartOption } from '../../../utils/chartsLogic/socialRadarChartOption'
+import CardLoader from '../shared/CardLoader'
+import useCardTitleActions from '../../../hooks/useCardTitleActions'
 const ReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 const SocialMediaStatisticsChart = () => {

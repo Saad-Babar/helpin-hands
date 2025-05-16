@@ -8,13 +8,13 @@ export const menuList = [
             {
                 id: 1,
                 name: "CRM",
-                path: "/",
+                path: "/account/",
                 subdropdownMenu: false
             },
             {
                 id: 2,
                 name: "Analytics",
-                path: "/dashboards/analytics",
+                path: "/account/general/dashboards/analytics/",
                 subdropdownMenu: false
             }
         ]
@@ -28,25 +28,25 @@ export const menuList = [
             {
                 id: 1,
                 name: "Sales Report",
-                path: "/reports/sales",
+                path: "/account/general/reports/sales",
                 subdropdownMenu: false
             },
             {
                 id: 2,
                 name: "Leads Report",
-                path: "/reports/leads",
+                path: "/account/general/reports/leads",
                 subdropdownMenu: false
             },
             {
                 id: 3,
                 name: "Project Report",
-                path: "/reports/project",
+                path: "/account/general/reports/project",
                 subdropdownMenu: false
             },
             {
                 id: 4,
                 name: "Timesheets Report",
-                path: "/reports/timesheets",
+                path: "/account/general/reports/timesheets",
                 subdropdownMenu: false
             },
 
@@ -61,7 +61,7 @@ export const menuList = [
             {
                 id: 1,
                 name: "Chat",
-                path: "/applications/chat",
+                path: "/account/applications/chat",
                 subdropdownMenu: false
             },
             {

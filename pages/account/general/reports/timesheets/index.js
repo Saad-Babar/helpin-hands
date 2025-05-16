@@ -7,24 +7,30 @@ import ProjectTimeMiscellaneous from '../../../../../components/account-comp/wid
 import TimeStatistics from '../../../../../components/account-comp/widgetsStatistics/TimeStatistics'
 import ProjectTracker from '../../../../../components/account-comp/widgetsTables/ProjectTracker'
 import React from 'react'
+import DuplicateLayout from '../../../duplicateLayout'
+import AdminStyleWrapper from '../../../../../components/AdminStyleWrapper'
 
 const page = () => {
     return (
-        <>
-            <PageHeader >
-                <PageHeaderWidgets />
-            </PageHeader>
-            <div className='main-content'>
-                <div className='row'>
-                    <TimeStatistics />
-                    <TimeLoggedChart />
-                    <BillableTimeChart />
-                    <ProjectTimeMiscellaneous />
-                    <ProjectTracker />
+        <AdminStyleWrapper>
+            <DuplicateLayout>
+                <div className="admin-content-wrapper">
+                    <PageHeader >
+                        <PageHeaderWidgets />
+                    </PageHeader>
+                    <div className='main-content'>
+                        <div className='row'>
+                            <TimeStatistics />
+                            <TimeLoggedChart />
+                            <BillableTimeChart />
+                            <ProjectTimeMiscellaneous />
+                            <ProjectTracker />
+                        </div>
+                    </div>
+                    <Footer />
                 </div>
-            </div>
-            <Footer />
-        </>
+            </DuplicateLayout>
+        </AdminStyleWrapper>
     )
 }
 

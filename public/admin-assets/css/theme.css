@@ -786,6 +786,12 @@
     scroll-behavior: smooth;
   }
 }
+
+.admin-content-wrapper {
+  background-color: #F3F4F6 !important;
+}
+
+
 .admin-scope body {
   margin: 0;
   font-family: var(--bs-body-font-family);

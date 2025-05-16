@@ -128,7 +128,9 @@
     scroll-behavior: smooth;
   }
 }
-
+.admin-content-wrapper{
+  background-color: #ea4d4d;
+}
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);

@@ -8,25 +8,30 @@ import ForecastRevenueMiscellaneous from '../../../../../components/account-comp
 import EstimateStatisticsTwo from '../../../../../components/account-comp/widgetsStatistics/EstimateStatisticsTwo'
 import LeadsStatus from '../../../../../components/account-comp/widgetsTables/LeadsStatus'
 import React from 'react'
-
+import AdminStyleWrapper from '../../../../../components/AdminStyleWrapper'
+import DuplicateLayout from '../../../duplicateLayout'
 const page = () => {
   return (
-    <>
-      <PageHeader >
-        <PageHeaderWidgets />
-      </PageHeader>
-      <div className='main-content'>
-        <div className='row'>
-          <EstimateStatisticsTwo />
-          <SalesPipelineChart isFooterShow={true} />
-          <ForecastRevenueMiscellaneous />
-          <ProjectAssingeMiscellaneous />
-          <EstimateAreaChartThree />
-          <LeadsStatus title={"Contact Leads"} progressFullHeight={true} />
+    <AdminStyleWrapper>
+      <DuplicateLayout>
+        <div className="admin-content-wrapper">
+          <PageHeader >
+            <PageHeaderWidgets />
+          </PageHeader>
+          <div className='main-content'>
+            <div className='row'>
+              <EstimateStatisticsTwo />
+              <SalesPipelineChart isFooterShow={true} />
+              <ForecastRevenueMiscellaneous />
+              <ProjectAssingeMiscellaneous />
+              <EstimateAreaChartThree />
+              <LeadsStatus title={"Contact Leads"} progressFullHeight={true} />
+            </div>
+          </div>
+          <Footer />
         </div>
-      </div>
-      <Footer />
-    </>
+      </DuplicateLayout>
+    </AdminStyleWrapper>
   )
 }
 

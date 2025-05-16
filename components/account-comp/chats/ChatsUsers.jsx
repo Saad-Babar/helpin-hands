@@ -1,8 +1,8 @@
 'use client'
 import React, { Fragment, useState } from 'react'
-import { userList } from '@/utils/fackData/userList'
+import { userList } from '../../../utils/fackData/userList'
 import { FiX } from 'react-icons/fi'
-import Dropdown from '@/components/shared/Dropdown'
+import Dropdown from '../shared/Dropdown'
 import { FiAlertTriangle, FiArchive, FiBellOff, FiCheckCircle, FiMail, FiMoreVertical, FiPhoneCall, FiStar, FiTrash2, FiVideo } from 'react-icons/fi'
 import PerfectScrollbar from "react-perfect-scrollbar";
 import Link from 'next/link'

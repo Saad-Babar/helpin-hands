@@ -5,8 +5,8 @@
     "build": "next build",
     "start": "next start",
     "build:scss": "sass admin-assets/scss/theme.scss public/admin-assets/css/theme.css",
-  "watch:scss": "sass --watch admin-assets/scss/theme.scss public/admin-assets/css/theme.css",
-  "dev:full": "npm-run-all --parallel dev watch:scss"
+    "watch:scss": "sass --watch admin-assets/scss/theme.scss public/admin-assets/css/theme.css",
+    "dev:full": "npm-run-all --parallel dev watch:scss"
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^4.5.1",
@@ -19,6 +19,7 @@
     "bcryptjs": "^3.0.2",
     "bootstrap": "^5.1.3",
     "date-fns": "^4.1.0",
+    "emoji-picker-react": "^4.12.2",
     "eslint-config-next": "^13.0.7",
     "formidable": "^3.5.2",
     "jsonwebtoken": "^9.0.2",
@@ -30,6 +31,7 @@
     "react-animated-css": "^1.2.1",
     "react-apexcharts": "^1.7.0",
     "react-awesome-reveal": "^4.1.0",
+    "react-calendar": "^5.1.0",
     "react-circular-progressbar": "^2.2.0",
     "react-countup": "^6.5.3",
     "react-date-range": "^2.0.1",
@@ -57,6 +59,8 @@
     "simple-react-validator": "^1.5.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.6",
+    "sweetalert2": "^11.21.0",
+    "sweetalert2-react-content": "^5.1.0",
     "swiper": "^8.4.5",
     "yet-another-react-lightbox": "^3.17.5"
   },

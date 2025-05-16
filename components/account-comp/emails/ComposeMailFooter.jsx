@@ -1,5 +1,5 @@
 import React from 'react'
-import Dropdown from '@/components/shared/Dropdown';
+import Dropdown from '../shared/Dropdown';
 import { FiCheck, FiClock, FiCompass, FiEdit3, FiFeather, FiFileText, FiHash, FiImage, FiMic, FiMoreHorizontal, FiSend, FiType, FiUpload, FiVideo, FiX } from 'react-icons/fi'
 
 export const initMessage = [

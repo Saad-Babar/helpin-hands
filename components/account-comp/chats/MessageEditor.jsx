@@ -1,9 +1,9 @@
 import React from 'react'
-import Dropdown from '@/components/shared/Dropdown'
+import Dropdown from '../shared/Dropdown'
 import { FiHash, FiLink, FiPhoneCall, FiSend, FiVideo, } from 'react-icons/fi'
 import { initMessage, uploadAttachments } from '../emails/ComposeMailFooter';
 import EmojiPicker from 'emoji-picker-react';
-import useEmojiPicker from '@/hooks/useEmojiPicker';
+import useEmojiPicker from '../../../hooks/useEmojiPicker';
 
 
 const callingOptions = [

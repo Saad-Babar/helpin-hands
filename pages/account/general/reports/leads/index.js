@@ -1,4 +1,3 @@
-import DuplicateLayout from '../../../duplicateLayout'
 import Footer from '../../../../../components/account-comp/shared/Footer'
 import PageHeader from '../../../../../components/account-comp/shared/pageHeader/PageHeader'
 import PageHeaderWidgets from '../../../../../components/account-comp/shared/pageHeader/PageHeaderWidgets'
@@ -10,25 +9,32 @@ import LeadsStatistics from '../../../../../components/account-comp/widgetsStati
 import LeadsStatusTwo from '../../../../../components/account-comp/widgetsTables/LeadsStatusTwo'
 import { upcomingEventsData } from '../../../../../utils/fackData/upcomingEventsData'
 import React from 'react'
+import AdminStyleWrapper from '../../../../../components/AdminStyleWrapper'
+import DuplicateLayout from '../../../duplicateLayout'
 
 const page = () => {
     return (
-        <>
-            <PageHeader >
-                <PageHeaderWidgets />
-            </PageHeader>
-            <div className='main-content'>
-                <div className='row'>
-                    <LeadsStatistics />
-                    <InquiryTrackingChart />
-                    <InquiryChannelChart />
-                    <LeadsStatusTwo />
-                    <ScheduleTwo title={"Upcoming Events"} data={upcomingEventsData.slice(0, 3)} />
-                    <ProjectLeads />
+        <AdminStyleWrapper>
+            <DuplicateLayout>
+                <div className="admin-content-wrapper">
+                    <PageHeader >
+                        <PageHeaderWidgets />
+                    </PageHeader>
+                    <div className='main-content'>
+                        <div className='row'>
+                            <LeadsStatistics />
+                            <InquiryTrackingChart />
+                            <InquiryChannelChart />
+                            <LeadsStatusTwo />
+                            <ScheduleTwo title={"Upcoming Events"} data={upcomingEventsData.slice(0, 3)} />
+                            <ProjectLeads />
+                        </div>
+                    </div>
+                    <Footer />
                 </div>
-            </div>
-            <Footer />
-        </>
+            </DuplicateLayout>
+        </AdminStyleWrapper>
+
     )
 }
 

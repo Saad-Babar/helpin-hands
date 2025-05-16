@@ -1,6 +1,6 @@
 import React from 'react'
-import { emailList } from '../utils/fackData/emailList'
-import getIcon from '../utils/getIcon'
+import { emailList } from '../../utils/fackData/emailList'
+import getIcon from '../../utils/getIcon'
 import Link from 'next/link'
 
 const EmailOverview = () => {

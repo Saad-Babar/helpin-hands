@@ -1,7 +1,7 @@
 import React from 'react'
 import { FiAlignLeft, FiBellOff, FiInfo, FiPhoneCall, FiPlus, FiSlash, FiStar, FiTrash2, FiUserPlus, FiVideo } from 'react-icons/fi'
-import Dropdown from '@/components/shared/Dropdown'
-import topTost from '@/utils/topTost';
+import Dropdown from '../shared/Dropdown'
+import topTost from '../../../utils/topTost';
 import Link from 'next/link';
 
 const chatItemsHeader = [

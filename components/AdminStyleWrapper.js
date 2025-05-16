@@ -5,7 +5,7 @@ export default function AdminStyleWrapper({ children }) {
   useEffect(() => {
     // Load compiled CSS
     const link = document.createElement('link');
-    link.href = '../admin-assets/css/theme.css';
+    link.href = '/admin-assets/css/theme.css';
     link.rel = 'stylesheet';
     link.id = 'admin-styles';
     document.head.appendChild(link);
