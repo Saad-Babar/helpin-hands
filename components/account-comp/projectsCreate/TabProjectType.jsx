@@ -1,5 +1,5 @@
 import React from 'react'
-import getIcon from '@/utils/getIcon'
+import getIcon from '../../../utils/getIcon'
 import { FiAlertTriangle } from 'react-icons/fi'
 
 const TabProjectType = ({ setFormData, formData, error, setError }) => {
@@ -10,16 +10,16 @@ const TabProjectType = ({ setFormData, formData, error, setError }) => {
             <form id="project-type">
                 <fieldset>
                     <div className="mb-5">
-                        <h2 className="fs-16 fw-bold">Project type</h2>
-                        <p className="text-muted">Select project type first.</p>
+                        <h2 className="fs-16 fw-bold">Food type</h2>
+                        <p className="text-muted">Select food type first.</p>
                         {error && <label id="project-type-error" className="error"><FiAlertTriangle /> This field is required.</label>}
                     </div>
                     <fieldset>
                         <ProjectTypeCard
                             icon={"feather-user"}
-                            title={"Personal Project"}
-                            description={"If you need more info, please check it out"}
-                            id={"project_personal"}
+                            title={"Cooked"}
+                            description={"Food that has been prepared and is ready to eat (e.g., homemade meals, restaurant leftovers)."}
+                            id={"food_cooked"}
                             name={"project-type"}
                             isRequired={true}
                             setFormData={setFormData}
@@ -28,9 +28,20 @@ const TabProjectType = ({ setFormData, formData, error, setError }) => {
                         />
                         <ProjectTypeCard
                             icon={"feather-users"}
-                            title={"Team Project"}
-                            description={"Create corporate account to manage users"}
-                            id={"project_team"}
+                            title={"Packaged"}
+                            description={"Sealed items with labels and expiry dates (e.g., canned food, snacks, bottled drinks)."}
+                            id={"food_packaged"}
+                            name={"project-type"}
+                            isRequired={false}
+                            setFormData={setFormData}
+                            formData={formData}
+                            setError={setError}
+                        />
+                        <ProjectTypeCard
+                            icon={"feather-users"}
+                            title={"Fresh"}
+                            description={"Raw and perishable items like fruits, vegetables, or bakery goods without packaging."}
+                            id={"food_fresh"}
                             name={"project-type"}
                             isRequired={false}
                             setFormData={setFormData}

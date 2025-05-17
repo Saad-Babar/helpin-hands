@@ -1,6 +1,6 @@
 import React from 'react'
-import Dropdown from '@/components/shared/Dropdown';
-import HorizontalProgress from '@/components/shared/HorizontalProgress';
+import Dropdown from '../shared/Dropdown';
+import HorizontalProgress from '../shared/HorizontalProgress';
 import { FiClock } from 'react-icons/fi';
 
 const CloudStorageCard = ({id, iconSrc, name, used, total, strogeOptions, lastActivity, progressColor, handleDelete }) => {

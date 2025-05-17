@@ -11,7 +11,7 @@ const TabProjectDetails = dynamic(() => import('./TabProjectDetails'), { ssr: fa
 const TabProjectTarget = dynamic(() => import('./TabProjectTarget'), { ssr: false })
 
 const steps = [
-    { name: "Type", required: true },
+    { name: "Food Type", required: true },
     { name: "Details", required: false },
     { name: "Settings", required: false },
     { name: "Budget", required: true },

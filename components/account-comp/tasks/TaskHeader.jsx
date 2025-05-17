@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import Dropdown from '@/components/shared/Dropdown'
+import Dropdown from '../shared/Dropdown'
 import { emailActions, emailMoreOptions, tagsItems } from '../emails/EmailHeader'
 import { FiActivity, FiAirplay, FiAlignLeft, FiArrowLeft, FiCheckCircle, FiChevronLeft, FiChevronRight, FiClock, FiEye, FiFolderPlus, FiHash, FiPlus, FiSearch, FiTag } from 'react-icons/fi'
-import HeaderSearchForm from '@/components/shared/pageHeader/HeaderSearchForm'
+import HeaderSearchForm from '../shared/pageHeader/HeaderSearchForm'
 
 export const taskOptions = [
     { label: "All Tasks", icon: <FiHash /> },

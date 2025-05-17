@@ -1,6 +1,6 @@
 import React from 'react'
 import { FiMoreHorizontal } from 'react-icons/fi';
-import ImageGroup from '@/components/shared/ImageGroup';
+import ImageGroup from '../shared/ImageGroup';
 
 const FoldersCard = ({ imgSrc, imgAlt,  title, fileCount, members, additionalText }) => {
     return (

@@ -209,26 +209,26 @@ export const menuList = [
     },
     {
         id: 7,
-        name: "projects",
+        name: "Donations",
         path: "#",
         icon: 'feather-briefcase',
         dropdownMenu: [
             {
                 id: 1,
-                name: "Projects",
-                path: "/projects/list",
+                name: "All Donations",
+                path: "/account/general/projects/list",
                 subdropdownMenu: false
             },
-            {
-                id: 2,
-                name: "Projects View",
-                path: "/projects/view",
-                subdropdownMenu: false
-            },
+            // {
+            //     id: 2,
+            //     name: "Donation View View",
+            //     path: "/account/general/projects/view",
+            //     subdropdownMenu: false
+            // },
             {
                 id: 3,
-                name: "Projects Create",
-                path: "/projects/create",
+                name: "Make a Donation",
+                path: "/account/general/projects/create",
                 subdropdownMenu: false
             }
         ]

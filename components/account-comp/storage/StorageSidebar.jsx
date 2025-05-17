@@ -1,6 +1,6 @@
 import React from 'react'
 import { FiBell, FiClock, FiFolder, FiHome, FiImage, FiInfo, FiPlus, FiSettings, FiShare2, FiStar, FiUpload, FiVideo, FiX } from 'react-icons/fi'
-import Checkbox from '@/components/shared/Checkbox'
+import Checkbox from '../shared/Checkbox'
 import PerfectScrollbar from "react-perfect-scrollbar";
 
 const filterMembers = ["Alls", "Users", "Editor", "Admin", "Contributor", "Administrator"]

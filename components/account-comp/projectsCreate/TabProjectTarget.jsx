@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import useJoditConfig from '@/hooks/useJoditConfig';
+import useJoditConfig from '../../../hooks/useJoditConfig';
 import JoditEditor from 'jodit-react';
-import useDatePicker from '@/hooks/useDatePicker';
+import useDatePicker from '../../../hooks/useDatePicker';
 import DatePicker from 'react-datepicker';
-import MultiSelectImg from '@/components/shared/MultiSelectImg';
-import { customerListTagsOptions, taskAssigneeOptions } from '@/utils/options';
-import MultiSelectTags from '@/components/shared/MultiSelectTags';
+import MultiSelectImg from '../shared/MultiSelectImg';
+import { customerListTagsOptions, taskAssigneeOptions } from '../../../utils/options';
+import MultiSelectTags from '../shared/MultiSelectTags';
 
 const TabProjectTarget = () => {
     const config = useJoditConfig()

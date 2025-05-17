@@ -1,5 +1,5 @@
 import React from 'react'
-import Dropdown from '@/components/shared/Dropdown'
+import Dropdown from '../shared/Dropdown'
 import { strogeOptions } from '../storage/StorageContent'
 
 const TabAttachement = () => {

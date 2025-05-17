@@ -4,10 +4,13 @@ import ProjectViewHeader from '../../../../../components/account-comp/projectsVi
 import ProjectViewTabItems from '../../../../../components/account-comp/projectsView/ProjectViewTabItems'
 import TabProjectOverview from '../../../../../components/account-comp/projectsView/TabProjectOverview'
 import LeadsEmptyCard from '../../../../../components/account-comp/leadsViewCreate/LeadsEmptyCard'
-
+import AdminStyleWrapper from '../../../../../components/AdminStyleWrapper'
+import DuplicateLayout from '../../../duplicateLayout'
 const page = () => {
   return (
-    <>
+    <AdminStyleWrapper>
+                <DuplicateLayout>
+                    <div className="admin-content-wrapper">
       <PageHeader>
         <ProjectViewHeader />
       </PageHeader>
@@ -21,7 +24,9 @@ const page = () => {
           <div className="tab-pane fade" id="discussionsTab"><LeadsEmptyCard title="No discussions yet!" description="There is no discussions on this project" /></div>
         </div>
       </div>
-    </>
+    </div>
+    </DuplicateLayout>
+    </AdminStyleWrapper>
   )
 }
 

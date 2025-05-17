@@ -1,5 +1,5 @@
 import React from 'react'
-import Dropdown from '@/components/shared/Dropdown';
+import Dropdown from '../shared/Dropdown';
 
 const RecentFileCard = ({ imgSrc, title, projectLink, dashboardLink, category, strogeOptions, handleDelete, id }) => {
     return (

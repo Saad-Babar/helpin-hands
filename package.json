@@ -14,6 +14,8 @@
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.11.0",
     "@mui/styled-engine-sc": "^5.11.0",
+    "@tabler/icons-react": "^3.33.0",
+    "@tanstack/react-table": "^8.21.3",
     "animate.css": "^4.1.1",
     "apexcharts": "^4.7.0",
     "bcryptjs": "^3.0.2",
@@ -22,6 +24,7 @@
     "emoji-picker-react": "^4.12.2",
     "eslint-config-next": "^13.0.7",
     "formidable": "^3.5.2",
+    "jodit-react": "^5.2.19",
     "js-cookie": "^3.0.5",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.13.2",
@@ -49,6 +52,7 @@
     "react-responsive-masonry": "^2.1.5",
     "react-router-dom": "^5.1.2",
     "react-scroll": "^1.7.16",
+    "react-select": "^5.10.1",
     "react-slick": "^0.29.0",
     "react-sticky-header": "^0.2.0",
     "react-toastify": "^9.1.1",
@@ -63,6 +67,7 @@
     "sweetalert2": "^11.21.0",
     "sweetalert2-react-content": "^5.1.0",
     "swiper": "^8.4.5",
+    "tabler-icons-react": "^1.56.0",
     "yet-another-react-lightbox": "^3.17.5"
   },
   "devDependencies": {

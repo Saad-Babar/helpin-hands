@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import SelectDropdown from '@/components/shared/SelectDropdown'
-import { customerListTagsOptions, projectBillingOptions, projectStatusOptions, propasalLeadOptions } from '@/utils/options'
-import MultiSelectTags from '@/components/shared/MultiSelectTags';
+import SelectDropdown from '../shared/SelectDropdown'
+import { customerListTagsOptions, projectBillingOptions, projectStatusOptions, propasalLeadOptions } from '../../../utils/options'
+import MultiSelectTags from '../shared/MultiSelectTags';
 import DatePicker from 'react-datepicker';
-import useDatePicker from '@/hooks/useDatePicker';
-import useJoditConfig from '@/hooks/useJoditConfig';
+import useDatePicker from '../../../hooks/useDatePicker';
+import useJoditConfig from '../../../hooks/useJoditConfig';
 import JoditEditor from 'jodit-react';
 
 const TabProjectDetails = () => {

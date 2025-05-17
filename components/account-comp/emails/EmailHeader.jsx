@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { FiAlertOctagon, FiAlignLeft, FiArchive, FiBell, FiBellOff, FiCheckCircle, FiChevronDown, FiChevronLeft, FiChevronRight, FiClock, FiDownload, FiEye, FiEyeOff, FiFolderPlus, FiMoreVertical, FiPlus, FiRefreshCw, FiSearch, FiShieldOff, FiSlash, FiSliders, FiStar, FiTag, FiTrash2, FiUserPlus } from 'react-icons/fi'
-import Checkbox from '@/components/shared/Checkbox'
-import { emailList } from '@/utils/fackData/emailList'
-import Dropdown from '@/components/shared/Dropdown'
-import HeaderSearchForm from '@/components/shared/pageHeader/HeaderSearchForm'
+import Checkbox from '../shared/Checkbox'
+import { emailList } from '../../../utils/fackData/emailList'
+import Dropdown from '../shared/Dropdown'
+import HeaderSearchForm from '../shared/pageHeader/HeaderSearchForm'
 
 export const emailMoreOptions = [
     { icon: <FiPlus />, label: "Add to Group" },

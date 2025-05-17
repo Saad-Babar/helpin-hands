@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { projectNotificationsOptions } from '@/utils/options';
-import SelectDropdown from '@/components/shared/SelectDropdown';
+import { projectNotificationsOptions } from '../../../utils/options';
+import SelectDropdown from '../shared/SelectDropdown';
 
 const visibleTabsList = [
     { id: "visibleTabTasks", isChecked: true, label: "Tasks" },

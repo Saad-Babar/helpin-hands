@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { FiEye, FiScissors, FiShare2, FiX } from 'react-icons/fi'
-import ImageGroup from '@/components/shared/ImageGroup'
-import Dropdown from '@/components/shared/Dropdown'
-import Pagination from '@/components/shared/Pagination'
-import { storageProjectData } from '@/utils/fackData/storageData'
-import { confirmDelete } from '@/utils/confirmDelete'
+import ImageGroup from '../shared/ImageGroup'
+import Dropdown from '../shared/Dropdown'
+import Pagination from '../shared/Pagination'
+import { storageProjectData } from '../../../utils/fackData/storageData'
+import { confirmDelete } from '../../../utils/confirmDelete'
 import Link from 'next/link'
 
 const ProjectFilteTable = () => {
