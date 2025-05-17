@@ -73,7 +73,7 @@ const Header = (props) => {
                                                 </ul> */}
                                             </li>
                                             <li><Link onClick={ClickHandler} href="/about">About</Link></li>
-                                            <li><Link onClick={ClickHandler} href="/register">Register</Link></li>
+                                            {/* <li><Link onClick={ClickHandler} href="/register">Register</Link></li> */}
                                             <li className="dropdown">
                                                 <Link onClick={ClickHandler} href="/donation-listing">Donations</Link>
                                                 <ul className="dropdown_menu dropdown_menu-2">
@@ -107,6 +107,8 @@ const Header = (props) => {
                                                     <li className="dropdown_item-2"><Link onClick={ClickHandler} href="/blog-details/Start-a-fundraiser-for-yourself-in-World-Charity-Day">Blog Details</Link></li>
                                                 </ul>
                                             </li>
+                                            <li><Link onClick={ClickHandler} href="/register">Register</Link></li>
+                                            <li><Link onClick={ClickHandler} href="/login">Login</Link></li>
                                         </ul>
                                     </nav>
                                 </div>

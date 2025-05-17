@@ -35,7 +35,7 @@ const Hero4 = (props) => {
                             </Slide>
                             <Slide direction='up' triggerOnce={'false'} duration={1200}>
                                 <div>
-                                    <Link onClick={ClickHandler} className="btn btn--styleOne btn--primary it-btn wow animate__fadeInUp animate__animated" data-wow-duration="1200ms" data-wow-delay="500ms" href="/donation-listing">
+                                    <Link onClick={ClickHandler} className="btn btn--styleOne btn--primary it-btn wow animate__fadeInUp animate__animated" data-wow-duration="1200ms" data-wow-delay="500ms" href="/register">
                                         <span className="btn__text">join the journey</span>
                                         <i className="fa-solid fa-heart btn__icon"></i>
                                         <span className="it-btn__inner">

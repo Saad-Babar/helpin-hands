@@ -105,7 +105,7 @@ const FeaturesSection3 = (props) => {
                                 </Slide>
                                 <Slide direction='up' triggerOnce={'false'} duration={1600}>
                                     <div>
-                                        <Link onClick={ClickHandler} className="btn btn--styleOne btn--black it-btn wow animate__fadeInUp" data-wow-duration="1200ms" data-wow-delay="400ms" href="/donation-listing">
+                                        <Link onClick={ClickHandler} className="btn btn--styleOne btn--black it-btn wow animate__fadeInUp" data-wow-duration="1200ms" data-wow-delay="400ms" href="/register">
                                             <span className="btn__text">BECOME A VOLEENTEER</span>
                                             <i className="fa-solid fa-heart btn__icon"></i>
                                             <span className="it-btn__inner">
