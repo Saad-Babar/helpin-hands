@@ -8,7 +8,7 @@ const TabAttachement = () => {
             <div>
                 <div className="mb-5">
                     <h2 className="fs-16 fw-bold">Attachement files</h2>
-                    <p className="text-muted">If you need more info, please check <a href="#">help center</a></p>
+                    <p className="text-muted">Upload the picture of your food. </p>
                 </div>
                 <div className="mb-4">
                     <label htmlFor="choose-file" className="custom-file-upload" id="choose-file-label"> Upload Document </label>
@@ -22,7 +22,7 @@ const TabAttachement = () => {
                         dashboardLink={"Dashboard"}
                         category={"Webapps"}
                     /> */}
-                    <AttachementCard
+                    {/* <AttachementCard
                         title={"UI/UX Design Templates"}
                         iconSrc={"/images/file-icons/zip.png"}
                         category1={"Project"}
@@ -49,7 +49,7 @@ const TabAttachement = () => {
                         category1={"Project"}
                         category2={"Dashboard"}
                         category3={"Webapps"}
-                    />
+                    /> */}
                 </div>
             </div>
         </section>

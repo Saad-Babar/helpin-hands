@@ -13,10 +13,10 @@ const TabProjectTarget = dynamic(() => import('./TabProjectTarget'), { ssr: fals
 const steps = [
     { name: "Food Type", required: true },
     { name: "Details", required: false },
-    { name: "Settings", required: false },
-    { name: "Budget", required: true },
-    { name: "Assagined", required: false },
-    { name: "Target", required: false },
+    { name: "Location", required: false },
+    // { name: "Identity", required: true },
+    // { name: "Identity", required: false },
+    // { name: "Target", required: false },
     { name: "Attachment", required: false },
     { name: "Completed", required: false },
 ];
@@ -88,11 +88,11 @@ const ProjectCreateContent = () => {
                         {currentStep === 0 && <TabProjectType setFormData={setFormData} formData={formData} error={error} setError={setError} />}
                         {currentStep === 1 && <TabProjectDetails />}
                         {currentStep === 2 && <TabProjectSettings />}
-                        {currentStep === 3 && <TabProjectBudget setFormData={setFormData} formData={formData} error={error} setError={setError} />}
-                        {currentStep === 4 && <TabProjectAssigned />}
-                        {currentStep === 5 && <TabProjectTarget />}
-                        {currentStep === 6 && <TabAttachement />}
-                        {currentStep === 7 && <TabCompleted />}
+                        {/* {currentStep === 3 && <TabProjectBudget setFormData={setFormData} formData={formData} error={error} setError={setError} />} */}
+                        {/* {currentStep === 3 && <TabProjectAssigned />} */}
+                        {/* {currentStep === 4 && <TabProjectTarget />} */}
+                        {currentStep === 3 && <TabAttachement />}
+                        {currentStep === 4 && <TabCompleted />}
                     </div>
 
                     {/* Buttons */}

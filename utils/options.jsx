@@ -186,6 +186,19 @@ const projectBillingOptions = [
     { value: "tasks-hours", label: "Tasks Hours", color: "#ffa21d" },
     { value: "project-hours", label: "Project Hours", color: "#17c666" },
 ]
+const foodStoreOptions = [
+    { value: "frozen", label: "Frozen", color: "#3454d1" },
+    { value: "chilled", label: "Chilled", color: "#3594FF" },
+    { value: "room-temprature", label: "Room Temprature", color: "#17c666" },
+]
+const packingStatusOptions = [
+    { value: "no", label: "No", color: "#ea4d4d" },
+    { value: 'yes', label: 'Yes', color: '#17c666' }
+]
+const dileveryOptions = [
+    { value: "rider-pickup", label: "Want Rider to Pickup", icon: "feather-user" },
+    { value: "drop-off", label: "I will drop myself", icon: "feather-bell-off" },
+]
 const projectNotificationsOptions = [
     { value: "specific-contacts", label: "Specific Contacts", icon: "feather-user" },
     { value: "dont-send", label: "Don't send notification", icon: "feather-bell-off" },
@@ -217,6 +230,9 @@ export {
     leadsSourceOptions,
     projectStatusOptions,
     projectBillingOptions,
+    foodStoreOptions,
+    packingStatusOptions,
+    dileveryOptions,
     projectNotificationsOptions,
     projectRoalOptions,
     taskTypeOptions

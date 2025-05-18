@@ -29,7 +29,7 @@ export default async function handler(req, res) {
     const token = jwt.sign(
       { userId: user._id, email: user.email, role: user.role, name: user.name },
       process.env.JWT_SECRET,
-      { expiresIn: '5m' }
+      { expiresIn: '60m' }
     );
 
     const serialized = serialize('token', token, {
@@ -37,7 +37,7 @@ export default async function handler(req, res) {
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'strict',
       path: '/',
-      maxAge: 60 * 5
+      maxAge: 60 * 60
       // maxAge: 60 * 60 * 24 * 7, // 7 days
     }); 
 

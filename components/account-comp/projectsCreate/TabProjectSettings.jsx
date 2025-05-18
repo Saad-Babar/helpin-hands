@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { projectNotificationsOptions } from '../../../utils/options';
+import { projectNotificationsOptions, dileveryOptions } from '../../../utils/options';
 import SelectDropdown from '../shared/SelectDropdown';
 
 const visibleTabsList = [
@@ -44,42 +44,42 @@ const TabProjectSettings = () => {
             <form id="project-settings">
                 <fieldset>
                     <div className="mb-5">
-                        <h2 className="fs-16 fw-bold">Project settings</h2>
-                        <p className="text-muted">Settings for your project features here.</p>
+                        <h2 className="fs-16 fw-bold">Location</h2>
+                        <p className="text-muted">Fill in the location details.</p>
                     </div>
                     <fieldset>
                         <div className="mb-4">
-                            <label htmlFor="sendcontactsNotifications" className="form-label">Send contacts notifications</label>
+                            <label htmlFor="sendcontactsNotifications" className="form-label">Delivery Options</label>
                             <SelectDropdown
-                                options={projectNotificationsOptions}
+                                options={dileveryOptions}
                                 selectedOption={selectedOption}
-                                defaultSelect="all"
+                                defaultSelect="rider-pickup"
                                 onSelectOption={(option) => setSelectedOption(option)}
                             />
                         </div>
                     </fieldset>
-                    <hr className="mb-5" />
                     <fieldset>
-                        <div className="mb-5">
-                            <h2 className="fs-16 fw-bold">Visible tabs</h2>
-                            <p className="text-muted">Visible tabs for your project.</p>
+                        <div className="mb-4">
+                            <label htmlFor="projectName" className="form-label">Pickup Address <span className="text-danger">*</span></label>
+                            <input type="text" className="form-control" id="projectName" name="projectName" placeholder="Enter Your Address" required />
                         </div>
-                        <fieldset>
-                            <div className="row">
-                                {visibleTabsList.map(({ id, label, isChecked }) => <CheckboxCard key={id} id={id} label={label} isChecked={isChecked} className={"col-lg-4"} />)}
-                            </div>
-                        </fieldset>
                     </fieldset>
-                    <hr className="mb-5" />
                     <fieldset>
-                        <div className="mb-5">
-                            <h2 className="fs-16 fw-bold">Project control</h2>
-                            <p className="text-muted">Project control for your project.</p>
+                        <div className="mb-4">
+                            <label htmlFor="projectName" className="form-label">Phone Number <span className="text-danger">*</span></label>
+                            <input type="text" className="form-control" id="projectName" name="projectName" placeholder="Enter Your Phone Number" required />
                         </div>
-                        <fieldset>
-                            {projectControlList.map(({ id, label, isChecked }) => <CheckboxCard key={id} id={id} label={label} isChecked={isChecked} />)}
-                        </fieldset>
                     </fieldset>
+                    {/* <hr className="mb-5" /> */}
+                    {/* <fieldset> */}
+                        {/* <div className="mb-5"> */}
+                            {/* <h2 className="fs-16 fw-bold">Project control</h2> */}
+                            {/* <p className="text-muted">Project control for your project.</p> */}
+                        {/* </div> */}
+                        {/* <fieldset> */}
+                            {/* {projectControlList.map(({ id, label, isChecked }) => <CheckboxCard key={id} id={id} label={label} isChecked={isChecked} />)} */}
+                        {/* </fieldset> */}
+                    {/* </fieldset> */}
                 </fieldset>
             </form>
         </section>

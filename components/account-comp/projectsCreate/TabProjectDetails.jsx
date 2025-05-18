@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import SelectDropdown from '../shared/SelectDropdown'
-import { customerListTagsOptions, projectBillingOptions, projectStatusOptions, propasalLeadOptions } from '../../../utils/options'
+import { customerListTagsOptions, foodStoreOptions, packingStatusOptions, projectStatusOptions, propasalLeadOptions } from '../../../utils/options'
 import MultiSelectTags from '../shared/MultiSelectTags';
 import DatePicker from 'react-datepicker';
 import useDatePicker from '../../../hooks/useDatePicker';
@@ -24,27 +24,20 @@ const TabProjectDetails = () => {
             <form id="project-details">
                 <fieldset>
                     <div className="mb-5">
-                        <h2 className="fs-16 fw-bold">Project details</h2>
-                        <p className="text-muted">You project details gose here.</p>
+                        <h2 className="fs-16 fw-bold">Food details</h2>
+                        <p className="text-muted">Food details goes here.</p>
                     </div>
                     <fieldset>
                         <div className="mb-4">
-                            <label htmlFor="projectName" className="form-label">Project Name <span className="text-danger">*</span></label>
-                            <input type="text" className="form-control" id="projectName" name="projectName" defaultValue="Website design and development" required />
+                            <label htmlFor="projectName" className="form-label">Food Name <span className="text-danger">*</span></label>
+                            <input type="text" className="form-control" id="projectName" name="projectName" defaultValue="Plain Rice" required />
                         </div>
-                        <div className="mb-4 ">
-                            <label className="form-label">Project Description <span className="text-danger">*</span></label>
-                            <JoditEditor
-                                value={value}
-                                config={config}
-                                onChange={(htmlString) => setValue(htmlString)}
-                            />
-                        </div>
-                        <div className="mb-4">
+                        
+                        {/* <div className="mb-4">
                             <label htmlFor="ratePerHour" className="form-label">Rate Per Hour <span className="text-danger">*</span></label>
                             <input type="number" className="form-control" id="ratePerHour" name="ratePerHour" defaultValue={20} required />
-                        </div>
-                        <div className="mb-4">
+                        </div> */}
+                        {/* <div className="mb-4">
                             <label htmlFor="projectClient" className="form-label">Project Client <span className="text-danger">*</span></label>
                             <SelectDropdown
                                 options={propasalLeadOptions}
@@ -52,28 +45,30 @@ const TabProjectDetails = () => {
                                 defaultSelect="ui"
                                 onSelectOption={(option) => setSelectedOption(option)}
                             />
-                        </div>
+                        </div> */}
                         <div className="mb-4">
-                            <label htmlFor="billingType" className="form-label">Billing type <span className="text-danger">*</span></label>
+                            <label htmlFor="billingType" className="form-label">Storage Condition <span className="text-danger">*</span></label>
                             <SelectDropdown
-                                options={projectBillingOptions}
+                                options={foodStoreOptions}
                                 selectedOption={selectedOption}
-                                defaultSelect="tasks-hours"
+                                defaultSelect="room-temprature"
                                 onSelectOption={(option) => setSelectedOption(option)}
+                                required
                             />
                         </div>
                         <div className="mb-4">
 
-                            <label htmlFor="projectStatus" className="form-label">Project status <span className="text-danger">*</span></label>
+                            <label htmlFor="projectStatus" className="form-label">Packing status <span className="text-danger">* is food properly packed for transport?</span></label>
                             <SelectDropdown
-                                options={projectStatusOptions}
+                                options={packingStatusOptions}
                                 selectedOption={selectedOption}
-                                defaultSelect="active"
+                                defaultSelect="yes"
                                 onSelectOption={(option) => setSelectedOption(option)}
+                                required
                             />
 
                         </div>
-                        <div className="mb-4">
+                        {/* <div className="mb-4">
                             <label htmlFor="projectTags" className="form-label">Project tags <span className="text-danger">*</span></label>
                             <MultiSelectTags
                                 options={customerListTagsOptions}
@@ -81,9 +76,9 @@ const TabProjectDetails = () => {
                                 defaultSelect={[customerListTagsOptions[10]]}
                                 onSelectOption={(option) => setSelectedOption(option)}
                             />
-                        </div>
-                        <div className="mb-4">
-                            <label htmlFor="projectReleaseDate" className="form-label">Release Date <span className="text-danger">*</span></label>
+                        </div> */}
+                        {/* <div className="mb-4">
+                            <label htmlFor="projectReleaseDate" className="form-label">Cooked Date <span className="text-danger">*</span></label>
                             <div className='input-group date '>
                                 <DatePicker
                                     placeholderText='Pick start date'
@@ -100,8 +95,16 @@ const TabProjectDetails = () => {
                                     )}
                                 />
                             </div>
+                        </div> */}
+                        <div className="mb-4 ">
+                            <label className="form-label">Any Note<span className="text-danger">*</span></label>
+                            <JoditEditor
+                                value={value}
+                                config={config}
+                                onChange={(htmlString) => setValue(htmlString)}
+                            />
                         </div>
-                        <hr className="mb-5" />
+                        {/* <hr className="mb-5" />
                         <div className="custom-control custom-checkbox mb-2">
                             <input type="checkbox" className="custom-control-input" id="sendProjectEmail" defaultChecked />
                             <label className="custom-control-label c-pointer" htmlFor="sendProjectEmail">Send project created email.</label>
@@ -113,7 +116,7 @@ const TabProjectDetails = () => {
                         <div className="custom-control custom-checkbox mb-2">
                             <input type="checkbox" className="custom-control-input" id="allowNotifications" defaultChecked />
                             <label className="custom-control-label c-pointer" htmlFor="allowNotifications">Allow Notifications by Phone or Email.</label>
-                        </div>
+                        </div> */}
                     </fieldset>
                 </fieldset>
             </form>
