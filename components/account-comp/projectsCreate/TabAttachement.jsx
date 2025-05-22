@@ -1,82 +1,122 @@
-import React from 'react'
-import Dropdown from '../shared/Dropdown'
-import { strogeOptions } from '../storage/StorageContent'
+import React, { useState, useEffect } from 'react'
+import { FiAlertTriangle } from 'react-icons/fi'
 
-const TabAttachement = () => {
-    return (
-        <section className="step-body mt-4">
-            <div>
-                <div className="mb-5">
-                    <h2 className="fs-16 fw-bold">Attachement files</h2>
-                    <p className="text-muted">Upload the picture of your food. </p>
-                </div>
-                <div className="mb-4">
-                    <label htmlFor="choose-file" className="custom-file-upload" id="choose-file-label"> Upload Document </label>
-                    <input name="uploadDocument" type="file" id="choose-file" style={{ display: 'none' }} />
-                </div>
-                <div className="row">
-                    {/* <RecentFileCard
-                        imgSrc={"/images/file-icons/zip.png"}
-                        title={"UI/UX Design Templates"}
-                        projectLink={"Project"}
-                        dashboardLink={"Dashboard"}
-                        category={"Webapps"}
-                    /> */}
-                    {/* <AttachementCard
-                        title={"UI/UX Design Templates"}
-                        iconSrc={"/images/file-icons/zip.png"}
-                        category1={"Project"}
-                        category2={"Dashboard"}
-                        category3={"Webapps"}
-                    />
-                    <AttachementCard
-                        title={"UI/UX Design Templates"}
-                        iconSrc={"/images/file-icons/png.png"}
-                        category1={"Project"}
-                        category2={"Dashboard"}
-                        category3={"Webapps"}
-                    />
-                    <AttachementCard
-                        title={"UI/UX Design Templates"}
-                        iconSrc={"/images/file-icons/pdf.png"}
-                        category1={"Project"}
-                        category2={"Dashboard"}
-                        category3={"Webapps"}
-                    />
-                    <AttachementCard
-                        title={"UI/UX Design Templates"}
-                        iconSrc={"/images/file-icons/psd.png"}
-                        category1={"Project"}
-                        category2={"Dashboard"}
-                        category3={"Webapps"}
-                    /> */}
-                </div>
+const TabAttachment = ({ formData, setFormData, error, setError }) => {
+  const { attachments = [] } = formData
+  const [selectedFiles, setSelectedFiles] = useState(attachments)
+
+  useEffect(() => {
+    setFormData((prev) => ({
+      ...prev,
+      attachments: selectedFiles,
+    }))
+  }, [selectedFiles, setFormData])
+
+  const handleFileChange = (e) => {
+    const files = Array.from(e.target.files)
+
+    const newAttachments = files.map((file) => {
+      const preview = file.type.startsWith('image/')
+        ? URL.createObjectURL(file)
+        : null
+
+      return {
+        name: file.name,
+        size: file.size,
+        type: file.type,
+        file,
+        preview,
+      }
+    })
+
+    setSelectedFiles((prev) => [...prev, ...newAttachments])
+
+    if (newAttachments.length > 0) setError(false)
+  }
+
+  const handleRemoveFile = (index) => {
+    const file = selectedFiles[index]
+    if (file.preview) URL.revokeObjectURL(file.preview)
+
+    const updatedFiles = selectedFiles.filter((_, i) => i !== index)
+    setSelectedFiles(updatedFiles)
+
+    if (updatedFiles.length === 0) setError(true)
+  }
+
+  return (
+    <section className="step-body mt-4 body current">
+      <form id="attachment-tab" onSubmit={(e) => e.preventDefault()}>
+        <fieldset>
+          <div className="mb-5">
+            <h2 className="fs-16 fw-bold">Attachments</h2>
+            <p className="text-muted">Upload your files here.</p>
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="fileUpload" className="form-label">
+              Upload Files
+            </label>
+            <input
+              type="file"
+              id="fileUpload"
+              name="fileUpload"
+              multiple
+              onChange={handleFileChange}
+              className="form-control"
+              accept="image/*,application/pdf,.doc,.docx,.xls,.xlsx,.txt"
+            />
+            {error && selectedFiles.length === 0 && (
+              <label className="error text-danger d-block mt-1">
+                <FiAlertTriangle /> This field is required.
+              </label>
+            )}
+          </div>
+
+          {selectedFiles.length > 0 && (
+            <div className="mb-4">
+              <h3 className="mb-3">Selected Attachments</h3>
+              <ul className="list-group">
+                {selectedFiles.map((file, index) => (
+                  <li
+                    key={index}
+                    className="list-group-item d-flex justify-content-between align-items-center flex-column flex-md-row gap-3"
+                  >
+                    <div className="d-flex align-items-center gap-3">
+                      {file.preview ? (
+                        <img
+                          src={file.preview}
+                          alt={file.name}
+                          style={{
+                            width: '60px',
+                            height: '60px',
+                            objectFit: 'cover',
+                            borderRadius: '6px',
+                          }}
+                        />
+                      ) : (
+                        <span className="fw-semibold">{file.name}</span>
+                      )}
+                      <span className="text-muted">
+                        ({(file.size / 1024).toFixed(2)} KB)
+                      </span>
+                    </div>
+                    <button
+                      type="button"
+                      className="btn btn-sm btn-danger"
+                      onClick={() => handleRemoveFile(index)}
+                    >
+                      Remove
+                    </button>
+                  </li>
+                ))}
+              </ul>
             </div>
-        </section>
-
-    )
+          )}
+        </fieldset>
+      </form>
+    </section>
+  )
 }
 
-export default TabAttachement
-
-
-const AttachementCard = ({ title, category1, category2, category3, iconSrc }) => {
-    return (
-        <div className="col-sm-6">
-            <div className="card stretch stretch-full">
-                <div className="card-body p-0 ht-200 position-relative">
-                    <a href="#" className="w-100 h-100 d-flex align-items-center justify-content-center">
-                        <img src={iconSrc} className="img-fluid wd-80 ht-80" alt="img" />
-                    </a>
-                    <Dropdown dropdownItems={strogeOptions} dataBsToggle='offcanvas' dropdownParentStyle={"position-absolute top-15 right-15"}/>
-                </div>
-                <div className="card-footer p-4">
-                    <h2 className="fs-13 mb-1 text-truncate-1-line">{title}</h2>
-                    <small className="fs-10 text-uppercase">
-                        <a href="#">{category1}</a> / <a href="#">{category2}</a> / <span className="text-gray-500">{category3}</span>
-                    </small>
-                </div>
-            </div>
-        </div>
-    );
-};
+export default TabAttachment
