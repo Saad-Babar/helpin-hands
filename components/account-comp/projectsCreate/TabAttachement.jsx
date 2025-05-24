@@ -12,27 +12,46 @@ const TabAttachment = ({ formData, setFormData, error, setError }) => {
     }))
   }, [selectedFiles, setFormData])
 
-  const handleFileChange = (e) => {
-    const files = Array.from(e.target.files)
+  const handleFileChange = async (e) => {
+  const files = Array.from(e.target.files)
 
-    const newAttachments = files.map((file) => {
-      const preview = file.type.startsWith('image/')
-        ? URL.createObjectURL(file)
-        : null
+  const uploadedFiles = await Promise.all(
+    files.map(async (file) => {
+      const formData = new FormData()
+      formData.append('file', file)
 
-      return {
-        name: file.name,
-        size: file.size,
-        type: file.type,
-        file,
-        preview,
+      try {
+        const res = await fetch('/api/upload', {
+          method: 'POST',
+          body: formData,
+        })
+
+        const data = await res.json()
+        if (!res.ok || !data.success) {
+          console.error('Upload failed:', data.error || 'Unknown error')
+          return null
+        }
+
+        return {
+          name: data.filename,
+          size: file.size,
+          type: file.type,
+          preview: data.url, // direct public URL to show image from /uploads/food/
+        }
+      } catch (error) {
+        console.error('Upload error:', error)
+        return null
       }
     })
+  )
 
-    setSelectedFiles((prev) => [...prev, ...newAttachments])
+  const validFiles = uploadedFiles.filter(Boolean)
+  setSelectedFiles((prev) => [...prev, ...validFiles])
 
-    if (newAttachments.length > 0) setError(false)
-  }
+  if (validFiles.length > 0) setError(false)
+}
+
+
 
   const handleRemoveFile = (index) => {
     const file = selectedFiles[index]
