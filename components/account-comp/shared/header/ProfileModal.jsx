@@ -1,6 +1,8 @@
+'use client';
+
 import React, { useEffect, useState, Fragment } from 'react';
 import Image from 'next/image';
-import { FiActivity, FiBell, FiChevronRight, FiDollarSign, FiSettings, FiUser } from "react-icons/fi";
+import { FiActivity, FiBell, FiChevronRight, FiDollarSign, FiSettings, FiUser, FiBarChart2 } from "react-icons/fi";
 import LogoutButton from './LogoutButton';
 
 const activePosition = ["Active", "Always", "Bussy", "Inactive", "Disabled", "Cutomization"];
@@ -8,11 +10,7 @@ const subscriptionsList = ["Plan", "Billings", "Referrals", "Payments", "Stateme
 
 const ProfileModal = () => {
   const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    console.log('User data:', user);
-  }, [user]);
-
+  const [points, setPoints] = useState(0); // ✅ total points state
 
   useEffect(() => {
     fetch('/api/profile')
@@ -22,6 +20,21 @@ const ProfileModal = () => {
       })
       .then(data => setUser(data))
       .catch(() => setUser(null));
+  }, []);
+
+  useEffect(() => {
+    const fetchPoints = async () => {
+      try {
+        const res = await fetch('/api/donations');
+        if (!res.ok) throw new Error('Failed to fetch points');
+        const data = await res.json();
+        setPoints(data.totalPoints);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    fetchPoints();
   }, []);
 
   const getColor = (item) => {
@@ -67,34 +80,23 @@ const ProfileModal = () => {
     <div className="dropdown nxl-h-item">
       <a href="#" data-bs-toggle="dropdown" role="button" data-bs-auto-close="outside">
         <Image
-  width={40}
-  height={40}
-  src={`${user.document.replace(/\\/g, '/')}`}
-  alt="user-image"
-  className="img-fluid user-avtar"
-/>
-
-
-
-
+          width={40}
+          height={40}
+          src={`${user.document.replace(/\\/g, '/')}`}
+          alt="user-image"
+          className="img-fluid user-avtar"
+        />
       </a>
       <div className="dropdown-menu dropdown-menu-end nxl-h-dropdown nxl-user-dropdown">
         <div className="dropdown-header">
           <div className="d-flex align-items-center">
             <Image
-  width={40}
-  height={40}
-  src={`${user.document.replace(/\\/g, '/')}`}
-  alt="user-image"
-  className="img-fluid user-avtar"
-/>
-
-
-
-
-
-
-
+              width={40}
+              height={40}
+              src={`${user.document.replace(/\\/g, '/')}`}
+              alt="user-image"
+              className="img-fluid user-avtar"
+            />
             <div>
               <h6 className="text-dark mb-0">{user.name} <span className="badge bg-soft-success text-success ms-1">PRO</span></h6>
               <span className="fs-12 fw-medium text-muted">{user.email}</span>
@@ -109,11 +111,6 @@ const ProfileModal = () => {
             <span>{user.status || "Unknown"}</span>
           </span>
         </div>
-
-
-
-
-
 
         {/* <div className="dropdown-divider"></div> */}
 
@@ -144,7 +141,7 @@ const ProfileModal = () => {
         <div className="dropdown-divider"></div>
 
         {/* Other menu items */}
-        <a href="#" className="dropdown-item">
+        {/* <a href="#" className="dropdown-item">
           <FiUser />
           <span>Profile Details</span>
         </a>
@@ -163,7 +160,15 @@ const ProfileModal = () => {
         <a href="#" className="dropdown-item">
           <FiSettings />
           <span>Account Settings</span>
-        </a>
+        </a> */}
+
+        <a href="#" className="dropdown-item disabled d-flex align-items-center" style={{ cursor: 'default', opacity: 0.7 }}>
+  <FiDollarSign size={18} className="me-2" />
+  <span className="fw-semibold" style={{ fontSize: '0.9rem' }}>
+    Total Points Earned: <span className="text-primary">{points}</span>
+  </span>
+</a>
+
 
         <div className="dropdown-divider"></div>
 

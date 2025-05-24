@@ -3,55 +3,54 @@ import { connectToDB } from '../../lib/mongodb';
 import jwt from 'jsonwebtoken';
 import cookie from 'cookie';
 
+function calculatePoints(mealSize) {
+  switch (mealSize) {
+    case '1-2': return 20;
+    case '3-5': return 40;
+    case '6+': return 60;
+    default: return 0;
+  }
+}
+
 export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method not allowed' });
+  await connectToDB();
+
+  const cookies = cookie.parse(req.headers.cookie || '');
+  const token = cookies.token;
+
+  if (!token) {
+    return res.status(401).json({ message: 'Unauthorized: No token provided' });
   }
 
+  let decoded;
   try {
-    // Connect to DB
-    await connectToDB();
+    decoded = jwt.verify(token, process.env.JWT_SECRET);
+  } catch (err) {
+    return res.status(401).json({ message: 'Unauthorized: Invalid token' });
+  }
 
-    // Parse cookies to get token
-    const cookies = cookie.parse(req.headers.cookie || '');
-    const token = cookies.token;
+  const userId = decoded.userId;
 
-    if (!token) {
-      return res.status(401).json({ message: 'Unauthorized: No token provided' });
-    }
-
-    let decoded;
-    try {
-      decoded = jwt.verify(token, process.env.JWT_SECRET);
-    } catch (err) {
-      return res.status(401).json({ message: 'Unauthorized: Invalid token' });
-    }
-
-    const userId = decoded.userId;
-
-    // Extract all expected fields from request body
+  if (req.method === 'POST') {
     const {
       foodType,
       mealSize,
-      details = {},        // tab 2 data
-      location = {},       // tab 3 data
-     attachments = []
+      details = {},
+      location = {},
+      attachments = []
     } = req.body;
 
-    // Validate required fields (add more if needed)
-    if (!foodType) {
-      return res.status(400).json({ message: 'Food type is required' });
-    }
-    if (!mealSize) {
-      return res.status(400).json({ message: 'Meal size is required' });
+    if (!foodType || !mealSize) {
+      return res.status(400).json({ message: 'Food type and meal size are required' });
     }
 
-    // Create the new Donation document
-        // Create the new Donation document
+    const points = calculatePoints(mealSize);
+
     const donation = new Donation({
       userId,
       foodType,
       mealSize,
+      points,
       details: {
         foodName: details.foodName || '',
         storageCondition: details.storageCondition || '',
@@ -65,29 +64,25 @@ export default async function handler(req, res) {
         phoneNumber: location.phoneNumber || ''
       },
       attachments: attachments.map(a => a.name || '')
-
-    });
-
-    console.log('Incoming Data:', {
-      userId,
-      foodType,
-      mealSize,
-      details,
-      location,
-      attachments: attachments.map(a => a.name || '')
-
     });
 
     await donation.save();
 
-
-
     return res.status(201).json({ message: 'Donation saved successfully', donation });
-
-  } catch (error) {
-    console.error('Donation API Error:', error.message, error.stack);
-
-    return res.status(500).json({ message: 'Server error' });
   }
-}
 
+  if (req.method === 'GET') {
+    try {
+      const donations = await Donation.find({ userId });
+
+      const totalPoints = donations.reduce((sum, d) => sum + (d.points || 0), 0);
+
+      return res.status(200).json({ totalPoints });
+    } catch (error) {
+      console.error('Error fetching points:', error.message);
+      return res.status(500).json({ message: 'Server error' });
+    }
+  }
+
+  return res.status(405).json({ message: 'Method not allowed' });
+}

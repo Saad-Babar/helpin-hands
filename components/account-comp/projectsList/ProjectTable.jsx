@@ -61,6 +61,10 @@ const ProjectTable = () => {
       header: 'Pickup Address',
     },
     {
+      accessorKey: 'points',
+      header: 'Points',
+    },
+    {
   accessorKey: 'attachments',
   header: 'Image',
   cell: info => {

@@ -15,11 +15,12 @@ const TabCompleted = () => {
         Thank you for your generous donation! Your food will now be delivered to someone in need. Together, we’re reducing waste and feeding hope.
       </p>
       <div className="d-flex justify-content-center gap-1 mt-5">
-        <Link href="/account/general/projects/create" className="btn btn-light">
+        <button onClick={() => window.location.reload()} className="btn btn-light">
   Make New Donation
-</Link>
+</button>
 
-        <Link href="/account/general/projects/view" className="btn btn-primary">
+
+        <Link href="/account/general/projects/list" className="btn btn-primary">
   Preview Donations
 </Link>
 

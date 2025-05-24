@@ -6,6 +6,7 @@ const donationSchema = new mongoose.Schema({
   // Tab 1 fields
   foodType: { type: String, required: true },
   mealSize: { type: String, required: true },
+  points: { type: Number, default: 0 },
 
   // Tab 2 fields (details)
   details: {
@@ -25,6 +26,7 @@ const donationSchema = new mongoose.Schema({
 
   // Tab 4 (attachments)
   attachments: { type: [String], default: [] },
+
 
   createdAt: { type: Date, default: Date.now }
 });
