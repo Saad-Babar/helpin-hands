@@ -13,7 +13,7 @@ const donationSchema = new mongoose.Schema({
     foodName: { type: String },
     storageCondition: { type: String },
     packagingStatus: { type: String },
-    cookedDate: { type: Date },       // Storing as Date type for accuracy
+    cookedDate: { type: Date },
     anyNote: { type: String }
   },
 
@@ -21,12 +21,14 @@ const donationSchema = new mongoose.Schema({
   location: {
     deliveryOptions: { type: String },
     pickupAddress: { type: String },
-    phoneNumber: { type: String }
+    phoneNumber: { type: String },
+    country: { type: String },   // ✅ Added
+    state: { type: String },     // ✅ Added
+    city: { type: String }       // ✅ Added
   },
 
   // Tab 4 (attachments)
   attachments: { type: [String], default: [] },
-
 
   createdAt: { type: Date, default: Date.now }
 });

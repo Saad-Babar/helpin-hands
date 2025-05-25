@@ -61,8 +61,12 @@ export default async function handler(req, res) {
       location: {
         deliveryOptions: location.deliveryOptions || '',
         pickupAddress: location.pickupAddress || '',
-        phoneNumber: location.phoneNumber || ''
+        phoneNumber: location.phoneNumber || '',
+        country: location.country || '',
+        state: location.state || '',
+        city: location.city || ''
       },
+
       attachments: attachments.map(a => a.name || '')
     });
 

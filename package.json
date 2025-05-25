@@ -24,6 +24,7 @@
     "date-fns": "^4.1.0",
     "emoji-picker-react": "^4.12.2",
     "eslint-config-next": "^13.0.7",
+    "feather-icons": "^4.29.2",
     "firebase": "^11.7.3",
     "formidable": "^3.5.2",
     "jodit-react": "^5.2.19",

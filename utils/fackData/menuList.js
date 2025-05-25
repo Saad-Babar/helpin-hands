@@ -183,25 +183,25 @@ export const menuList = [
     },
     {
         id: 6,
-        name: "leads",
+        name: "Expiry Tracker",
         path: "#",
         icon: 'feather-alert-circle',
         dropdownMenu: [
             {
                 id: 1,
-                name: "Leads",
+                name: "All Expiries",
                 path: "/account/general/leads/list",
                 subdropdownMenu: false
             },
-            {
-                id: 2,
-                name: "Leads View",
-                path: "/account/general/leads/view",
-                subdropdownMenu: false
-            },
+            // {
+            //     id: 2,
+            //     name: "Leads View",
+            //     path: "/account/general/leads/view",
+            //     subdropdownMenu: false
+            // },
             {
                 id: 3,
-                name: "Leads Create",
+                name: "Add Expiry",
                 path: "/account/general/leads/create",
                 subdropdownMenu: false
             }

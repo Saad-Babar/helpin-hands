@@ -36,10 +36,13 @@ const ProjectCreateContent = () => {
             anyNote: ''
         },
         location: {
-            deliveryOptions: '',
-            pickupAddress: '',
-            phoneNumber: ''
-        },
+        deliveryOptions: '',
+        pickupAddress: '',
+        phoneNumber: '',
+        country: '',    // <--- added
+        state: '',      // <--- added
+        city: ''        // <--- added
+    },
         attachments: []
     });
 
@@ -65,13 +68,13 @@ const ProjectCreateContent = () => {
 
         if (currentStep === 2) {
             const {
-                location: { deliveryOptions, pickupAddress, phoneNumber } = {},
-            } = formData;
+        location: { deliveryOptions, pickupAddress, phoneNumber, country, state, city } = {},
+    } = formData;
 
-            if (!deliveryOptions || !pickupAddress || !phoneNumber) {
-                setError(true);
-                return false;
-            }
+    if (!deliveryOptions || !pickupAddress || !phoneNumber || !country || !state || !city) {
+        setError(true);
+        return false;
+    }
         }
 
 
@@ -117,6 +120,8 @@ const ProjectCreateContent = () => {
 
     const handleSubmit = async (e) => {
   e.preventDefault();
+//   console.log('Submitting donation:', formData);
+
 
   // Validate attachments before submitting
   if (!formData.attachments || formData.attachments.length === 0) {
@@ -154,8 +159,11 @@ const ProjectCreateContent = () => {
         },
         location: {
           deliveryOptions: '',
-          pickupAddress: '',
-          phoneNumber: '',
+        pickupAddress: '',
+        phoneNumber: '',
+        country: '',    // <--- added
+        state: '',      // <--- added
+        city: '',
         },
         attachments: [],
       });

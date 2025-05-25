@@ -5,6 +5,9 @@ import TextArea from '../shared/TextArea'
 import { customerListTagsOptions, leadsGroupsOptions, leadsSourceOptions, leadsStatusOptions, propsalVisibilityOptions, taskAssigneeOptions } from '../../../utils/options'
 import useLocationData from '../../../hooks/useLocationData'
 import { currencyOptionsData } from '../../../utils/fackData/currencyOptionsData'
+import { foodCategoryOptions } from '../../../utils/fackData/foodcategory'
+import { remindDayOptions } from '../../../utils/fackData/remindday'
+
 import { languagesData } from '../../../utils/fackData/languagesData'
 import { timezonesData } from '../../../utils/fackData/timeZonesData'
 import Loading from '../shared/Loading'
@@ -16,6 +19,8 @@ import MultiSelectTags from '../shared/MultiSelectTags'
 
 const LeadsCreateContent = () => {
     const [selectedOption, setSelectedOption] = useState(null);
+    const [selectedCategory, setSelectedCategory] = useState(null);
+    const [selectedperiod, setselectedperiod] = useState(null);
     const { countries, states, cities, loading, error, fetchStates, fetchCities, } = useLocationData();
     const leadsTags = customerListTagsOptions
     return (
@@ -86,124 +91,64 @@ const LeadsCreateContent = () => {
                     <div className="card-body general-info">
                         <div className="mb-5 d-flex align-items-center justify-content-between">
                             <h5 className="fw-bold mb-0 me-4">
-                                <span className="d-block mb-2">Lead Info :</span>
-                                <span className="fs-12 fw-normal text-muted text-truncate-1-line">General information for your lead</span>
+                                <span className="d-block mb-2">Expiry Tracker :</span>
+                                <span className="fs-12 fw-normal text-muted text-truncate-1-line">Add items in expiry tracker.</span>
                             </h5>
-                            <a href="#" className="btn btn-sm btn-light-brand">Edit Lead</a>
+                            {/* <a href="#" className="btn btn-sm btn-light-brand">Edit Lead</a> */}
                         </div>
                         <Input
-                            icon='feather-user'
-                            label={"Name"}
+                            icon='feather-shopping-cart'
+                            label={"Item Name"}
                             labelId={"nameInput"}
-                            placeholder={"Name"}
+                            placeholder={"Item's Name"}
                             name={"name"}
                         />
                         <Input
-                            icon='feather-mail'
-                            label={"Email"}
-                            labelId={"emailInput"}
-                            placeholder={"Email"}
-                            name={"email"}
-                            type={"email"}
-                        />
-                        <Input
-                            icon='feather-link-2'
-                            label={"Username"}
-                            labelId={"usernameInput"}
-                            placeholder={"Username"}
-                            name={"username"}
-                        />
-                        <Input
-                            icon='feather-phone'
-                            label={"Phone"}
-                            labelId={"phoneInput"}
-                            placeholder={"Phone"}
-                            name={"phone"}
-                        />
-                        <Input
-                            icon='feather-compass'
-                            label={"Company"}
-                            labelId={"companyInput"}
-                            placeholder={"Company"}
-                            name={"company"}
-                        />
-                        <Input
                             icon='feather-briefcase'
-                            label={"Designation"}
-                            labelId={"designationInput"}
-                            placeholder={"Designation"}
-                            name={"designation"}
+                            label={"Quantity"}
+                            labelId={"emailInput"}
+                            placeholder={"Enter Quantity e.g. 1 pack / 1 L / 1 KG"}
+                            name={"quantity"}
+                            type={"text"}
                         />
                         <Input
-                            icon="feather-link"
-                            label={"Website"}
-                            labelId={"websiteInput"}
-                            placeholder={"Website"}
-                            name={"website"}
+                            icon="/admin-images/file-icons/calendar.svg"
+                            type="date"
+                            label="Expiry Date"
+                            labelId="expiryDateInput"
+                            placeholder="Expiry Date"
+                            name="expiryDate"
                         />
-                        <Input
-                            icon="feather-dollar-sign"
-                            label={"VAT"}
-                            labelId={"vatInput"}
-                            placeholder={"VAT"}
-                            name={"vat"}
-                        />
-                        <TextArea
-                            icon="feather-map-pin"
-                            label={"Address"}
-                            labelId={"addressInput"}
-                            placeholder={"Address"}
-                        />
-                        <TextArea
-                            icon="feather-type"
-                            label={"description"}
-                            labelId={"descriptionInput"}
-                            placeholder={"Description"}
-                            row='5'
-                        />
+
                         <div className="row mb-4 align-items-center">
                             <div className="col-lg-4">
-                                <label className="fw-semibold">Country: </label>
+                                <label className="fw-semibold">Food Category: </label>
                             </div>
                             <div className="col-lg-8">
                                 <SelectDropdown
-                                    options={countries}
-                                    selectedOption={selectedOption}
-                                    defaultSelect="usa"
-                                    onSelectOption={(option) => {
-                                        fetchStates(option.label);
-                                        fetchCities(option.label);
-                                        setSelectedOption(option)
-                                    }}
+                                    options={foodCategoryOptions}
+                                    selectedOption={selectedCategory}
+                                    defaultSelect="vegetables"
+                                    onSelectOption={(option) => setSelectedCategory(option)}
                                 />
                             </div>
                         </div>
+
                         <div className="row mb-4 align-items-center">
                             <div className="col-lg-4">
-                                <label className="fw-semibold">State: </label>
+                                <label className="fw-semibold">Remind Before Days: </label>
                             </div>
                             <div className="col-lg-8">
                                 <SelectDropdown
-                                    options={states}
-                                    selectedOption={selectedOption}
-                                    defaultSelect={"new-york"}
-                                    onSelectOption={(option) => setSelectedOption(option)}
+                                    options={remindDayOptions}
+                                    selectedOption={selectedperiod}
+                                    defaultSelect="2days"
+                                    onSelectOption={(option) => setSelectedCategory(option)}
                                 />
                             </div>
                         </div>
-                        <div className="row mb-4 align-items-center">
-                            <div className="col-lg-4">
-                                <label className="fw-semibold">City: </label>
-                            </div>
-                            <div className="col-lg-8">
-                                <SelectDropdown
-                                    options={cities}
-                                    selectedOption={selectedOption}
-                                    defaultSelect="new-york"
-                                    onSelectOption={(option) => setSelectedOption(option)}
-                                />
-                            </div>
-                        </div>
+
+                        
                         <div className="row mb-4 align-items-center">
                             <div className="col-lg-4">
                                 <label className="fw-semibold">Time Zone: </label>
@@ -228,19 +173,8 @@ const LeadsCreateContent = () => {
                                 />
                             </div>
                         </div>
-                        <div className="row mb-4 align-items-center">
-                            <div className="col-lg-4">
-                                <label className="fw-semibold">Currency: </label>
-                            </div>
-                            <div className="col-lg-8">
-                                <SelectDropdown
-                                    options={currencyOptionsData}
-                                    selectedOption={selectedOption}
-                                    defaultSelect="usd"
-                                    onSelectOption={(option) => setSelectedOption(option)}
-                                />
-                            </div>
-                        </div>
+                        
+
                     </div>
                 </div>
             </div>
