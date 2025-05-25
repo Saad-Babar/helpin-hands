@@ -57,6 +57,18 @@ const ProjectTable = () => {
       header: 'Delivery Option',
     },
     {
+      accessorKey: 'location.country',
+      header: 'Country',
+    },
+    {
+      accessorKey: 'location.state',
+      header: 'State',
+    },
+    {
+      accessorKey: 'location.city',
+      header: 'City',
+    },
+    {
       accessorKey: 'location.pickupAddress',
       header: 'Pickup Address',
     },
@@ -65,18 +77,18 @@ const ProjectTable = () => {
       header: 'Points',
     },
     {
-  accessorKey: 'attachments',
-  header: 'Image',
-  cell: info => {
-    const images = info.getValue();
-    const filename = images?.[0];
-    const imageUrl = filename ? `/uploads/food/${filename}` : null;
-    return imageUrl ? (
-      <img src={imageUrl} alt="food" width={60} className="rounded" />
-    ) : 'No Image';
-  },
-}
-,
+      accessorKey: 'attachments',
+      header: 'Image',
+      cell: info => {
+        const images = info.getValue();
+        const filename = images?.[0];
+        const imageUrl = filename ? `/uploads/food/${filename}` : null;
+        return imageUrl ? (
+          <img src={imageUrl} alt="food" width={60} className="rounded" />
+        ) : 'No Image';
+      },
+    }
+    ,
 
     {
       accessorKey: 'createdAt',
