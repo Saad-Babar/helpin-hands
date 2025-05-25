@@ -1,5 +1,5 @@
 import React from 'react'
-import getIcon from '@/utils/getIcon'
+import getIcon from '../../../utils/getIcon'
 
 const TextArea = ({ label, icon, placeholder, labelId, row="3" }) => {
     return (

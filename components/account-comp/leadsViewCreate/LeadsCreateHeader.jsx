@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import { FiLayers, FiUserPlus } from 'react-icons/fi'
-import topTost from '@/utils/topTost';
+import topTost from '../../../utils/topTost';
 
 const LeadsCreateHeader = () => {
   const handleClick = () => {
