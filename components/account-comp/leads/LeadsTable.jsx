@@ -1,155 +1,91 @@
 'use client'
-import React, { memo, useEffect, useState } from 'react'
-import Table from '../shared/table/Table';
-import { FiAlertOctagon, FiArchive, FiClock, FiEdit3, FiEye, FiMoreHorizontal, FiPrinter, FiTrash2 } from 'react-icons/fi'
-import Dropdown from '../shared/Dropdown';
-import SelectDropdown from '../shared/SelectDropdown';
-import getIcon from '../../../utils/getIcon';
-import { leadTableData } from '../../../utils/fackData/leadTableData';
-
-
-const actions = [
-    { label: "Edit", icon: <FiEdit3 /> },
-    { label: "Print", icon: <FiPrinter /> },
-    { label: "Remind", icon: <FiClock /> },
-    { type: "divider" },
-    { label: "Archive", icon: <FiArchive /> },
-    { label: "Report Spam", icon: <FiAlertOctagon />, },
-    { type: "divider" },
-    { label: "Delete", icon: <FiTrash2 />, },
-];
+import React, { useEffect, useState, memo } from 'react'
+import Table from '../shared/table/Table'
+import SelectDropdown from '../shared/SelectDropdown'
 
 const TableCell = memo(({ options, defaultSelect }) => {
-    const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOption, setSelectedOption] = useState(defaultSelect || null)
+  return (
+    <SelectDropdown
+      options={options}
+      defaultSelect={defaultSelect}
+      selectedOption={selectedOption}
+      onSelectOption={setSelectedOption}
+    />
+  )
+})
 
-    return (
-        <SelectDropdown
-            options={options}
-            defaultSelect={defaultSelect}
-            selectedOption={selectedOption}
-            onSelectOption={(option) => setSelectedOption(option)}
-        />
-    );
-});
+const ExpiryTable = () => {
+  const [data, setData] = useState([])
+  const [loading, setLoading] = useState(true)
 
+  useEffect(() => {
+    const fetchExpiryItems = async () => {
+      try {
+        const res = await fetch('/api/expiry-tracker', {
+          method: 'GET',
+          headers: { 'Content-Type': 'application/json' },
+        })
+        const json = await res.json()
+        if (res.ok && json.success) {
+          // Map MongoDB _id to id for table if needed
+          const mappedData = json.data.map(item => ({
+            id: item._id,
+            itemName: item.itemName,
+            quantity: item.quantity,
+            expiryDate: new Date(item.expiryDate).toLocaleDateString(),
+            foodCategory: item.foodCategory,
+            remindBefore: item.remindBefore,
+            status: item.status,
+          }))
+          setData(mappedData)
+        } else {
+          console.error(json.message)
+        }
+      } catch (error) {
+        console.error('Failed to fetch expiry items:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchExpiryItems()
+  }, [])
 
-const LeadssTable = () => {
-    const columns = [
-        {
-            accessorKey: 'id',
-            header: ({ table }) => {
-                const checkboxRef = React.useRef(null);
+  const columns = [
+    {
+      accessorKey: 'itemName',
+      header: 'Item Name',
+    },
+    {
+      accessorKey: 'quantity',
+      header: 'Quantity',
+    },
+    {
+      accessorKey: 'expiryDate',
+      header: 'Expiry Date',
+    },
+    {
+      accessorKey: 'foodCategory',
+      header: 'Food Category',
+    },
+    {
+      accessorKey: 'remindBefore',
+      header: 'Remind Before',
+    },
+    {
+      accessorKey: 'status',
+      header: 'Status',
+      cell: ({ row }) => (
+        <span className={`badge ${row.original.status === 'ready to donate' ? 'bg-success' : 'bg-secondary'}`}>
+          {row.original.status}
+        </span>
+      ),
+    },
+  ]
 
-                useEffect(() => {
-                    if (checkboxRef.current) {
-                        checkboxRef.current.indeterminate = table.getIsSomeRowsSelected();
-                    }
-                }, [table.getIsSomeRowsSelected()]);
+  if (loading) return <div>Loading...</div>
 
-                return (
-                    <input
-                        type="checkbox"
-                        className="custom-table-checkbox"
-                        ref={checkboxRef}
-                        checked={table.getIsAllRowsSelected()}
-                        onChange={table.getToggleAllRowsSelectedHandler()}
-                    />
-                );
-            },
-            cell: ({ row }) => (
-                <input
-                    type="checkbox"
-                    className="custom-table-checkbox"
-                    checked={row.getIsSelected()}
-                    disabled={!row.getCanSelect()}
-                    onChange={row.getToggleSelectedHandler()}
-                />
-            ),
-            meta: {
-                headerClassName: 'width-30',
-            },
-        },
-
-        {
-            accessorKey: 'customer',
-            header: () => 'Customer',
-            cell: (info) => {
-                const roles = info.getValue();
-                return (
-                    <a href="#" className="hstack gap-3">
-                        {
-                            roles?.img ?
-                                <div className="avatar-image avatar-md">
-                                    <img src={roles?.img} alt="" className="img-fluid" />
-                                </div>
-                                :
-                                <div className="text-white avatar-text user-avatar-text avatar-md">{roles?.name.substring(0, 1)}</div>
-                        }
-                        <div>
-                            <span className="text-truncate-1-line">{roles?.name}</span>
-                        </div>
-                    </a>
-                )
-            }
-        },
-        {
-            accessorKey: 'email',
-            header: () => 'Email',
-            cell: (info) => <a href="apps-email.html">{info.getValue()}</a>
-        },
-        {
-            accessorKey: 'source',
-            header: () => 'Source',
-            cell: (info) => {
-                const x = info.getValue()
-                return (
-                    <div className="hstack gap-2">
-                        <div className="avatar-text avatar-sm">
-                            {getIcon(x.icon)}
-                        </div>
-                        <a href="#">{x.media}</a>
-                    </div>
-                )
-            }
-        },
-        {
-            accessorKey: 'phone',
-            header: () => 'Phone',
-            cell: (info) => <a href="tel:">{info.getValue()}</a>
-            // meta: {
-            //     className: "fw-bold text-dark"
-            // }
-        },
-        {
-            accessorKey: 'date',
-            header: () => 'Date',
-        },
-        {
-            accessorKey: 'status',
-            header: () => 'Status',
-            cell: (info) => <TableCell options={info?.getValue().status} defaultSelect={info?.getValue().defaultSelect} />
-        },
-        {
-            accessorKey: 'actions',
-            header: () => "Actions",
-            cell: info => (
-                <div className="hstack gap-2 justify-content-end">
-                    <a href="proposal-view.html" className="avatar-text avatar-md">
-                        <FiEye />
-                    </a>
-                    <Dropdown dropdownItems={actions} triggerClassNaclassName='avatar-md' triggerPosition={"0,21"} triggerIcon={<FiMoreHorizontal />} />
-                </div>
-            ),
-            meta: {
-                headerClassName: 'text-end'
-            }
-        },
-    ]
-    return (
-        <>
-            <Table data={leadTableData} columns={columns} />
-        </>
-    )
+  return <Table data={data} columns={columns} />
 }
 
-export default LeadssTable
+export default ExpiryTable

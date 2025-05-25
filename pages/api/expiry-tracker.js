@@ -1,13 +1,12 @@
-import { connectToDB } from '../../lib/mongodb' // ✅ CORRECT
-
+import { connectToDB } from '../../lib/mongodb'
 import Expiry from '../../models/Expiry'
 import jwt from 'jsonwebtoken'
 
 export default async function handler(req, res) {
+  await connectToDB()
+
   if (req.method === 'POST') {
     try {
-      await connectToDB()
-
       const token = req.cookies.token
       if (!token) return res.status(401).json({ success: false, message: 'Unauthorized: No token' })
 
@@ -21,17 +20,33 @@ export default async function handler(req, res) {
       }
 
       const newItem = new Expiry({
-        userId,                // ✅ Save userId
+        userId,
         itemName,
         quantity,
         expiryDate,
         foodCategory,
         remindBefore,
+        status: 'ready to donate',
       })
 
       await newItem.save()
 
       res.status(201).json({ success: true, message: 'Item saved.' })
+    } catch (error) {
+      console.error(error)
+      res.status(500).json({ success: false, message: error.message })
+    }
+  } else if (req.method === 'GET') {
+    try {
+      const token = req.cookies.token
+      if (!token) return res.status(401).json({ success: false, message: 'Unauthorized: No token' })
+
+      const decoded = jwt.verify(token, process.env.JWT_SECRET)
+      const userId = decoded.userId
+
+      const items = await Expiry.find({ userId }).sort({ createdAt: -1 })
+
+      res.status(200).json({ success: true, data: items })
     } catch (error) {
       console.error(error)
       res.status(500).json({ success: false, message: error.message })

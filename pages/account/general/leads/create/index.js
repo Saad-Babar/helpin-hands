@@ -10,7 +10,7 @@ const page = () => {
       <DuplicateLayout>
         <div className="admin-content-wrapper">
           <PageHeader>
-            <LeadsCreateHeader />
+            {/* <LeadsCreateHeader /> */}
           </PageHeader>
 
           <div className='main-content'>

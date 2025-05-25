@@ -11,6 +11,7 @@ const ExpirySchema = new mongoose.Schema({
   expiryDate: String,
   foodCategory: String,
   remindBefore: String,
+  status: { type: String, default: 'ready to donate' }, // default here also works, optional
 }, { timestamps: true, collection: 'expiry' });
 
 export default mongoose.models.Expiry || mongoose.model('Expiry', ExpirySchema);
