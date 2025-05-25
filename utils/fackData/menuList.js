@@ -190,19 +190,19 @@ export const menuList = [
             {
                 id: 1,
                 name: "Leads",
-                path: "/leads/list",
+                path: "/account/general/leads/list",
                 subdropdownMenu: false
             },
             {
                 id: 2,
                 name: "Leads View",
-                path: "/leads/view",
+                path: "/account/general/leads/view",
                 subdropdownMenu: false
             },
             {
                 id: 3,
                 name: "Leads Create",
-                path: "/leads/create",
+                path: "/account/general/leads/create",
                 subdropdownMenu: false
             }
         ]
