@@ -3,8 +3,8 @@ import { serialize } from 'cookie';
 
 export default async function handler(req, res) {
   const token = req.cookies.token;
-  console.log("🍪 Cookie:", req.cookies);
-console.log("🔑 Token:", req.cookies.token);
+//   console.log("🍪 Cookie:", req.cookies);
+// console.log("🔑 Token:", req.cookies.token);
 
 
   if (!token) {
