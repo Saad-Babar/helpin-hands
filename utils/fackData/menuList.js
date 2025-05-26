@@ -161,45 +161,72 @@ export const menuList = [
             }
         ]
     },
-    {
-        id: 1,
-        name: "reports",
-        path: "#",
-        icon: 'feather-cast',
-        role: "Store Owner",
-        dropdownMenu: [
-            {
-                id: 1,
-                name: "Sales Report",
-                path: "/account/general/reports/sales",
-                subdropdownMenu: false
-            },
-            {
-                id: 2,
-                name: "Leads Report",
-                path: "/account/general/reports/leads",
-                subdropdownMenu: false
-            },
-            {
-                id: 3,
-                name: "Project Report",
-                path: "/account/general/reports/project",
-                subdropdownMenu: false
-            },
-            {
-                id: 4,
-                name: "Timesheets Report",
-                path: "/account/general/reports/timesheets",
-                subdropdownMenu: false
-            },
+    // {
+    //     id: 1,
+    //     name: "reports",
+    //     path: "#",
+    //     icon: 'feather-cast',
+    //     role: "Store Owner",
+    //     dropdownMenu: [
+    //         {
+    //             id: 1,
+    //             name: "Sales Report",
+    //             path: "/account/general/reports/sales",
+    //             subdropdownMenu: false
+    //         },
+    //         {
+    //             id: 2,
+    //             name: "Leads Report",
+    //             path: "/account/general/reports/leads",
+    //             subdropdownMenu: false
+    //         },
+    //         {
+    //             id: 3,
+    //             name: "Project Report",
+    //             path: "/account/general/reports/project",
+    //             subdropdownMenu: false
+    //         },
+    //         {
+    //             id: 4,
+    //             name: "Timesheets Report",
+    //             path: "/account/general/reports/timesheets",
+    //             subdropdownMenu: false
+    //         },
 
-        ]
-    },
+    //     ]
+    // },
     {
         id: 13,
         name: "ngo/reciver",
         type: "heading", // custom field to render heading
         role: "NGO / Receiver"
+    },
+    {
+        id: 17,
+        name: "Availaible Donations",
+        path: "#",
+        icon: 'feather-alert-circle',
+        role: "NGO / Receiver",
+        dropdownMenu: [
+            {
+                id: 1,
+                name: "All Donations",
+                path: "/account/general/recDon/create",
+                subdropdownMenu: false
+            },
+            // {
+            //     id: 2,
+            //     name: "Leads View",
+            //     path: "/account/general/leads/view",
+            //     subdropdownMenu: false
+            // },
+            {
+                id: 3,
+                name: "Add Expiry",
+                path: "/account/general/leads/create",
+                subdropdownMenu: false
+            }
+        ]
     },
     {
         id: 13,
