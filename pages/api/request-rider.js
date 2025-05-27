@@ -3,6 +3,7 @@ import cookie from 'cookie'
 import jwt from 'jsonwebtoken'
 import User from '../../models/User'
 import Donation from '../../models/Donation'
+import RiderPickup from '../../models/RiderPickup'
 import { sendRiderNotificationEmail } from '../../lib/sendEmail'
 
 export default async function handler(req, res) {
@@ -45,9 +46,29 @@ export default async function handler(req, res) {
       return res.status(400).json({ message: 'User city not found' })
     }
 
+    // Check if this rider pickup request already exists
+    const existingPickup = await RiderPickup.findOne({
+      donationId: donationId,
+      requesterId: decoded.userId,
+    })
+
+    if (existingPickup) {
+      return res.status(400).json({
+        message: 'You have already requested a rider for this donation. Please wait.',
+      })
+    }
+
+    // Save new rider pickup request with riderCity (important for filtering donations later)
+    await RiderPickup.create({
+      donationId: donationId,
+      requesterId: decoded.userId,
+      riderCity: userCity.trim().toLowerCase(),  // normalize city casing here
+    })
+
+    // Find active riders in the user's city to notify
     const riders = await User.find({
       role: { $regex: new RegExp('^rider$', 'i') },
-      city: userCity,
+      city: new RegExp(`^${userCity}$`, 'i'),  // case-insensitive match
       status: 'Active',
     }).lean()
 

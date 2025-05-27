@@ -234,6 +234,33 @@ export const menuList = [
         type: "heading", // custom field to render heading
          role: "Rider"
     },
+    {
+        id: 18,
+        name: "Availaible Pickups",
+        path: "#",
+        icon: 'feather-alert-circle',
+        role: "Rider",
+        dropdownMenu: [
+            {
+                id: 1,
+                name: "All Pickups",
+                path: "/account/general/volunteer/create",
+                subdropdownMenu: false
+            },
+            // {
+            //     id: 2,
+            //     name: "Leads View",
+            //     path: "/account/general/leads/view",
+            //     subdropdownMenu: false
+            // },
+            {
+                id: 3,
+                name: "Accepted Pickups",
+                path: "/account/general/volunteer/list",
+                subdropdownMenu: false
+            }
+        ]
+    },
 
     ]
     // {

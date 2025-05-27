@@ -30,7 +30,7 @@ const CollectedDonations = () => {
   const handleRequestRider = async (donationId) => {
     setRequesting(donationId)
     setMessage(null)
-    try {
+    try { 
       const res = await fetch('/api/request-rider', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
