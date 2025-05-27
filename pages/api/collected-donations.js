@@ -38,7 +38,7 @@ export default async function handler(req, res) {
     )
 
     const formatted = filtered.map(entry => ({
-      id: entry._id,
+      id: entry.donationId._id.toString(), // <-- change here
       foodName: entry.donationId.details?.foodName || 'N/A',
       foodType: entry.donationId.foodType,
       city: entry.donationId.location?.city || 'N/A',
