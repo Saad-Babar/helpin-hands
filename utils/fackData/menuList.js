@@ -222,8 +222,8 @@ export const menuList = [
             // },
             {
                 id: 3,
-                name: "Add Expiry",
-                path: "/account/general/leads/create",
+                name: "Collected Donations",
+                path: "/account/general/recDon/list",
                 subdropdownMenu: false
             }
         ]

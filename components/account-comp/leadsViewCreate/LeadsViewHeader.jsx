@@ -1,8 +1,8 @@
 'use client'
 import React from 'react'
 import { FiDelete, FiEdit, FiMoreHorizontal, FiPlus, FiPrinter, FiTrash2, FiUserX } from 'react-icons/fi'
-import Dropdown from '@/components/shared/Dropdown'
-import topTost from '@/utils/topTost'
+import Dropdown from '../shared/Dropdown'
+import topTost from '../../../utils/topTost'
 import Link from 'next/link'
 
 const options = [
