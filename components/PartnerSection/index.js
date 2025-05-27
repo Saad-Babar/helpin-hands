@@ -7,7 +7,7 @@ import pimg2 from '/public/images/sponsors/sponsors2.png'
 import pimg3 from '/public/images/sponsors/sponsors3.png'
 import pimg4 from '/public/images/sponsors/sponsors4.png'
 import pimg5 from '/public/images/sponsors/sponsors5.png'
-import pimg6 from '/public/images/sponsors/sponsors6.png'
+// import pimg6 from '/public/images/sponsors/sponsors6.png'
 import Image from "next/image";
 
 const partners = [
@@ -27,9 +27,6 @@ const partners = [
         pImg: pimg5,
     },
     {
-        pImg: pimg6,
-    },
-    {
         pImg: pimg2,
     },
 ]
@@ -38,7 +35,7 @@ var settings = {
     dots: false,
     infinite: true,
     speed: 1500,
-    slidesToShow: 6,
+    slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
     arrows: false,
