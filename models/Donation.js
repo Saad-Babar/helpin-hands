@@ -22,13 +22,20 @@ const donationSchema = new mongoose.Schema({
     deliveryOptions: { type: String },
     pickupAddress: { type: String },
     phoneNumber: { type: String },
-    country: { type: String },   // ✅ Added
-    state: { type: String },     // ✅ Added
-    city: { type: String }       // ✅ Added
+    country: { type: String },
+    state: { type: String },
+    city: { type: String }
   },
 
   // Tab 4 (attachments)
   attachments: { type: [String], default: [] },
+
+  // Donation status (new field)
+  status: {
+    type: String,
+    enum: ['available', 'collected'],
+    default: 'available'
+  },
 
   createdAt: { type: Date, default: Date.now }
 });

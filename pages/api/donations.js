@@ -51,6 +51,7 @@ export default async function handler(req, res) {
       foodType,
       mealSize,
       points,
+      status: 'available', // ✅ Explicitly set status
       details: {
         foodName: details.foodName || '',
         storageCondition: details.storageCondition || '',

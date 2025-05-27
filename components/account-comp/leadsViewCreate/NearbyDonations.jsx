@@ -21,8 +21,11 @@ const NearbyDonations = () => {
 
                 const { donations, role, city } = await res.json()
 
+                // Filter out collected donations
+                const availableDonations = donations.filter(d => d.status !== 'collected')
+
                 setUserRole(role)
-                setDonations(donations)
+                setDonations(availableDonations)
 
                 if (role.toLowerCase() === 'admin') {
                     setUserCity('All Cities')
@@ -40,6 +43,28 @@ const NearbyDonations = () => {
 
         fetchNearbyDonations()
     }, [])
+
+    const handleCollectDonation = async (donationId) => {
+        try {
+            const res = await fetch('/api/collect-donation', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ donationId })
+            })
+
+            const data = await res.json()
+            if (!res.ok) throw new Error(data.message)
+
+            topTost('Donation marked as collected', 'success')
+
+            // Remove from UI immediately
+            setDonations(prev => prev.filter(d => d._id !== donationId))
+        } catch (err) {
+            topTost('Failed to collect donation: ' + err.message, 'error')
+        }
+    }
 
     return (
         <div className="container mt-4">
@@ -73,6 +98,12 @@ const NearbyDonations = () => {
                                         <strong>Donor Email:</strong> {donation.userEmail || 'N/A'}<br />
                                         <strong>Donor Phone:</strong> {donation.userPhone || 'N/A'}
                                     </p>
+                                    <button
+                                        className="btn btn-success mt-2"
+                                        onClick={() => handleCollectDonation(donation._id)}
+                                    >
+                                        Collect Donation
+                                    </button>
                                 </div>
                             </div>
                         </div>
