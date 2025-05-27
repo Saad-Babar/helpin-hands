@@ -13,21 +13,21 @@ import Image from 'next/image';
 const Features = [
     {
         title: 'healthy Food',
-        des: 'We help local nonprofits access the funding, tools, training,',
+        des: 'Our platform ensures donated food is safe and nutritious.',
         icon: icon1,
         width: '80%',
         duration: 1000,
     },
     {
         title: 'Dedicated',
-        des: 'We help local nonprofits access the funding, tools, training,',
+        des: 'Committed to impacting lives through every meal donated.',
         icon: icon2,
         width: '94%',
         duration: 1200,
     },
     {
         title: 'Strong Team',
-        des: 'We help local nonprofits access the funding, tools, training,',
+        des: 'A strong team driving change with passion and dedication.',
         icon: icon3,
         width: '70%',
         duration: 1400,
@@ -66,7 +66,7 @@ const FeaturesSection3 = (props) => {
                                                     </div>
                                                     <div className="keyFeatureBlock__content">
                                                         <h3 className="keyFeatureBlock__heading">
-                                                            <Link onClick={ClickHandler} className="keyFeatureBlock__heading__link" href="/services">
+                                                            <Link onClick={ClickHandler} className="keyFeatureBlock__heading__link" href="#">
                                                                 {features.title}
                                                             </Link>
                                                         </h3>
@@ -93,14 +93,14 @@ const FeaturesSection3 = (props) => {
                                 <Slide direction='up' triggerOnce={'false'} duration={1200}>
                                     <div>
                                         <h2 className="donnerAreaContent__bigTitle wow animate__fadeInUp" data-wow-duration="1200ms" data-wow-delay="200ms">
-                                            <span className="donnerAreaContent__bigTitle__number">250</span>
+                                            <span className="donnerAreaContent__bigTitle__number">783</span>
                                             <span className="donnerAreaContent__bigTitle__text">mln</span>
                                         </h2>
                                     </div>
                                 </Slide>
                                 <Slide direction='up' triggerOnce={'false'} duration={1400}>
                                     <div>
-                                        <h3 className="donnerAreaContent__heading text-uppercase wow animate__fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">People Live with a disability</h3>
+                                        <h3 className="donnerAreaContent__heading text-uppercase wow animate__fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">Face hunger each year</h3>
                                     </div>
                                 </Slide>
                                 <Slide direction='up' triggerOnce={'false'} duration={1600}>

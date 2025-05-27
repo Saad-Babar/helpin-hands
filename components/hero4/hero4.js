@@ -10,7 +10,7 @@ const Hero4 = (props) => {
 
     return (
 
-        <section className="hero hero--style5" style={{ backgroundImage: `url(${'/images/update/african-women-s-hands-holding-a-cup-of-coffee.jpg'})` }}>
+        <section className="hero hero--style5" style={{ backgroundImage: `url(${'/images/update/person-giving-grains.jpg'})` }}>
             <div className="container">
                 <div className="row align-items-center justify-content-between">
                     <div className="col-xl-6 col-lg-8 mb-30">
@@ -30,7 +30,7 @@ const Hero4 = (props) => {
                             </Slide>
                             <Slide direction='up' triggerOnce={'false'} duration={1200}>
                                 <div>
-                                    <p className="hero__text text-white wow animate__fadeInUp animate__animated" data-wow-duration="1200ms" data-wow-delay="400ms">We help nonprofits from Australia to Ukraine (and hundreds of places in between) access the tools, training,</p>
+                                    <p className="hero__text text-white wow animate__fadeInUp animate__animated" data-wow-duration="1200ms" data-wow-delay="400ms">Through our platform, we connect donors, stores, and NGOs to reduce food waste, support vulnerable populations, and build sustainable donation networks.</p>
                                 </div>
                             </Slide>
                             <Slide direction='up' triggerOnce={'false'} duration={1200}>
