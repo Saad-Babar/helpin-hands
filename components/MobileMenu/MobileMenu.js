@@ -13,105 +13,93 @@ const menus = [
     },
     {
         id: 2,
-        title: 'About',
-        link: '/about',
+        title: 'Register',
+        link: '/register',
     },
     {
         id: 3,
-        title: 'Donations',
-        link: '/donation-listing',
-        submenu: [
-            {
-                id: 31,
-                title: 'Donations Listing',
-                link: '/donation-listing'
-            },
-            {
-                id: 32,
-                title: 'Donations Details',
-                link: '/donation-details/Gift-an-Education-Make-a-Life-Better!'
-            }
-        ]
-    },
-    {
-        id: 4,
-        title: 'Blog',
-        link: '/blog',
-        submenu: [
-            {
-                id: 41,
-                title: 'Blog',
-                link: '/blog'
-            },
-            {
-                id: 42,
-                title: 'Blog Details',
-                link: '/blog-details/Start-a-fundraiser-for-yourself-in-World-Charity-Day'
-            },
-        ]
-    },
-    {
-        id: 5,
-        title: 'Pages',
-        link: '/events',
-        submenu: [
-            {
-                id: 51,
-                title: 'Events',
-                link: '/events'
-            },
-            {
-                id: 52,
-                title: 'Event Single',
-                link: '/event-single/The-Human-rights-and-democracy-programme'
-            },
-            {
-                id: 51,
-                title: 'Service',
-                link: '/service'
-            },
-            {
-                id: 52,
-                title: 'Service Single',
-                link: '/service-single/Study-&-Life-Tips'
-            },
-            {
-                id: 53,
-                title: 'Shop',
-                link: '/products'
-            },
-            {
-                id: 54,
-                title: 'Shop Single',
-                link: '/product-single/Yellow-Rocks-Umbrealla'
-            },
-            {
-                id: 55,
-                title: 'Carts',
-                link: '/cart'
-            },
-            {
-                id:56,
-                title: 'Checkout',
-                link: '/checkout'
-            },
-            {
-                id: 345,
-                title: 'Volunteers',
-                link: '/volunteers'
-            },
-            {
-                id: 3454,
-                title: 'Volunteer Single',
-                link: '/team-single/Cameron-Williamson'
-            }
-        ]
-    },
-    {
-        id: 88,
-        title: 'Contact',
-        link: '/contact',
+        title: 'Login',
+        link: '/login',
     }
+    // {
+    //     id: 4,
+    //     title: 'Blog',
+    //     link: '/blog',
+    //     submenu: [
+    //         {
+    //             id: 41,
+    //             title: 'Blog',
+    //             link: '/blog'
+    //         },
+    //         {
+    //             id: 42,
+    //             title: 'Blog Details',
+    //             link: '/blog-details/Start-a-fundraiser-for-yourself-in-World-Charity-Day'
+    //         },
+    //     ]
+    // },
+    // {
+    //     id: 5,
+    //     title: 'Pages',
+    //     link: '/events',
+    //     submenu: [
+    //         {
+    //             id: 51,
+    //             title: 'Events',
+    //             link: '/events'
+    //         },
+    //         {
+    //             id: 52,
+    //             title: 'Event Single',
+    //             link: '/event-single/The-Human-rights-and-democracy-programme'
+    //         },
+    //         {
+    //             id: 51,
+    //             title: 'Service',
+    //             link: '/service'
+    //         },
+    //         {
+    //             id: 52,
+    //             title: 'Service Single',
+    //             link: '/service-single/Study-&-Life-Tips'
+    //         },
+    //         {
+    //             id: 53,
+    //             title: 'Shop',
+    //             link: '/products'
+    //         },
+    //         {
+    //             id: 54,
+    //             title: 'Shop Single',
+    //             link: '/product-single/Yellow-Rocks-Umbrealla'
+    //         },
+    //         {
+    //             id: 55,
+    //             title: 'Carts',
+    //             link: '/cart'
+    //         },
+    //         {
+    //             id:56,
+    //             title: 'Checkout',
+    //             link: '/checkout'
+    //         },
+    //         {
+    //             id: 345,
+    //             title: 'Volunteers',
+    //             link: '/volunteers'
+    //         },
+    //         {
+    //             id: 3454,
+    //             title: 'Volunteer Single',
+    //             link: '/team-single/Cameron-Williamson'
+    //         }
+    //     ]
+    // },
+    // {
+    //     id: 88,
+    //     title: 'Contact',
+    //     link: '/contact',
+    // }
 
 
 ]

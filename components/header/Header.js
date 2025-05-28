@@ -58,7 +58,7 @@ const Header = (props) => {
                             <div className="header__wrapper">
                                 <div className="header__logo">
                                     <Link onClick={ClickHandler} href="/home-4" className="header__logo__link">
-                                        <Image src={logo} alt="Gainioz" className="header__logo__image" />
+                                        <Image src={logo} alt="Helpin Hands" className="header__logo__image" />
                                     </Link>
                                 </div>
                                 <div className="header__menu">
@@ -72,16 +72,16 @@ const Header = (props) => {
                                                     <li className="dropdown_item-4"><Link onClick={ClickHandler} href="/home-4">Home 4</Link></li>
                                                 </ul> */}
                                             </li>
-                                            <li><Link onClick={ClickHandler} href="/about">About</Link></li>
+                                            {/* <li><Link onClick={ClickHandler} href="/about">About</Link></li> */}
                                             {/* <li><Link onClick={ClickHandler} href="/register">Register</Link></li> */}
-                                            <li className="dropdown">
+                                            {/* <li className="dropdown">
                                                 <Link onClick={ClickHandler} href="/donation-listing">Donations</Link>
                                                 <ul className="dropdown_menu dropdown_menu-2">
                                                     <li className="dropdown_item-1"><Link onClick={ClickHandler} href="/donation-listing">Donations Listing</Link></li>
                                                     <li className="dropdown_item-2"><Link onClick={ClickHandler} href="/donation-details/Gift-an-Education-Make-a-Life-Better!">Donations Details</Link></li>
                                                 </ul>
-                                            </li>
-                                            <li className="dropdown"><Link onClick={ClickHandler} href="/home">Pages</Link>
+                                            </li> */}
+                                            {/* <li className="dropdown"><Link onClick={ClickHandler} href="/home">Pages</Link>
                                                 <ul className="dropdown_menu dropdown_menu-2">
                                                     <li className="dropdown_item-1"><Link onClick={ClickHandler} href="/events">Events</Link></li>
                                                     <li className="dropdown_item-1"><Link onClick={ClickHandler} href="/event-single/The-Human-rights-and-democracy-programme">Event Single</Link></li>
@@ -106,14 +106,14 @@ const Header = (props) => {
                                                     <li className="dropdown_item-1"><Link onClick={ClickHandler} href="/blog">Blog Page</Link></li>
                                                     <li className="dropdown_item-2"><Link onClick={ClickHandler} href="/blog-details/Start-a-fundraiser-for-yourself-in-World-Charity-Day">Blog Details</Link></li>
                                                 </ul>
-                                            </li>
+                                            </li> */}
                                             <li><Link onClick={ClickHandler} href="/register">Register</Link></li>
                                             <li><Link onClick={ClickHandler} href="/login">Login</Link></li>
                                         </ul>
                                     </nav>
                                 </div>
                                 <div className="header__right">
-                                    <div className="header__actions">
+                                    {/* <div className="header__actions">
                                         <ul>
                                             <li>
                                                 <Link onClick={ClickHandler} href="/cart">
@@ -131,9 +131,9 @@ const Header = (props) => {
                                                 </span>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </div> */}
                                     <div className="header__button">
-                                        <Link onClick={ClickHandler} className="btn btn--styleOne btn--secondary it-btn" href="/donation-listing">
+                                        <Link onClick={ClickHandler} className="btn btn--styleOne btn--secondary it-btn" href="/login">
                                             <span className="btn__text">donate now</span>
                                             <i className="fa-solid fa-heart btn__icon"></i>
                                             <span className="it-btn__inner">
@@ -172,7 +172,7 @@ const Header = (props) => {
                         <Image className="mean-bar__logo" alt="Techkit" src={logo} />
                     </Link>
                     <div className="header__right">
-                        <div className="header__actions">
+                        {/* <div className="header__actions">
                             <ul>
                                 <li>
                                     <Link onClick={ClickHandler} href="/products">
@@ -198,7 +198,7 @@ const Header = (props) => {
                                     </button>
                                 </li>
                             </ul>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
@@ -215,7 +215,7 @@ const Header = (props) => {
                         <MobileMenu />
                     </nav>
                 </div>
-                <div className="itSocial itSocial--sidebar mb-40">
+                {/* <div className="itSocial itSocial--sidebar mb-40">
                     <ul>
                         <li>
                             <Link onClick={ClickHandler} className="facebook" href="/" rel="nofollow">
@@ -238,11 +238,11 @@ const Header = (props) => {
                             </Link>
                         </li>
                     </ul>
-                </div>
+                </div> */}
                 <div className="cc__button">
                     <div className="header__button">
-                        <Link onClick={ClickHandler} className="btn btn--styleOne btn--secondary it-btn" href="/donation-listing">
-                            <span className="btn__text">Contact Us</span>
+                        <Link onClick={ClickHandler} className="btn btn--styleOne btn--secondary it-btn" href="/login">
+                            <span className="btn__text">Donate Now</span>
                             <i className="fa-solid fa-heart btn__icon"></i>
                             <span className="it-btn__inner">
                                 <span className="it-btn__blobs">

@@ -3,6 +3,12 @@ import Link from 'next/link'
 import shape from '/public/images/shapes/footerShape2.png'
 import logo from '/public/images/logos/logo_2.svg'
 import Image from 'next/image'
+import team1 from '/public/images/update/team-small-1.jpg'
+import team6 from '/public/images/update/team-small-2.jpg'
+import team3 from '/public/images/update/team-small-3.jpg'
+import team4 from '/public/images/update/team-small-4.jpg'
+import team5 from '/public/images/update/team-small-5.jpg'
+import team2 from '/public/images/update/team-small-6.jpg'
 
 const ClickHandler = () => {
     window.scrollTo(10, 0);
@@ -24,7 +30,7 @@ const Footer = (props) => {
                             <Image src={logo} alt="Gainioz Logo" className="footer__logo__image" />
                         </div>
                     </div>
-                    <div className="col">
+                    {/* <div className="col">
                         <div className="footer__social itSocial">
                             <ul>
                                 <li>
@@ -54,7 +60,7 @@ const Footer = (props) => {
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                    </div> */}
                     <div className="col-12">
                         <hr className="footer__line" />
                     </div>
@@ -65,15 +71,20 @@ const Footer = (props) => {
                             <div className="col-lg-2 col-md-4 mb-30">
                                 <div className="footer__widget">
                                     <div className="footer__title">
-                                        <h2 className="footer__heading text-uppercase text-white">About us</h2>
+                                        <h2 className="footer__heading text-uppercase text-white">Contact us</h2>
                                     </div>
                                     <div className="footer__menu">
-                                        <ul>
-                                            <li><Link onClick={ClickHandler} href="/contact">Policy Priorities</Link></li>
-                                            <li><Link onClick={ClickHandler} href="/contact">Careers</Link></li>
-                                            <li><Link onClick={ClickHandler} href="/donation-listing">Internships</Link></li>
-                                            <li><Link onClick={ClickHandler} href="/donation-listing">Financial Reports</Link></li>
-                                            <li><Link onClick={ClickHandler} href="/contact">Contact Us</Link></li>
+                                        <ul className="footer-list mb-30">
+                                            <li>
+                                                M. Saad Mubeen <Link onClick={ClickHandler} href="/home-4">2021-BSCS-057</Link>
+                                            </li>
+                                            <li>
+                                                Syed M. Hamza <Link onClick={ClickHandler} href="/home-4">2021-BSCS-077</Link>
+                                            </li>
+                                            <li>
+                                                <Link onClick={ClickHandler} href="/home-4">The University Of Faisalabad</Link>
+                                            </li>
+
                                         </ul>
                                     </div>
                                 </div>
@@ -85,11 +96,10 @@ const Footer = (props) => {
                                     </div>
                                     <div className="footer__menu">
                                         <ul>
-                                            <li><Link onClick={ClickHandler} href="/donation-listing">Donate Now</Link></li>
-                                            <li><Link onClick={ClickHandler} href="/products">Store</Link></li>
-                                            <li><Link onClick={ClickHandler} href="/contact">Reports</Link></li>
-                                            <li><Link onClick={ClickHandler} href="/contact">Press Releases</Link></li>
-                                            <li><Link onClick={ClickHandler} href="/contact">Privacy & Policy</Link></li>
+                                            <li><Link onClick={ClickHandler} href="/login">Donate Now</Link></li>
+
+                                            <li><Link onClick={ClickHandler} href="/login">Become Volunteer</Link></li>
+                                            <li><Link onClick={ClickHandler} href="/login">Register your Store</Link></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -101,31 +111,49 @@ const Footer = (props) => {
                                     </div>
                                     <div className="footer__menu">
                                         <ul>
-                                            <li><Link onClick={ClickHandler} href="/">Home</Link></li>
-                                            <li><Link onClick={ClickHandler} href="/about">About us</Link></li>
-                                            <li><Link onClick={ClickHandler} href="/contact">Contact us</Link></li>
-                                            <li><Link onClick={ClickHandler} href="/donation-listing">Donation</Link></li>
-                                            <li><Link onClick={ClickHandler} href="/stories">Join Volentter</Link></li>
+                                            <li><Link onClick={ClickHandler} href="/home-4">Home</Link></li>
+                                            {/* <li><Link onClick={ClickHandler} href="/about">About us</Link></li> */}
+                                            {/* <li><Link onClick={ClickHandler} href="/contact">Contact us</Link></li> */}
+                                            <li><Link onClick={ClickHandler} href="/login">Donation</Link></li>
+                                            <li><Link onClick={ClickHandler} href="/login">Join Volentter</Link></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-lg-5 mb-30">
-                                <form action="#" method="post" className="footer__newsletter" onSubmit={SubmitHandler}> 
-                                    <div className="footer__title">
-                                        <h2 className="footer__heading text-uppercase text-white">News Latter</h2>
-                                    </div>
-                                    <div className="footer__newsletter__formGroup mb-20">
-                                        <input type="email" className="footer__newsletter__input" placeholder="Enter mail" />
-                                        <input className="footer__newsletter__button" type="submit" value="Subscribe" />
-                                    </div>
-                                    <div className="footer__newsletter__formGroup">
-                                        <input id="agree" type="checkbox" className="footer__newsletter__check form-check-input" />
-                                        <label className="footer__newsletter__label" htmlFor="agree">I agree that my submitted data is
-                                            being
-                                            collected and stored.</label>
-                                    </div>
-                                </form>
+                                <h4 className="heading--tertiary mb-4 ff-primary">Turn Leftovers into Lifesavers</h4>
+                                                            <div className="row g-3 mt-3">
+                                                                <div className="col-6 col-sm-4">
+                                                                    <Link onClick={ClickHandler} href="/home-4" className="w-100">
+                                                                        <Image src={team1} className="w-100" alt="" />
+                                                                    </Link>
+                                                                </div>
+                                                                <div className="col-6 col-sm-4">
+                                                                    <Link onClick={ClickHandler} href="/home-4" className="w-100">
+                                                                        <Image src={team2} className="w-100" alt="" />
+                                                                    </Link>
+                                                                </div>
+                                                                <div className="col-6 col-sm-4">
+                                                                    <Link onClick={ClickHandler} href="/home-4" className="w-100">
+                                                                        <Image src={team3} className="w-100" alt="" />
+                                                                    </Link>
+                                                                </div>
+                                                                <div className="col-6 col-sm-4">
+                                                                    <Link onClick={ClickHandler} href="/home-4" className="w-100">
+                                                                        <Image src={team4} className="w-100" alt="" />
+                                                                    </Link>
+                                                                </div>
+                                                                <div className="col-6 col-sm-4">
+                                                                    <Link onClick={ClickHandler} href="/home-4" className="w-100">
+                                                                        <Image src={team5} className="w-100" alt="" />
+                                                                    </Link>
+                                                                </div>
+                                                                <div className="col-6 col-sm-4">
+                                                                    <Link onClick={ClickHandler} href="/home-4" className="w-100">
+                                                                        <Image src={team6} className="w-100" alt="" />
+                                                                    </Link>
+                                                                </div>
+                                                            </div>
                             </div>
                         </div>
                     </div>
@@ -138,7 +166,7 @@ const Footer = (props) => {
                             </div>
                             <div className="col mb-20">
                                 <div className="footer__copyright pt-20">
-                                    <p className="footer__copyright__text mb-0">Copyright@example 2024 all right receved</p>
+                                    <p className="footer__copyright__text mb-0">Copyright@PCS-19 2025 all right receved</p>
                                 </div>
                             </div>
                         </div>

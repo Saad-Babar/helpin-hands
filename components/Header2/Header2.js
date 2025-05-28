@@ -159,7 +159,7 @@ const Header2 = (props) => {
                         <Image className="mean-bar__logo" alt="Techkit" src={logo2} />
                     </Link>
                     <div className="header__right">
-                        <div className="header__actions">
+                        {/* <div className="header__actions">
                             <ul>
                                 <li>
                                     <Link onClick={ClickHandler} href="/products">
@@ -185,7 +185,7 @@ const Header2 = (props) => {
                                     </button>
                                 </li>
                             </ul>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
@@ -228,8 +228,8 @@ const Header2 = (props) => {
                 </div> */}
                 <div className="cc__button">
                     <div className="header__button">
-                        <Link onClick={ClickHandler} className="btn btn--styleOne btn--secondary it-btn" href="/donation-listing">
-                            <span className="btn__text">Contact Us</span>
+                        <Link onClick={ClickHandler} className="btn btn--styleOne btn--secondary it-btn" href="/login">
+                            <span className="btn__text">Donate Now</span>
                             <i className="fa-solid fa-heart btn__icon"></i>
                             <span className="it-btn__inner">
                                 <span className="it-btn__blobs">

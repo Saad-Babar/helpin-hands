@@ -11,7 +11,7 @@ import Image from 'next/image'
 
 const ClickHandler = () => {
     window.scrollTo(10, 0);
-}
+} 
 
 
 const Footer2 = (props) => {
@@ -93,7 +93,7 @@ const Footer2 = (props) => {
                         <div className="col-lg-2 mb-30">
                             <h4 className="heading--tertiary mb-4 ff-primary">ABOUT US</h4>
                             <ul className="footer-list">
-                                <li><Link onClick={ClickHandler} href="/about">About Us</Link></li>
+                                <li><Link onClick={ClickHandler} href="/home-4">About Us</Link></li>
                                 {/* <li><Link onClick={ClickHandler} href="/service">Service</Link></li>
                                 <li><Link onClick={ClickHandler} href="/donation-listing">Donation</Link></li>
                                 <li><Link onClick={ClickHandler} href="/donation-listing">Privacy</Link></li>

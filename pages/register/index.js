@@ -49,7 +49,7 @@ const ContactPage = (props) => {
                     <div className={`fixed top-0 left-0 w-full z-50 p-3 alert alert-${notification.type} shadow-lg text-center`} role="alert">
                         {notification.message}
                     </div>
-                )} */}
+                )} */} 
 
                 <div className="container mt-5 register--layout1">
                     <div className="row">

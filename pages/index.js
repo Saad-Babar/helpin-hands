@@ -19,7 +19,7 @@ const HomePage = () => {
                 <Header2 />
                 <main className="main main--wrapper4">
                     <Hero4 />
-                    <About4 />
+                    <About4 /> 
                     <Testimonial />
                     {/* <StoriesSection3 /> */}
                     {/* <BlogSection4 /> */}
