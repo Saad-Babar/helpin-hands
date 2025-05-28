@@ -8,29 +8,8 @@ const menus = [
     {
         id: 1,
         title: 'Home',
-        link: '/home',
-        submenu: [
-            {
-                id: 11,
-                title: 'Home 1',
-                link: '/home'
-            },
-            {
-                id: 12,
-                title: 'Home 2',
-                link: '/home-2'
-            },
-            {
-                id: 13,
-                title: 'Home 3',
-                link: '/home-3'
-            },
-            {
-                id: 14,
-                title: 'Home 4',
-                link: '/home-4'
-            }
-        ]
+        link: '/home-4',
+        
     },
     {
         id: 2,

@@ -4,6 +4,7 @@ import LeadsCreateHeader from '../../../../../components/account-comp/leadsViewC
 import LeadsCreateContent from '../../../../../components/account-comp/leadsViewCreate/LeadsCreateContent'
 import DuplicateLayout from '../../../duplicateLayout'
 import AdminStyleWrapper from '../../../../../components/AdminStyleWrapper'
+import Footer from '../../../../../components/account-comp/shared/Footer'
 const page = () => {
   return (
     <AdminStyleWrapper>
@@ -18,6 +19,7 @@ const page = () => {
               <LeadsCreateContent />
             </div>
           </div>
+          <Footer></Footer>
         </div>
       </DuplicateLayout>
     </AdminStyleWrapper>

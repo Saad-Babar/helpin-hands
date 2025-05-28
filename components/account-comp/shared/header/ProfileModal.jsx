@@ -10,7 +10,7 @@ const subscriptionsList = ["Plan", "Billings", "Referrals", "Payments", "Stateme
 
 const ProfileModal = () => {
   const [user, setUser] = useState(null);
-  const [points, setPoints] = useState(0); // ✅ total points state
+  const [points, setPoints] = useState(0);
 
   useEffect(() => {
     fetch('/api/profile')
@@ -70,7 +70,6 @@ const ProfileModal = () => {
               </div>
             </div>
           </div>
-          {/* You can optionally add other menu items or leave blank for guests */}
         </div>
       </div>
     );
@@ -98,13 +97,19 @@ const ProfileModal = () => {
               className="img-fluid user-avtar"
             />
             <div>
-              <h6 className="text-dark mb-0">{user.name} <span className="badge bg-soft-success text-success ms-1">PRO</span></h6>
+              <h6 className="text-dark mb-0">
+                {user.name}{' '}
+                {user.role && (
+                  <span className="badge bg-soft-success text-success ms-1 text-uppercase">
+                    {user.role}
+                  </span>
+                )}
+              </h6>
               <span className="fs-12 fw-medium text-muted">{user.email}</span>
             </div>
           </div>
         </div>
 
-        {/* Active status dropdown */}
         <div className="dropdown-item">
           <span className="hstack">
             <i className={`wd-10 ht-10 border border-2 border-gray-1 rounded-circle me-2 ${getColor(user.status)}`}></i>
@@ -112,63 +117,14 @@ const ProfileModal = () => {
           </span>
         </div>
 
-        {/* <div className="dropdown-divider"></div> */}
-
-        {/* Subscriptions dropdown */}
-        {/* <div className="dropdown">
-          <a href="#" className="dropdown-item" data-bs-toggle="dropdown">
-            <span className="hstack">
-              <FiDollarSign className="me-2" />
-              <span>Subscriptions</span>
-            </span>
-            <FiChevronRight className="ms-auto me-0" />
-          </a>
-          <div className="dropdown-menu">
-            {subscriptionsList.map((item, index) => (
-              <Fragment key={index}>
-                {index === activePosition.length - 1 && <div className="dropdown-divider"></div>}
-                <a href="#" className="dropdown-item">
-                  <span className="hstack">
-                    <i className="wd-5 ht-5 bg-gray-500 rounded-circle me-3"></i>
-                    <span>{item}</span>
-                  </span>
-                </a>
-              </Fragment>
-            ))}
-          </div>
-        </div> */}
-
         <div className="dropdown-divider"></div>
 
-        {/* Other menu items */}
-        {/* <a href="#" className="dropdown-item">
-          <FiUser />
-          <span>Profile Details</span>
-        </a>
-        <a href="#" className="dropdown-item">
-          <FiActivity />
-          <span>Activity Feed</span>
-        </a>
-        <a href="#" className="dropdown-item">
-          <FiDollarSign />
-          <span>Billing Details</span>
-        </a>
-        <a href="#" className="dropdown-item">
-          <FiBell />
-          <span>Notifications</span>
-        </a>
-        <a href="#" className="dropdown-item">
-          <FiSettings />
-          <span>Account Settings</span>
-        </a> */}
-
         <a href="#" className="dropdown-item disabled d-flex align-items-center" style={{ cursor: 'default', opacity: 0.7 }}>
-  <FiDollarSign size={18} className="me-2" />
-  <span className="fw-semibold" style={{ fontSize: '0.9rem' }}>
-    Total Points Earned: <span className="text-primary">{points}</span>
-  </span>
-</a>
-
+          <FiDollarSign size={18} className="me-2" />
+          <span className="fw-semibold" style={{ fontSize: '0.9rem' }}>
+            Total Points Earned: <span className="text-primary">{points}</span>
+          </span>
+        </a>
 
         <div className="dropdown-divider"></div>
 

@@ -134,7 +134,7 @@ const FeaturesSection3 = (props) => {
                     </div>
                 </div>
             </div>
-            <DonationListSection2 />
+            {/* <DonationListSection2 /> */}
         </div>
     );
 }

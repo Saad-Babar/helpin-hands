@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+
 import Header2 from '../../components/Header2/Header2';
 import Hero4 from '../../components/hero4/hero4';
 import About4 from '../../components/about4/about4';
@@ -20,8 +21,8 @@ const HomePage = () => {
                     <Hero4 />
                     <About4 />
                     <Testimonial />
-                    <StoriesSection3 />
-                    <BlogSection4 />
+                    {/* <StoriesSection3 /> */}
+                    {/* <BlogSection4 /> */}
                     <PartnerSection pClass={'sponsors--style2'}/>
                 </main>
                 <Footer2 />

@@ -19,6 +19,7 @@ const TeamProgress = dynamic(() => import('../../components/account-comp/widgets
 const DuplicateLayout = dynamic(() => import('./duplicateLayout'), { ssr: false });
 
 import { projectsDataTwo } from '../../utils/fackData/projectsDataTwo';
+import Footer from '../../components/account-comp/shared/Footer';
 
 const Home = () => {
   return (
@@ -46,6 +47,7 @@ const Home = () => {
               <TeamProgress title={"Team Progress"} footerShow={true} /> */}
             </div>
           </div>
+          <Footer />
         </div>
       </DuplicateLayout>
     </AdminStyleWrapper>

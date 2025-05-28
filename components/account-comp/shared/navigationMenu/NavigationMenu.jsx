@@ -18,10 +18,10 @@ const NavigationManu = () => {
         <nav className={`nxl-navigation ${navigationOpen ? "mob-navigation-active" : ""}`}>
             <div className="navbar-wrapper">
                 <div className="m-header">
-                    <Link href="/" className="b-brand">
+                    <Link href="/account" className="b-brand">
                         {/* <!-- ========   change your logo hear   ============ --> */}
-                        <Image width={140} height={30} src="/admin-images/logo-full.png" alt="logo" className="logo logo-lg" />
-                        <Image width={140} height={30} src="/admin-images/logo-abbr.png" alt="logo" className="logo logo-sm" />
+                        <Image width={140} height={30} src="/admin-images/logo-hh.png" alt="logo" className="logo logo-lg" />
+                        <Image width={140} height={30} src="/admin-images/logo-hh.png" alt="logo" className="logo logo-sm" />
                     </Link>
                 </div>
 

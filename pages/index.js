@@ -21,8 +21,8 @@ const HomePage = () => {
                     <Hero4 />
                     <About4 />
                     <Testimonial />
-                    <StoriesSection3 />
-                    <BlogSection4 />
+                    {/* <StoriesSection3 /> */}
+                    {/* <BlogSection4 /> */}
                     <PartnerSection pClass={'sponsors--style2'}/>
                 </main>
                 <Footer2 />

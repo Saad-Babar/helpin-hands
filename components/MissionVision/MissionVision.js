@@ -52,96 +52,82 @@ const MissionVision = (props) => {
                                 <TabContent activeTab={activeTab} className="mb-30">
                                     <TabPane tabId="1">
                                         <div className="mvvTabs__content">
-                                            <h2 className="mvvTabs__heading">Listen, Act, Learn, Repeat</h2>
-                                            <p className="mvvTabs__text mb-25">There are many variations of passages of Lorem Ipsum available, but
-                                                the
-                                                majority have suffered
-                                                alteration in some form,
-                                                by injected humour, or randomised words which don't look even slightly believable. If you are
-                                                going to use a passage of
-                                                Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle There
-                                                are many variations</p>
+                                            <h2 className="mvvTabs__heading">Saving Food, Serving Humanity</h2>
+                                            <p className="mvvTabs__text mb-25">
+                                                Our mission is to combat food waste and hunger through a secure, organized, and technology-driven platform. Every year, over $1 trillion worth of food is wasted globally—causing 8–10% of all greenhouse gas emissions and occupying nearly 30% of agricultural land. Meanwhile, 150 million children under 5 suffer from stunted growth due to malnutrition. We aim to connect donors, NGOs, and volunteers to ensure that surplus food reaches those in need—safely and efficiently.
+                                            </p>
                                             <div className="mvvTabs__skills">
                                                 <div className="mvvTabs__skills__block mb-20">
-                                                    <h4 className="mvvTabs__skills__counter"><span className="mvvTabs__skills__counter">45</span>%</h4>
-                                                    <span className="mvvTabs__skills__title color-title">kids need help</span>
+                                                    <h4 className="mvvTabs__skills__counter"><span className="mvvTabs__skills__counter">30</span>%</h4>
+                                                    <span className="mvvTabs__skills__title color-title">agricultural land wasted</span>
                                                 </div>
                                                 <div className="mvvTabs__skills__block mb-20">
-                                                    <h4 className="mvvTabs__skills__counter">$<span className="mvvTabs__skills__counter">140</span>k</h4>
-                                                    <span className="mvvTabs__skills__title color-title">raised Now</span>
+                                                    <h4 className="mvvTabs__skills__counter">$<span className="mvvTabs__skills__counter">1</span>T</h4>
+                                                    <span className="mvvTabs__skills__title color-title">food wasted annually</span>
                                                 </div>
                                                 <div className="mvvTabs__skills__block mb-20">
-                                                    <h4 className="mvvTabs__skills__counter"><span className="mvvTabs__skills__counter">189</span>+</h4>
-                                                    <span className="mvvTabs__skills__title color-title">Voleenteer</span>
+                                                    <h4 className="mvvTabs__skills__counter"><span className="mvvTabs__skills__counter">150</span>M</h4>
+                                                    <span className="mvvTabs__skills__title color-title">children affected</span>
                                                 </div>
                                             </div>
-                                            <p className="mvvTabs__text mb-0">There are many variations of passages of Lorem Ipsum available, but
-                                                the
-                                                majority have suffered alteration in some form,
-                                                by injected humour.</p>
+                                            <p className="mvvTabs__text mb-0">
+                                                With this platform, we listen to community needs, act through technology, learn from real-time feedback, and repeat the process to create a cycle of sustainable change. Together, we can build a food-secure and waste-free future.
+                                            </p>
                                         </div>
+
                                     </TabPane>
                                     <TabPane tabId="2">
                                         <div className="mvvTabs__content">
-                                            <h2 className="mvvTabs__heading">Do good For Others</h2>
-                                            <p className="mvvTabs__text mb-25">There are many variations of passages of Lorem Ipsum available, but
-                                                the
-                                                majority have suffered
-                                                alteration in some form,
-                                                by injected humour, or randomised words which don't look even slightly believable. If you are
-                                                going to use a passage of
-                                                Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle There
-                                                are many variations</p>
-                                            <div className="mvvTabs__skills">
-                                                <div className="mvvTabs__skills__block mb-20">
-                                                    <h4 className="mvvTabs__skills__counter"><span className="mvvTabs__skills__counter">35</span>%</h4>
-                                                    <span className="mvvTabs__skills__title color-title">kids need help</span>
-                                                </div>
-                                                <div className="mvvTabs__skills__block mb-20">
-                                                    <h4 className="mvvTabs__skills__counter">$<span className="mvvTabs__skills__counter">100</span>k</h4>
-                                                    <span className="mvvTabs__skills__title color-title">raised Now</span>
-                                                </div>
-                                                <div className="mvvTabs__skills__block mb-20">
-                                                    <h4 className="mvvTabs__skills__counter"><span className="mvvTabs__skills__counter">152</span>+</h4>
-                                                    <span className="mvvTabs__skills__title color-title">Voleenteer</span>
-                                                </div>
-                                            </div>
-                                            <p className="mvvTabs__text mb-0">There are many variations of passages of Lorem Ipsum available, but
-                                                the
-                                                majority have suffered alteration in some form,
-                                                by injected humour.</p>
-                                        </div>
+    <h2 className="mvvTabs__heading">A Future Without Hunger or Waste</h2>
+    <p className="mvvTabs__text mb-25">
+        Our vision is a world where no edible food goes to waste, and no one sleeps hungry. By creating a smart, secure, and collaborative food donation ecosystem, we envision bridging the gap between abundance and need—using technology to empower generosity and reduce environmental harm. We strive to normalize food donations and make it as easy and trusted as ordering online.
+    </p>
+    <div className="mvvTabs__skills">
+    <div className="mvvTabs__skills__block mb-20">
+        <h4 className="mvvTabs__skills__counter"><span className="mvvTabs__skills__counter">40</span>%</h4>
+        <span className="mvvTabs__skills__title color-title">targeted food waste reduction</span>
+    </div>
+    <div className="mvvTabs__skills__block mb-20">
+        <h4 className="mvvTabs__skills__counter"><span className="mvvTabs__skills__counter">500</span>+</h4>
+        <span className="mvvTabs__skills__title color-title">planned donations in pilot phase</span>
+    </div>
+    <div className="mvvTabs__skills__block mb-20">
+        <h4 className="mvvTabs__skills__counter"><span className="mvvTabs__skills__counter">100</span>+</h4>
+        <span className="mvvTabs__skills__title color-title">expected volunteers at launch</span>
+    </div>
+</div>
+
+    <p className="mvvTabs__text mb-0">
+        Our platform isn't just about food—it’s about dignity, sustainability, and creating a cycle of care. We believe in tech for good, and we’re here to lead the way.
+    </p>
+</div>
+
                                     </TabPane>
                                     <TabPane tabId="3">
                                         <div className="mvvTabs__content">
-                                            <h2 className="mvvTabs__heading">Foodless People In Sudan</h2>
-                                            <p className="mvvTabs__text mb-25">There are many variations of passages of Lorem Ipsum available, but
-                                                the
-                                                majority have suffered
-                                                alteration in some form,
-                                                by injected humour, or randomised words which don't look even slightly believable. If you are
-                                                going to use a passage of
-                                                Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle There
-                                                are many variations</p>
-                                            <div className="mvvTabs__skills">
-                                                <div className="mvvTabs__skills__block mb-20">
-                                                    <h4 className="mvvTabs__skills__counter"><span className="mvvTabs__skills__counter">65</span>%</h4>
-                                                    <span className="mvvTabs__skills__title color-title">kids need help</span>
-                                                </div>
-                                                <div className="mvvTabs__skills__block mb-20">
-                                                    <h4 className="mvvTabs__skills__counter">$<span className="mvvTabs__skills__counter">190</span>k</h4>
-                                                    <span className="mvvTabs__skills__title color-title">raised Now</span>
-                                                </div>
-                                                <div className="mvvTabs__skills__block mb-20">
-                                                    <h4 className="mvvTabs__skills__counter"><span className="mvvTabs__skills__counter">220</span>+</h4>
-                                                    <span className="mvvTabs__skills__title color-title">Voleenteer</span>
-                                                </div>
-                                            </div>
-                                            <p className="mvvTabs__text mb-0">There are many variations of passages of Lorem Ipsum available, but
-                                                the
-                                                majority have suffered alteration in some form,
-                                                by injected humour.</p>
-                                        </div>
+    <h2 className="mvvTabs__heading">Our Core Values</h2>
+    <p className="mvvTabs__text mb-25">
+        Our project is built on the belief that no one should go hungry while food is being wasted. We are committed to building a system that encourages generosity, ensures transparency, and upholds the dignity of every person involved—from donors to receivers. As we prepare for launch, these values guide every line of code and every decision we make.
+    </p>
+    <div className="mvvTabs__skills">
+        <div className="mvvTabs__skills__block mb-20">
+            <h4 className="mvvTabs__skills__counter"><span className="mvvTabs__skills__counter">100</span>%</h4>
+            <span className="mvvTabs__skills__title color-title">Transparency in Donations</span>
+        </div>
+        <div className="mvvTabs__skills__block mb-20">
+            <h4 className="mvvTabs__skills__counter"><span className="mvvTabs__skills__counter">0</span>%</h4>
+            <span className="mvvTabs__skills__title color-title">Food Wastage Goal</span>
+        </div>
+        <div className="mvvTabs__skills__block mb-20">
+            <h4 className="mvvTabs__skills__counter"><span className="mvvTabs__skills__counter">1</span> Vision</h4>
+            <span className="mvvTabs__skills__title color-title">One Ummah, Shared Responsibility</span>
+        </div>
+    </div>
+    <p className="mvvTabs__text mb-0">
+        Our mission is not just to reduce food waste, but to create a trusted ecosystem that connects people in need with those who have something to give—securely, responsibly, and compassionately.
+    </p>
+</div>
+
                                     </TabPane>
                                 </TabContent>
                             </div>

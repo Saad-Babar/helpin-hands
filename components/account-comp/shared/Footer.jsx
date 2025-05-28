@@ -8,9 +8,8 @@ const Footer = () => {
                 {new Date().getFullYear()}
             </p>
             <div className="d-flex align-items-center gap-4">
-                <a href="#" className="fs-11 fw-semibold text-uppercase">Help</a>
-                <a href="#" className="fs-11 fw-semibold text-uppercase">Terms</a>
-                <a href="#" className="fs-11 fw-semibold text-uppercase">Privacy</a>
+                <a href="#" className="fs-11 fw-semibold text-uppercase">M. Saad Mubeen (2021-BSCS-057)</a>
+                <a href="#" className="fs-11 fw-semibold text-uppercase">Syed M. Hamza (2021-BSCS-077)</a>
             </div>
         </footer>
     )

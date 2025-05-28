@@ -58,7 +58,7 @@ const About4 = () => {
                   While there are many initiatives out there, our foundation stands out by leveraging technology to make donation processes transparent, efficient, and impactful.
                 </p>
                 <span className="aboutContent__quote">join our Action and everyone can help</span>
-                <Link onClick={ClickHandler} className="btn btn--styleOne btn--secondary it-btn" href="/donation-listing">
+                <Link onClick={ClickHandler} className="btn btn--styleOne btn--secondary it-btn" href="/login">
                   <span className="btn__text">donate now</span>
                   <i className="fa-solid fa-heart btn__icon"></i>
                   <span className="it-btn__inner">

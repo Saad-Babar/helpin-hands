@@ -19,29 +19,30 @@ import Image from 'next/image';
 
 const testimonial = [
     {
-        id: '01',
-        tImg: tImg1,
-        Title: 'Amazing services',
-        Des: "I ah4preciate your amazing services and professional staff for all your hard work and creative thinking! It was fun, and I hope to work with you again soon",
-        Name: 'Roman Dymtro',
-        sub: 'Director of Marketing',
-    },
-    {
-        id: '02',
-        tImg: tImg1,
-        Title: 'We Are Satisfied',
-        Des: "I ah4preciate your amazing services and professional staff for all your hard work and creative thinking! It was fun, and I hope to work with you again soon",
-        Name: 'Michel johnson',
-        sub: 'Tech Startup Founder',
-    },
-    {
-        id: '03',
-        tImg: tImg1,
-        Title: 'Fast Respond',
-        Des: "I ah4preciate your amazing services and professional staff for all your hard work and creative thinking! It was fun, and I hope to work with you again soon",
-        Name: 'Bohdan Maksym',
-        sub: 'Monprofit Director',
-    },
+    id: '01',
+    tImg: tImg1,
+    Title: 'Exceptional Platform!',
+    Des: "This initiative truly impressed us! The food donation process is seamless, and the verification system adds a layer of trust. Hats off to the developer for creating something so impactful and user-friendly.",
+    Name: 'Mr. Abubakar (FYP Supervisor)',
+    sub: 'FYP Supervisor',
+},
+{
+    id: '02',
+    tImg: tImg2,
+    Title: 'Innovative and Reliable',
+    Des: "Your platform solves a real-world problem with smart technology. The expiry tracker and location-based donation matching are game-changers. We’re excited to see how far this project goes!",
+    Name: 'Miss Rabee (Co Supervisor)',
+    sub: 'Tech Startup Founder',
+},
+// {
+//     id: '03',
+//     tImg: tImg3,
+//     Title: 'Quick Support & Smart Features',
+//     Des: "The team responded quickly to every query, and the features were well thought out—from ID verification to donation tracking. A brilliant step toward reducing food waste in our communities.",
+//     Name: 'Bohdan Maksym',
+//     sub: 'Nonprofit Director',
+// },
+
 ]
 
 const Testimonial = () => {

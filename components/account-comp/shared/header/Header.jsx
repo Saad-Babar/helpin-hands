@@ -148,7 +148,7 @@ const Header = () => {
                     </a>
 
                     {/* Navigation Toggle */}
-                    <div className="nxl-navigation-toggle navigation-up-1600">
+                    {/* <div className="nxl-navigation-toggle navigation-up-1600">
                         {navigationExpend ? (
                             <a href="#" onClick={(e) => handleNavigationExpendUp(e, "hide")} id="menu-expend-button" ref={expendButtonRef}>
                                 <FiArrowRight size={24} />
@@ -158,8 +158,8 @@ const Header = () => {
                                 <FiAlignLeft size={24} />
                             </a>
                         )}
-                    </div>
-                    <div className="nxl-navigation-toggle navigation-down-1600">
+                    </div> */}
+                    {/* <div className="nxl-navigation-toggle navigation-down-1600">
                         {navigationExpend ? (
                             <a href="#" onClick={(e) => handleNavigationExpendDown(e, "hide")} id="menu-mini-button" ref={miniButtonRef}>
                                 <FiAlignLeft size={24} />
@@ -169,17 +169,17 @@ const Header = () => {
                                 <FiArrowRight size={24} />
                             </a>
                         )}
-                    </div>
+                    </div> */}
 
                     {/* Mega Menu Toggle */}
-                    <div className="nxl-lavel-mega-menu-toggle d-flex d-lg-none">
+                    {/* <div className="nxl-lavel-mega-menu-toggle d-flex d-lg-none">
                         <a href="#" onClick={(e) => { e.preventDefault(); setOpenMegaMenu(true); }} id="nxl-lavel-mega-menu-open">
                             <FiAlignLeft size={24} />
                         </a>
-                    </div>
+                    </div> */}
 
                     {/* Mega Menu */}
-                    <div className="nxl-drp-link nxl-lavel-mega-menu">
+                    {/* <div className="nxl-drp-link nxl-lavel-mega-menu">
                         <div className="nxl-lavel-mega-menu-toggle d-flex d-lg-none">
                             <a href="#" onClick={(e) => { e.preventDefault(); setOpenMegaMenu(false); }} id="nxl-lavel-mega-menu-hide">
                                 <i className="me-2"><FiArrowLeft /></i>
@@ -190,14 +190,14 @@ const Header = () => {
                             <HeaderDropDownModal />
                             <MegaMenu />
                         </div>
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Header Right */}
                 <div className="header-right ms-auto">
                     <div className="d-flex align-items-center">
-                        <SearchModal />
-                        <LanguagesModal />
+                        {/* <SearchModal /> */}
+                        {/* <LanguagesModal /> */}
 
                         {/* Fullscreen Toggle */}
                         <div className="nxl-h-item d-none d-sm-flex">
@@ -213,7 +213,7 @@ const Header = () => {
                         </div>
 
                         {/* Dark/Light Theme Toggle */}
-                        <div className="nxl-h-item dark-light-theme">
+                        {/* <div className="nxl-h-item dark-light-theme">
                             {isDarkMode ? (
                                 <div className="nxl-head-link me-0 light-button" onClick={() => handleThemeMode("light")}>
                                     <FiSun size={20} />
@@ -223,7 +223,7 @@ const Header = () => {
                                     <FiMoon size={20} />
                                 </div>
                             )}
-                        </div>
+                        </div> */}
 
                         {/* <TimesheetsModal /> */}
                         <NotificationsModal />

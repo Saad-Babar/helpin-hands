@@ -5,6 +5,7 @@ import LeadsCreateContent from '../../../../../components/account-comp/leadsView
 import NearbyDonations from '../../../../../components/account-comp/leadsViewCreate/NearbyDonations'
 import DuplicateLayout from '../../../duplicateLayout'
 import AdminStyleWrapper from '../../../../../components/AdminStyleWrapper'
+import Footer from '../../../../../components/account-comp/shared/Footer'
 const page = () => {
   return (
     <AdminStyleWrapper>
@@ -19,6 +20,7 @@ const page = () => {
               <NearbyDonations></NearbyDonations>
             </div>
           </div>
+          <Footer />
         </div>
       </DuplicateLayout>
     </AdminStyleWrapper>

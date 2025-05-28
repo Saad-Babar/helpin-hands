@@ -33,6 +33,19 @@ const ProjectTable = () => {
 
   const columns = [
     {
+      accessorKey: 'attachments',
+      header: 'Image',
+      cell: info => {
+        const images = info.getValue();
+        const filename = images?.[0];
+        const imageUrl = filename ? `/uploads/food/${filename}` : null;
+        return imageUrl ? (
+          <img src={imageUrl} alt="food" width={60} className="rounded" />
+        ) : 'No Image';
+      },
+    }
+    ,
+    {
       accessorKey: 'foodType',
       header: 'Food Type',
     },
@@ -76,19 +89,7 @@ const ProjectTable = () => {
       accessorKey: 'points',
       header: 'Points',
     },
-    {
-      accessorKey: 'attachments',
-      header: 'Image',
-      cell: info => {
-        const images = info.getValue();
-        const filename = images?.[0];
-        const imageUrl = filename ? `/uploads/food/${filename}` : null;
-        return imageUrl ? (
-          <img src={imageUrl} alt="food" width={60} className="rounded" />
-        ) : 'No Image';
-      },
-    }
-    ,
+    
 
     {
       accessorKey: 'createdAt',

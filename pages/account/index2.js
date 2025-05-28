@@ -23,6 +23,7 @@ const DuplicateLayout = dynamic(() => import('./duplicateLayout'), { ssr: false 
 import { projectsDataTwo } from '../../utils/fackData/projectsDataTwo';
 import RecieverStatistics from '../../components/account-comp/widgetsStatistics/recieverStatistics';
 import CollectedRecordChart from '../../components/account-comp/widgetsCharts/CollectedRecordChart';
+import Footer from '../../components/account-comp/shared/Footer';
 
 const Home = () => {
   return (
@@ -41,6 +42,7 @@ const Home = () => {
               {/* <PaymentRecordChart /> */}
             </div>
           </div>
+          <Footer />
         </div>
       </DuplicateLayout>
     </AdminStyleWrapper>

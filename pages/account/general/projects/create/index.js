@@ -4,6 +4,8 @@ import ProjectCreateContent from '../../../../../components/account-comp/project
 import ProjectCreateHeader from '../../../../../components/account-comp/projectsCreate/ProjectCreateHeader'
 import AdminStyleWrapper from '../../../../../components/AdminStyleWrapper'
 import DuplicateLayout from '../../../duplicateLayout'
+import Footer from '../../../../../components/account-comp/shared/Footer'
+
 
 const page = () => {
   return (
@@ -11,13 +13,14 @@ const page = () => {
             <DuplicateLayout>
                 <div className="admin-content-wrapper">
       <PageHeader>
-        <ProjectCreateHeader />
+        {/* <ProjectCreateHeader /> */}
       </PageHeader>
       <div className='main-content'>
         <div className='row'>
           <ProjectCreateContent />
         </div>
       </div>
+      <Footer />
 </div>
   </DuplicateLayout>
   </AdminStyleWrapper>
