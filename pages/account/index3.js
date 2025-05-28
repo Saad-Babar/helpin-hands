@@ -9,7 +9,7 @@ const AdminStyleWrapper = dynamic(
 
 const PageHeader = dynamic(() => import('../../components/account-comp/shared/pageHeader/PageHeader'), { ssr: false });
 const PageHeaderDate = dynamic(() => import('../../components/account-comp/shared/pageHeader/PageHeaderDate'), { ssr: false });
-const SiteOverviewStatistics = dynamic(() => import('../../components/account-comp/widgetsStatistics/SiteOverviewStatistics'), { ssr: false });
+const PickedupOverviewStatistics = dynamic(() => import('../../components/account-comp/widgetsStatistics/PickedupOverviewStatistics'), { ssr: false });
 const PaymentRecordChart = dynamic(() => import('../../components/account-comp/widgetsCharts/PaymentRecordChart'), { ssr: false });
 const LeadsOverviewChart = dynamic(() => import('../../components/account-comp/widgetsCharts/LeadsOverviewChart'), { ssr: false });
 const TasksOverviewChart = dynamic(() => import('../../components/account-comp/widgetsCharts/TasksOverviewChart'), { ssr: false });
@@ -34,8 +34,8 @@ const Home = () => {
           <div className='main-content'>
             <div className='row'>
                 <h2>Index3</h2>
-              <SiteOverviewStatistics />
-              <PaymentRecordChart />
+              <PickedupOverviewStatistics></PickedupOverviewStatistics>
+              {/* <PaymentRecordChart /> */}
               {/* <SalesMiscellaneous isFooterShow={true} dataList={projectsDataTwo} /> */}
               {/* <TasksOverviewChart /> */}
               {/* <LeadsOverviewChart chartHeight={315} /> */}
