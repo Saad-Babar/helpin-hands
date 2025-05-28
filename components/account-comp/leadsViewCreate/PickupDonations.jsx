@@ -65,9 +65,33 @@ const PickupDonations = () => {
     }
   }
 
-  const handleAcceptPickup = (donationId) => {
-    console.log('Accept Pickup clicked for donation ID:', donationId)
-    topTost('Pickup accepted (dummy)', 'info')
+  // Updated function to call your /api/accept-pickup
+  const handleAcceptPickup = async (donation) => {
+    if (!donation._id || !donation.dropOffInfo?.collectedBy) {
+      topTost('Donation or drop-off info missing required data', 'error')
+      return
+    }
+
+    try {
+      const res = await fetch('/api/accept-pickup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          donationId: donation._id,
+          collectedBy: donation.dropOffInfo.collectedBy,
+        }),
+      })
+
+      const data = await res.json()
+      if (!res.ok) throw new Error(data.message)
+
+      topTost('Pickup accepted successfully', 'success')
+
+      // Optionally remove the donation from the list after pickup accepted
+      setDonations((prev) => prev.filter((d) => d._id !== donation._id))
+    } catch (err) {
+      topTost('Failed to accept pickup: ' + err.message, 'error')
+    }
   }
 
   const renderTitle = () => {
@@ -122,21 +146,38 @@ const PickupDonations = () => {
                     <br />
                     <strong>Donor Email:</strong> {donation.userEmail || 'N/A'}
                     <br />
-                    <strong>Donor Phone:</strong> {donation.location?.phoneNumber || 'N/A'}
+                    <strong>Donor Phone:</strong> {donation.userPhone || 'N/A'}
+                    <br />
+                    {donation.dropOffInfo && (
+                      <>
+                        <strong>Drop-off Name:</strong> {donation.dropOffInfo.name || 'N/A'}
+                        <br />
+                        <strong>Drop-off Email:</strong> {donation.dropOffInfo.email || 'N/A'}
+                        <br />
+                        <strong>Drop-off Phone:</strong> {donation.dropOffInfo.phone || 'N/A'}
+                        <br />
+                        <strong>Drop-off Address:</strong> {donation.dropOffInfo.address || 'N/A'}
+                      </>
+                    )}
                   </p>
+
                   <div className="d-flex flex-wrap gap-2 mt-3">
-                    <button
+                    {/* Uncomment if needed */}
+                    {/* <button
                       className="btn btn-success"
                       onClick={() => handleCollectDonation(donation._id)}
                     >
                       Collect Donation
-                    </button>
+                    </button> */}
                     <button
-                      className="btn btn-warning"
-                      onClick={() => handleAcceptPickup(donation._id)}
-                    >
-                      Accept Pickup
-                    </button>
+  className="btn btn-warning"
+  disabled={!donation.dropOffInfo?.collectedBy}
+  onClick={() => handleAcceptPickup(donation)}
+  title={!donation.dropOffInfo?.collectedBy ? 'Drop-off user not assigned yet' : ''}
+>
+  Accept Pickup
+</button>
+
                   </div>
                 </div>
               </div>

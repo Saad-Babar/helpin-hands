@@ -36,6 +36,13 @@ const donationSchema = new mongoose.Schema({
     enum: ['available', 'collected'],
     default: 'available'
   },
+  // Add this below your existing 'status' field in donationSchema
+status_pickup: {
+  type: String,
+  enum: ['pending', 'pickedup'],
+  default: 'pending'
+},
+
 
   createdAt: { type: Date, default: Date.now }
 });

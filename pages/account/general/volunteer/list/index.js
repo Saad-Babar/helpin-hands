@@ -1,7 +1,7 @@
 import React from 'react'
 import PageHeader from '../../../../../components/account-comp/shared/pageHeader/PageHeader'
 import LeadsHeader from '../../../../../components/account-comp/leads/LeadsHeader'
-import CollectedDonations from '../../../../../components/account-comp/leads/CollectedDonations'
+import PickedupDonations from '../../../../../components/account-comp/leads/PickedupDonations'
 import Footer from '../../../../../components/account-comp/shared/Footer'
 import AdminStyleWrapper from '../../../../../components/AdminStyleWrapper'
 import DuplicateLayout from '../../../duplicateLayout'
@@ -15,7 +15,7 @@ const page = () => {
             </PageHeader>
             <div className='main-content'>
                 <div className='row'>
-                    <CollectedDonations />
+                    <PickedupDonations />
                 </div>
             </div>
             <Footer />
