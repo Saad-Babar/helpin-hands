@@ -7,8 +7,8 @@ export const menuList = [
     },
     {
         id: 0,
-        name: "dashboards",
-        path: "/account/",
+        name: "dashboard",
+        path: "#",
         icon: 'feather-airplay',
         role: "Individual Donor", // 👈 Add role key
         dropdownMenu: [
@@ -88,8 +88,8 @@ export const menuList = [
     },
     {
         id: 14,
-        name: "dashboards",
-        path: "/account/",
+        name: "dashboard",
+        path: "#",
         icon: 'feather-airplay',
         role: "Store Owner",
         dropdownMenu: [
@@ -202,6 +202,21 @@ export const menuList = [
         role: "NGO / Receiver"
     },
     {
+        id: 19,
+        name: "dashboard",
+        path: "#",
+        icon: 'feather-airplay',
+        role: "NGO / Receiver",
+        dropdownMenu: [
+            {
+                id: 1,
+                name: "CRM",
+                path: "/account/index2",
+                subdropdownMenu: false
+            }
+        ]
+    },
+    {
         id: 17,
         name: "Availaible Donations",
         path: "#",
@@ -233,6 +248,21 @@ export const menuList = [
         name: "rider/volunteer",
         type: "heading", // custom field to render heading
          role: "Rider"
+    },
+    {
+        id: 20,
+        name: "dashboard",
+        path: "#",
+        icon: 'feather-airplay',
+        role: "Rider",
+        dropdownMenu: [
+            {
+                id: 1,
+                name: "CRM",
+                path: "/account/index3",
+                subdropdownMenu: false
+            }
+        ]
     },
     {
         id: 18,
