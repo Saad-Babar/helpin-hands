@@ -188,6 +188,33 @@ export const menuList = [
             }
         ]
     },
+    {
+        id: 22,
+        name: "Donate Products",
+        path: "#",
+        icon: 'feather-plus-square',
+        role: "Store Owner", // 👈 Add role key
+        dropdownMenu: [
+            {
+                id: 1,
+                name: "All Products",
+                path: "/account/general/shop/list",
+                subdropdownMenu: false
+            },
+            // {
+            //     id: 2,
+            //     name: "Donation View View",
+            //     path: "/account/general/projects/view",
+            //     subdropdownMenu: false
+            // },
+            {
+                id: 3,
+                name: "Add a Product",
+                path: "/account/general/shop/create",
+                subdropdownMenu: false
+            }
+        ]
+    },
     // {
     //     id: 1,
     //     name: "reports",
