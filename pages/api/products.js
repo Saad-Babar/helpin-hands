@@ -60,7 +60,16 @@ export default async function handler(req, res) {
 
   if (req.method === 'GET') {
     try {
-      const { userId, role } = req.query;
+      const { userId, role, slug } = req.query;
+      if (slug) {
+        // Generate the slug the same way as in the frontend
+        const products = await Product.find({});
+        const matched = products.filter(p =>
+          p.productName &&
+          p.productName.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '') === slug
+        );
+        return res.status(200).json({ success: true, products: matched });
+      }
       let products;
       if (role === 'admin') {
         products = await Product.find({}).sort({ createdAt: -1 });

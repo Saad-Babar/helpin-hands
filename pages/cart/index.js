@@ -63,34 +63,13 @@ const CartPage = (props) => {
                                   </li>
                                 </ul>
                               </td>
-                              <td className="price">${catItem.price}</td>
+                              <td className="price">₨{Number(catItem.price).toLocaleString()}</td>
                               <td className="stock">
                                 <ul className="input-style">
-                                  <Grid className="quantity cart-plus-minus">
-                                    <button
-                                      type="button"
-                                      className="dec qtybutton"
-                                      onClick={() =>
-                                        props.decrementQuantity(catItem.id)
-                                      }
-                                    >
-                                      -
-                                    </button>
-                                    <input value={catItem.qty} type="text" />
-                                    <button
-                                      type="button"
-                                      className="inc qtybutton"
-                                      onClick={() =>
-                                        props.incrementQuantity(catItem.id)
-                                      }
-                                    >
-                                      +
-                                    </button>
-                                  </Grid>
-                                  <li><Link onClick={ClickHandler} href="/wishlist"><i className="icon icon-heart"></i></Link></li>
+                                  <span className="cart-qty">{catItem.qty}</span>
                                 </ul>
                               </td>
-                              <td className="price">${catItem.qty * catItem.price}</td>
+                              <td className="price">₨{Number(catItem.qty * catItem.price).toLocaleString()}</td>
                             </tr>
                           ))}
                         </tbody>
@@ -129,7 +108,7 @@ const CartPage = (props) => {
                   )}
                   {carts && carts.length > 0 && (
                     <>
-                      <div className="submit-btn-area">
+                      {/* <div className="submit-btn-area">
                         <div className="left-coupon">
                           <h3>Have a discount code?</h3>
                           <div className="form-group">
@@ -140,14 +119,11 @@ const CartPage = (props) => {
                         <ul>
                           <li><button type="submit">Update Cart</button></li>
                         </ul>
-                      </div>
+                      </div> */}
                       <div className="cart-product-list">
                         <ul>
-                          <li>Subtotal<span>${totalPrice(carts)}</span></li>
-                          <li>Tax US (8.375%)<span>$4.88</span></li>
-                          <li>Eco Tax<span>$0</span></li>
-                          <li>Delivery Charge<span>$50</span></li>
-                          <li className="cart-b">Total Price<span>${totalPrice(carts) + 4.88 + 50}</span></li>
+                          <li>Subtotal<span>₨{Number(totalPrice(carts)).toLocaleString()}</span></li>
+                          <li className="cart-b">Total Price<span>₨{Number(totalPrice(carts)).toLocaleString()}</span></li>
                           <li><Link className="c-btn" onClick={ClickHandler} href="/checkout"><i className="icon-privacy"></i> Proceed to Checkout</Link></li>
                         </ul>
                       </div>

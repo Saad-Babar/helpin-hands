@@ -1,10 +1,44 @@
 import React from "react";
 import Link from "next/link";
 import { Tooltip } from 'react-tooltip'
+import { toast } from 'react-toastify';
 
-const Product = ({ products, addToCartProduct, addToWishListProduct, addToCompareListProduct }) => {
+const Product = ({ products, addToCartProduct, addToWishListProduct, addToCompareListProduct, carts }) => {
   const ClickHandler = () => {
     window.scrollTo(10, 0);
+  };
+
+  const handleAddToCart = (product) => {
+    // Always use id = _id for cart
+    const productWithId = { ...product, id: product._id };
+    if (carts && carts.some(cartItem => cartItem.id === productWithId.id)) {
+      toast.info('Already in cart');
+      return;
+    }
+    addToCartProduct(productWithId, 1);
+    toast.success('Added to cart');
+  };
+
+  const formatDate = (dateString) => {
+    if (!dateString) return '';
+    const date = new Date(dateString);
+    const now = new Date();
+    const diffTime = Math.abs(now - date);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    
+    if (diffDays === 1) {
+      return 'Added today';
+    } else if (diffDays === 2) {
+      return 'Added yesterday';
+    } else if (diffDays < 7) {
+      return `Added ${diffDays} days ago`;
+    } else {
+      return date.toLocaleDateString('en-US', { 
+        month: 'short', 
+        day: 'numeric',
+        year: 'numeric'
+      });
+    }
   };
 
   return (
@@ -21,7 +55,7 @@ const Product = ({ products, addToCartProduct, addToWishListProduct, addToCompar
                         <div className="col-lg-3 mb-24" key={pitem}>
                           <div className="productBlock">
                             {product.badge1 ?
-                              <span className="productBlock__tags">{product.badge1}</span>
+                              <span className={`productBlock__tags ${product.badgeClass || ''}`}>{product.badge1}</span>
                               : ''}
                             <figure className="productBlock__thumb">
                               <div className="productBlock__thumb__main">
@@ -38,7 +72,28 @@ const Product = ({ products, addToCartProduct, addToWishListProduct, addToCompar
                             <div className="productBlock__content">
                               <div className="productBlock__content__main">
                                 <h3 className="productBlock__name"><Link onClick={ClickHandler} href={'/product-single/[slug]'} as={`/product-single/${product.slug}`}> {product.title}</Link></h3>
-                                <span className="productBlock__price">${product.price}</span>
+                                <span className="productBlock__price">₨{Number(product.price).toLocaleString()}</span>
+                                {/* Show location if available */}
+                                {product.location && (
+                                  <div className="productBlock__location" style={{ fontSize: '12px', color: '#666', marginTop: '5px' }}>
+                                    <i className="fa-solid fa-map-marker-alt" style={{ marginRight: '5px' }}></i>
+                                    {product.location}
+                                  </div>
+                                )}
+                                {/* Show condition if available */}
+                                {product.condition && (
+                                  <div className="productBlock__condition" style={{ fontSize: '12px', color: '#888', marginTop: '2px' }}>
+                                    <i className="fa-solid fa-tag" style={{ marginRight: '5px' }}></i>
+                                    {product.condition}
+                                  </div>
+                                )}
+                                {/* Show creation date */}
+                                {product.createdAt && (
+                                  <div className="productBlock__date" style={{ fontSize: '11px', color: '#999', marginTop: '2px', fontStyle: 'italic' }}>
+                                    <i className="fa-solid fa-clock" style={{ marginRight: '5px' }}></i>
+                                    {formatDate(product.createdAt)}
+                                  </div>
+                                )}
                                 <span className="productBlock__ratings">
                                   <i className="fa-solid fa-star active"></i>
                                   <i className="fa-solid fa-star active"></i>
@@ -50,7 +105,7 @@ const Product = ({ products, addToCartProduct, addToWishListProduct, addToCompar
                               <div className="productBlock__content__hover">
                                 <div className="productBlock__actions">
                                   <button type="button" className="btn btn-secondary"
-                                    onClick={() => addToCartProduct(product)}
+                                    onClick={() => handleAddToCart(product)}
                                     data-tooltip-id="cart-tooltip" data-tooltip-content="Add to Cart"
                                   >
                                     <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -58,24 +113,6 @@ const Product = ({ products, addToCartProduct, addToWishListProduct, addToCompar
                                     </svg>
                                   </button>
                                   <Tooltip id="cart-tooltip" />
-                                  <button type="button" className="btn btn-secondary"
-                                    onClick={() => addToCompareListProduct(product)}
-                                    data-tooltip-id="compare-tooltip" data-tooltip-content="Add to Compare"
-                                  >
-                                    <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                      <path d="M6.8916 6.09375C6.8916 6.47656 7.16504 6.75 7.54785 6.75H10.1455C10.7197 6.75 11.0205 6.06641 10.583 5.65625L9.84473 4.89062L12.9072 1.82812C13.0439 1.69141 13.0439 1.47266 12.9072 1.36328L12.2783 0.734375C12.1689 0.597656 11.9502 0.597656 11.8135 0.734375L8.75098 3.79688L7.98535 3.05859C7.5752 2.62109 6.8916 2.92188 6.8916 3.49609V6.09375ZM1.94238 12.793L5.00488 9.73047L5.77051 10.4688C6.18066 10.9062 6.8916 10.6055 6.8916 10.0312V7.40625C6.8916 7.05078 6.59082 6.75 6.23535 6.75H3.61035C3.03613 6.75 2.73535 7.46094 3.17285 7.87109L3.91113 8.63672L0.848633 11.6992C0.711914 11.8359 0.711914 12.0547 0.848633 12.1641L1.47754 12.793C1.58691 12.9297 1.80566 12.9297 1.94238 12.793Z" fill="#8B8F9E" />
-                                    </svg>
-                                  </button>
-                                  <Tooltip id="compare-tooltip" />
-                                  <button type="button" className="btn btn-secondary"
-                                    data-tooltip-id="view-tooltip" data-tooltip-content="Add to Wishlist"
-                                    onClick={() => addToWishListProduct(product)}
-                                  >
-                                    <svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                      <path d="M12.9907 1.52737C11.4048 0.187524 8.97121 0.378931 7.46731 1.93752C5.93606 0.378931 3.50246 0.187524 1.91652 1.52737C-0.134257 3.25002 0.166524 6.06643 1.64309 7.57034L6.42824 12.4649C6.70168 12.7383 7.05715 12.9024 7.46731 12.9024C7.85012 12.9024 8.20559 12.7383 8.47902 12.4649L13.2915 7.57034C14.7407 6.06643 15.0415 3.25002 12.9907 1.52737ZM12.3345 6.64065L7.54934 11.5352C7.49465 11.5899 7.43996 11.5899 7.35793 11.5352L2.57277 6.64065C1.56105 5.62893 1.36965 3.71487 2.76418 2.53909C3.83059 1.63674 5.47121 1.77346 6.51027 2.81252L7.46731 3.7969L8.42434 2.81252C9.43606 1.77346 11.0767 1.63674 12.1431 2.51174C13.5376 3.71487 13.3462 5.62893 12.3345 6.64065Z" fill="#8B8F9E" />
-                                    </svg>
-                                  </button>
-                                  <Tooltip id="view-tooltip" />
                                 </div>
                               </div>
                             </div>

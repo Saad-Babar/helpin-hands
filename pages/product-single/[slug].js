@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState, useMemo } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { useRouter } from 'next/router'
 import Header from '../../components/header/Header';
 import { connect } from "react-redux";
@@ -6,36 +6,59 @@ import PageTitle from '../../components/pagetitle/PageTitle';
 import Scrollbar from '../../components/scrollbar/scrollbar';
 import { addToCart } from "../../store/actions/action";
 import Product from './product';
-import api from "../../api";
 import Footer from '../../components/footer/Footer';
 import ProductTabs from './alltab';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ProductSinglePage = (props) => {
-    const router = useRouter()
-
-    const productsArray = api();
-    const Allproduct = productsArray
-
-    const { addToCart } = props;
-
-    const initialProducts = Allproduct.filter(prod => prod.slug === router.query.slug);
-    const [product, setProduct] = useState(initialProducts);
+    const router = useRouter();
+    const { addToCart, carts } = props;
+    const [product, setProduct] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        setProduct(Allproduct.filter(prod => prod.slug === router.query.slug));
-      }, [Allproduct, router.query.slug]);
-
-    const item = product[0];
+        const fetchProduct = async () => {
+            if (!router.query.slug) return;
+            setLoading(true);
+            try {
+                const response = await fetch(`/api/products?slug=${router.query.slug}`);
+                const data = await response.json();
+                if (data.success && data.products && data.products.length > 0) {
+                    // Transform to match Product component props
+                    const prod = data.products[0];
+                    setProduct({
+                        ...prod,
+                        proImg: prod.images && prod.images.length > 0 ? prod.images[prod.mainImageIdx || 0] : '/images/product/product-thumb1.png',
+                        title: prod.productName,
+                        price: prod.price,
+                    });
+                } else {
+                    setProduct(null);
+                }
+            } catch (error) {
+                setProduct(null);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchProduct();
+    }, [router.query.slug]);
 
     return (
         <Fragment>
+            <ToastContainer />
             <Header hclass={'header--styleFour'} />
-            <PageTitle pageTitle={item?.title} pagesub={'Product'} />
+            <PageTitle pageTitle={product?.title || 'Product'} pagesub={'Product'} />
             <section className="product-details pt-130 pb-100">
                 <div className="container">
-                    {item ? (
-                        <Product item={item} addToCart={addToCart} />
-                    ) : null}
+                    {loading ? (
+                        <div className="text-center py-5">Loading product details...</div>
+                    ) : product ? (
+                        <Product item={product} addToCart={addToCart} carts={carts} />
+                    ) : (
+                        <div className="text-center py-5">Product not found.</div>
+                    )}
                     <ProductTabs />
                 </div>
             </section>
@@ -45,10 +68,8 @@ const ProductSinglePage = (props) => {
     );
 };
 
-const mapStateToProps = (state) => {
-    return {
-        products: state.data.products,
-    };
-};
+const mapStateToProps = (state) => ({
+    carts: state.cartList.cart,
+});
 
 export default connect(mapStateToProps, { addToCart })(ProductSinglePage);

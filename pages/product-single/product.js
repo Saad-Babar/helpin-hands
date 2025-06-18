@@ -1,13 +1,36 @@
 import React, { useState } from "react";
 import Link from 'next/link'
+import { toast } from 'react-toastify';
 
-const Product = ({ item, addToCart }) => {
-
-  const [qty, setQty] = useState(1);
+const Product = ({ item, addToCart, carts }) => {
+  // State for main image index
+  const [mainIdx, setMainIdx] = useState(item.mainImageIdx || 0);
 
   const ClickHandler = () => {
     window.scrollTo(10, 0);
   }
+
+  // Format date
+  const formatDate = (dateString) => {
+    if (!dateString) return '';
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' });
+  };
+
+  // Format price
+  const formatPrice = (price) => `₨${Number(price).toLocaleString()}`;
+
+  // Add to cart handler with duplicate check
+  const handleAddToCart = () => {
+    // Always use id = _id for cart
+    const productWithId = { ...item, id: item._id };
+    if (carts && carts.some(cartItem => cartItem.id === productWithId.id)) {
+      toast.info('Already in cart');
+      return;
+    }
+    addToCart(productWithId, 1);
+    toast.success('Added to cart');
+  };
 
   return (
     <div className="row align-items-center">
@@ -16,9 +39,37 @@ const Product = ({ item, addToCart }) => {
           <div className="productImages-gallery__tabs">
             <div className="tab-content" id="v-pills-tabContent">
               <div className="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                <div className="productImages-gallery__main">
-                  <img src={item.proImg ? item.proImg : ''} alt="products" />
+                <div className="productImages-gallery__main" style={{ overflow: 'hidden', width: '100%', maxWidth: 400 }}>
+                  <img
+                    src={item.images && item.images.length > 0 ? item.images[mainIdx] : ''}
+                    alt={item.productName}
+                    style={{ width: '100%', maxWidth: 400, transition: 'transform 0.3s', cursor: 'zoom-in' }}
+                    className="zoom-on-hover"
+                  />
                 </div>
+                {/* Gallery thumbnails if more images */}
+                {item.images && item.images.length > 1 && (
+                  <div className="productImages-gallery__thumbs mt-3" style={{ display: 'flex', flexDirection: 'row' }}>
+                    {item.images.map((img, idx) => (
+                      <img
+                        key={idx}
+                        src={img}
+                        alt={`thumb-${idx}`}
+                        onClick={() => setMainIdx(idx)}
+                        style={{
+                          width: 60,
+                          height: 60,
+                          objectFit: 'cover',
+                          marginRight: 8,
+                          border: idx === mainIdx ? '2px solid #7CB030' : '1px solid #eee',
+                          borderRadius: 4,
+                          cursor: 'pointer',
+                          opacity: idx === mainIdx ? 1 : 0.7
+                        }}
+                      />
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -26,70 +77,33 @@ const Product = ({ item, addToCart }) => {
       </div>
       <div className="col-lg-5 mb-50">
         <div className="productDetails-block">
-          <h3 className="productDetails-block__heading mb-15">{item.title}</h3>
-          <p className="productDetails-block__text">Rorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <div className="productDetails-block__rating">
-            <ul>
-              <li>
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <span>(4 customer review)</span>
-              </li>
-            </ul>
-          </div>
+          <h3 className="productDetails-block__heading mb-15">{item.productName}</h3>
           <div className="productDetails-block__price mb-20">
-            <span>${item.price}<sub>/120</sub></span>
+            <span>{formatPrice(item.price)}</span>
           </div>
-          <span className="productDetails-block__title">Model</span>
-          <div className="productDetails-block__model mb-30">
-            <div className="productDetails-block__model__single">
-              <input id="model1" type="checkbox" />
-              <label htmlFor="model1">tyk</label>
-            </div>
-            <div className="productDetails-block__model__single">
-              <input id="model2" type="checkbox" />
-              <label htmlFor="model2">ffd2</label>
-            </div>
-            <div className="productDetails-block__model__single">
-              <input id="model3" type="checkbox" />
-              <label htmlFor="model3">23tt</label>
-            </div>
-            <div className="productDetails-block__model__single">
-              <input id="model4" type="checkbox" />
-              <label htmlFor="model4">r454</label>
-            </div>
-            <div className="productDetails-block__model__single">
-              <input id="model5" type="checkbox" />
-              <label htmlFor="model5">45hy</label>
-            </div>
+          <div className="mb-2" style={{ color: '#888' }}>
+            <i className="fa-solid fa-map-marker-alt" style={{ marginRight: 5 }}></i>
+            {item.city}, {item.state}, {item.country}
           </div>
-          <div className="productDetails-block__quantity mb-25">
-            <span className="productDetails-block__title mb-0">Quantity</span>
-            <div className="input-group number-spinner">
-              <span className="input-group-btn">
-                <button className="btn btn-default quantity-minus" data-dir="dwn" onClick={() => setQty(qty <= 1 ? 1 : qty - 1)}>
-                  <i className="fa-solid fa-arrow-left-long"></i>
-                </button>
-              </span>
-              <input
-                value={qty}
-                onChange={() => setQty(qty)}
-                type="text"
-                className="form-control text-center quantity-input"
-              />
-              <span className="input-group-btn">
-                <button className="btn btn-default quantity-plus" data-dir="up" onClick={() => setQty(qty + 1)}>
-                  <i className="fa-solid fa-arrow-right-long"></i>
-                </button>
-              </span>
-            </div>
+          <div className="mb-2" style={{ color: '#888' }}>
+            <i className="fa-solid fa-tag" style={{ marginRight: 5 }}></i>
+            {item.condition}
+          </div>
+          <div className="mb-2" style={{ color: '#888' }}>
+            <i className="fa-solid fa-clock" style={{ marginRight: 5 }}></i>
+            {formatDate(item.createdAt)}
+          </div>
+          <div className="mb-3">
+            <strong>Description:</strong>
+            <div>{item.description}</div>
+          </div>
+          <div className="mb-3">
+            <strong>Contact:</strong>
+            <div>Phone: {item.phone}</div>
+            <div>Email: {item.email}</div>
           </div>
           <div className="productDetails-block__buttons">
-            <button className="btn btn--styleOne btn--secondary it-btn" onClick={() => addToCart(item, qty)}>
+            <button className="btn btn--styleOne btn--secondary it-btn" onClick={handleAddToCart}>
               <span className="btn__text">Add to cart</span>
               <span className="it-btn__inner">
                 <span className="it-btn__blobs">
@@ -112,7 +126,7 @@ const Product = ({ item, addToCart }) => {
               </svg>
             </button>
             <Link onClick={ClickHandler} className="btn btn--styleOne btn--primary it-btn" href="/products">
-              <span className="btn__text">Buy Now</span>
+              <span className="btn__text">Back to Shop</span>
               <span className="it-btn__inner">
                 <span className="it-btn__blobs">
                   <span className="it-btn__blob"></span>
@@ -138,5 +152,12 @@ const Product = ({ item, addToCart }) => {
     </div>
   );
 };
+
+// Add zoom effect CSS
+if (typeof window !== 'undefined') {
+  const style = document.createElement('style');
+  style.innerHTML = `.zoom-on-hover:hover { transform: scale(1.15); z-index: 2; }`;
+  document.head.appendChild(style);
+}
 
 export default Product;

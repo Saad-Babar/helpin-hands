@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link'
+import { connect } from "react-redux";
 import logo from '/public/images/logos/logo_2.svg'
 import logo2 from '/public/images/logos/logo_1.svg'
 import MobileMenu from '../MobileMenu/MobileMenu'
@@ -37,6 +38,7 @@ const Header2 = (props) => {
         };
     }, []);
 
+    const { carts = [] } = props;
 
     return (
         <div>
@@ -81,6 +83,8 @@ const Header2 = (props) => {
                                                     <li className="dropdown_item-5"><Link onClick={ClickHandler} href="/contact">Contacts</Link></li>
                                                 </ul>
                                             </li> */}
+                                            <li><Link onClick={ClickHandler} href="/products">Shop</Link></li>
+
                                             {/* <li className="dropdown"><Link onClick={ClickHandler} href="/products">Shop</Link>
                                                 <ul className="dropdown_menu dropdown_menu-2">
                                                     <li className="dropdown_item-3"><Link onClick={ClickHandler} href="/products">Shop</Link></li>
@@ -104,6 +108,14 @@ const Header2 = (props) => {
                                 <div className="header__right header__right--style2">
                                     <div className="header__actions">
                                         <ul>
+                                        <li>
+                                                <Link onClick={ClickHandler} href="/cart">
+                                                    <span>{carts.length}</span>
+                                                    <svg width="25" height="20" viewBox="0 0 25 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M24.2344 7H20.9258L14.9102 0.382812C14.6523 0.0820312 14.2227 0.0820312 13.9648 0.339844C13.6641 0.597656 13.6641 1.02734 13.9219 1.28516L19.0781 7H5.62891L10.7852 1.28516C11.043 1.02734 11.043 0.597656 10.7422 0.339844C10.4844 0.0820312 10.0547 0.0820312 9.79688 0.382812L3.78125 7H0.515625C0.214844 7 0 7.25781 0 7.51562V7.85938C0 8.16016 0.214844 8.375 0.515625 8.375H1.20312L2.49219 17.6133C2.62109 18.6445 3.48047 19.375 4.51172 19.375H20.1953C21.2266 19.375 22.0859 18.6445 22.2148 17.6133L23.5039 8.375H24.2344C24.4922 8.375 24.75 8.16016 24.75 7.85938V7.51562C24.75 7.25781 24.4922 7 24.2344 7ZM20.8828 17.4414C20.7969 17.7852 20.5391 18 20.1953 18H4.51172C4.16797 18 3.91016 17.7852 3.82422 17.4414L2.57812 8.375H22.1289L20.8828 17.4414ZM13.0625 10.7812C13.0625 10.4375 12.7188 10.0938 12.375 10.0938C11.9883 10.0938 11.6875 10.4375 11.6875 10.7812V15.5938C11.6875 15.9805 11.9883 16.2812 12.375 16.2812C12.7188 16.2812 13.0625 15.9805 13.0625 15.5938V10.7812ZM17.875 10.7812C17.875 10.4375 17.5312 10.0938 17.1875 10.0938C16.8008 10.0938 16.5 10.4375 16.5 10.7812V15.5938C16.5 15.9805 16.8008 16.2812 17.1875 16.2812C17.5312 16.2812 17.875 15.9805 17.875 15.5938V10.7812ZM8.25 10.7812C8.25 10.4375 7.90625 10.0938 7.5625 10.0938C7.17578 10.0938 6.875 10.4375 6.875 10.7812V15.5938C6.875 15.9805 7.17578 16.2812 7.5625 16.2812C7.90625 16.2812 8.25 15.9805 8.25 15.5938V10.7812Z" fill="#7FB432" />
+                                                    </svg>
+                                                </Link>
+                                            </li>
                                             {/* <li>
                                                 <Link onClick={ClickHandler} href="/cart">
                                                     <span>2</span>
@@ -274,4 +286,10 @@ const Header2 = (props) => {
     )
 }
 
-export default Header2;
+const mapStateToProps = (state) => {
+    return {
+        carts: state.cartList.cart,
+    };
+};
+
+export default connect(mapStateToProps)(Header2);
