@@ -7,7 +7,7 @@ import {connect} from "react-redux";
 import Footer from '../../components/footer/Footer';
 import { loadStripe } from '@stripe/stripe-js';
 
-const stripePromise = loadStripe('pk_test_51RbMM8D5OKfTLSSqSGgGwyJ7kivP3oiQIycSiU4b13LL8xKfryw0w3ejzXFmtB8oicxxzk5dN7srSvxDGuGdX0Zd00iUFXSoeH'); // Replace with your Stripe test publishable key
+const stripePromise = loadStripe(process.env.STRIPE_PUB_KEY); // Replace with your Stripe test publishable key
 
 const CheckoutPage =({cartList}) => {
     const handleStripeCheckout = async () => {

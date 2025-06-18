@@ -1,6 +1,6 @@
 import Stripe from 'stripe';
 
-const stripe = new Stripe('sk_test_51RbMM8D5OKfTLSSqSigBTAgQ82YgfD5ASwzATqXFOqLNg6CNrQyGeJyFSbYkjfRPobVUKlzev152g7CLsOLdO1vE00l1Vh8PVw'); // Replace with your test secret key
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY); // Replace with your test secret key
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
