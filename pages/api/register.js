@@ -2,7 +2,7 @@
 
 import { connectToDB } from '../../lib/mongodb';
 import User from '../../models/User';
-import { v4 as uuidv4 } from 'uuid'; // For generating unique filenames
+const { v4: uuidv4 } = require('uuid'); // For generating unique filenames
 import path from 'path';
 // import fs from 'fs/promises'; // Remove this line
 import { mkdir, copyFile, unlink } from 'fs/promises'; // Import specific functions
