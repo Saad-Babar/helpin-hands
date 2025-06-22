@@ -41,8 +41,8 @@ jest.mock('next/image', () => ({
 // Mock environment variables
 process.env.JWT_SECRET = 'test-jwt-secret'
 process.env.MONGODB_URI = 'mongodb://localhost:27017/test'
-process.env.STRIPE_SECRET_KEY = 'sk_test_...'
-process.env.STRIPE_PUB_KEY = 'pk_test_...'
+process.env.STRIPE_SECRET_KEY = 'sk_test_mock_key_for_testing_only'
+process.env.STRIPE_PUB_KEY = 'pk_test_mock_key_for_testing_only'
 
 // Global test setup
 global.console = {
