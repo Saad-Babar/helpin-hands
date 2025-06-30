@@ -7,7 +7,7 @@ import {connect} from "react-redux";
 import Footer from '../../components/footer/Footer';
 import { loadStripe } from '@stripe/stripe-js';
 
-const stripePromise = loadStripe(process.env.STRIPE_PUB_KEY);
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUB_KEY);
 
 const CheckoutPage =({cartList}) => {
     const handleStripeCheckout = async () => {
@@ -17,8 +17,13 @@ const CheckoutPage =({cartList}) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ cart: cartList }),
         });
-        const { sessionId } = await res.json();
-        await stripe.redirectToCheckout({ sessionId });
+        const data = await res.json();
+        console.log('Stripe session response:', data);
+        if (!data.sessionId) {
+            alert('Stripe session creation failed: ' + (data.error || 'Unknown error'));
+            return;
+        }
+        await stripe.redirectToCheckout({ sessionId: data.sessionId });
     };
 
     return(
