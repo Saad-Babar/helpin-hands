@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 const useLocationData = (selectedCountry, selectedState) => {
     const [countries, setCountries] = useState([]);
@@ -32,79 +32,96 @@ const useLocationData = (selectedCountry, selectedState) => {
         fetchCountry();
     }, []);
 
-    // Fetch states when selectedCountry changes
+    // Fetch states function - exposed for manual calls
+    const fetchStates = useCallback(async (countryName) => {
+        if (!countryName) {
+            setStates([]);
+            return;
+        }
+        setError(null);
+        setLoading(true);
+        try {
+            const response = await fetch('https://countriesnow.space/api/v0.1/countries/states', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ country: countryName })
+            });
+            if (!response.ok) throw new Error('Network response was not ok');
+            const data = await response.json();
+            const transformedStates = data.data.states.map(state => ({
+                value: state.name,
+                label: state.name
+            }));
+            setStates(transformedStates);
+        } catch (err) {
+            setError(err.message);
+            setStates([]);
+        } finally {
+            setLoading(false);
+        }
+    }, []);
+
+    // Fetch cities function - exposed for manual calls
+    const fetchCities = useCallback(async (countryName, stateName) => {
+        if (!countryName || !stateName) {
+            setCities([]);
+            return;
+        }
+        setError(null);
+        setLoading(true);
+        try {
+            const response = await fetch('https://countriesnow.space/api/v0.1/countries/state/cities', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    country: countryName,
+                    state: stateName
+                })
+            });
+            if (!response.ok) throw new Error('Network response was not ok');
+            const data = await response.json();
+            const transformedCities = data.data.map(city => ({
+                value: city,
+                label: city
+            }));
+            setCities(transformedCities);
+        } catch (err) {
+            setError(err.message);
+            setCities([]);
+        } finally {
+            setLoading(false);
+        }
+    }, []);
+
+    // Fetch states when selectedCountry changes (for automatic updates)
     useEffect(() => {
         if (!selectedCountry) {
             setStates([]);
             return;
         }
-        const fetchStates = async () => {
-            setError(null);
-            setLoading(true);
-            try {
-                const response = await fetch('https://countriesnow.space/api/v0.1/countries/states', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ country: selectedCountry.label || selectedCountry.value })
-                });
-                if (!response.ok) throw new Error('Network response was not ok');
-                const data = await response.json();
-                const transformedStates = data.data.states.map(state => ({
-                    value: state.name,
-                    label: state.name
-                }));
-                setStates(transformedStates);
-            } catch (err) {
-                setError(err.message);
-                setStates([]);
-            } finally {
-                setLoading(false);
-            }
-        };
-        fetchStates();
-    }, [selectedCountry]);
+        const countryName = selectedCountry.label || selectedCountry.value;
+        fetchStates(countryName);
+    }, [selectedCountry, fetchStates]);
 
-    // Fetch cities when selectedCountry and selectedState change
+    // Fetch cities when selectedCountry and selectedState change (for automatic updates)
     useEffect(() => {
         if (!selectedCountry || !selectedState) {
             setCities([]);
             return;
         }
-        const fetchCities = async () => {
-            setError(null);
-            setLoading(true);
-            try {
-                const response = await fetch('https://countriesnow.space/api/v0.1/countries/state/cities', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        country: selectedCountry.label || selectedCountry.value,
-                        state: selectedState.label || selectedState.value
-                    })
-                });
-                if (!response.ok) throw new Error('Network response was not ok');
-                const data = await response.json();
-                const transformedCities = data.data.map(city => ({
-                    value: city,
-                    label: city
-                }));
-                setCities(transformedCities);
-            } catch (err) {
-                setError(err.message);
-                setCities([]);
-            } finally {
-                setLoading(false);
-            }
-        };
-        fetchCities();
-    }, [selectedCountry, selectedState]);
+        const countryName = selectedCountry.label || selectedCountry.value;
+        const stateName = selectedState.label || selectedState.value;
+        fetchCities(countryName, stateName);
+    }, [selectedCountry, selectedState, fetchCities]);
 
     return {
         countries,
         states,
         cities,
         loading,
-        error
+        error,
+        fetchStates,
+        fetchCities
     };
 };
 

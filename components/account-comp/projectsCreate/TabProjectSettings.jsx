@@ -43,7 +43,6 @@
 
     const handleCountryChange = (option) => {
       fetchStates(option.label)
-      fetchCities(option.label)
       setFormData((prev) => ({
         ...prev,
         location: {
@@ -56,11 +55,14 @@
     }
 
     const handleStateChange = (option) => {
+      const currentCountry = formData.location?.country || ''
+      fetchCities(currentCountry, option.label)
       setFormData((prev) => ({
         ...prev,
         location: {
           ...prev.location,
           state: option.label,
+          city: '',
         },
       }))
     }

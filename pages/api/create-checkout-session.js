@@ -1,14 +1,18 @@
 import Stripe from 'stripe';
+import { connectToDB } from '../../lib/mongodb';
+import ShopOrder from '../../models/ShopOrder';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     try {
-      const { cart } = req.body;
-      if (!Array.isArray(cart) || cart.length === 0) {
-        return res.status(400).json({ success: false, error: 'Cart is required and must be a non-empty array.' });
-      }
+      await connectToDB();
+      const { cart, email, fname, lname, company, country, post_code, phone, note } = req.body;
+      // Save order to MongoDB
+      const order = new ShopOrder({ cart, email, fname, lname, company, country, post_code, phone, note });
+      await order.save();
+      // Stripe session creation
       const line_items = cart.map(item => ({
         price_data: {
           currency: 'pkr', // or 'usd', 'inr', etc.

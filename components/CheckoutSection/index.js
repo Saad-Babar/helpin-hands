@@ -1,11 +1,11 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, forwardRef, useImperativeHandle } from 'react';
 import SimpleReactValidator from "simple-react-validator";
 import { toast } from "react-toastify";
 import { useRouter } from 'next/router'
 import { totalPrice } from "../../utils";
 
 
-const CheckoutSection = ({ cartList }) => {
+const CheckoutSection = forwardRef(({ cartList, onCheckout }, ref) => {
 
     const router = useRouter()
 
@@ -59,6 +59,17 @@ const CheckoutSection = ({ cartList }) => {
             toast.error('Empty field is not allowed!');
         }
     };
+
+    useImperativeHandle(ref, () => ({
+        validateAndGetValues: () => {
+            if (validator.allValid()) {
+                return { valid: true, values: value };
+            } else {
+                validator.showMessages();
+                return { valid: false };
+            }
+        }
+    }));
 
     return (
         <Fragment>
@@ -118,7 +129,7 @@ const CheckoutSection = ({ cartList }) => {
                                                             <option>South Africa</option>
                                                             <option>Australia</option>
                                                             <option>Srilanka</option>
-                                                            <option>Pakisthan</option>
+                                                            <option>Pakistan</option>
                                                             <option>Canada</option>
                                                         </select>
                                                     </div>
@@ -132,15 +143,18 @@ const CheckoutSection = ({ cartList }) => {
                                                     <div className="col-lg-12 col-md-12 col-12">
                                                         <select name="address" id="City" className="form-control">
                                                             <option disabled="" selected="">Town / City *</option>
-                                                            <option>United States (USA)</option>
-                                                            <option>South Africa</option>
-                                                            <option>Australia</option>
-                                                            <option>Srilanka</option>
-                                                            <option>Pakisthan</option>
-                                                            <option>Canada</option>
+                                                            <option>Islamabad</option>
+                                                            <option>Lahore</option>
+                                                            <option>Faisalabad</option>
+                                                            <option>Karachi</option>
+                                                            <option>Quetta</option>
+                                                            <option>Peshawar</option>
+                                                            <option>Multan</option>
+                                                            <option>Rawalpindi</option>
+                                                            <option>Sialkot</option>
                                                         </select>
                                                     </div>
-                                                    <div className="col-lg-12 col-md-12 col-12">
+                                                    {/* <div className="col-lg-12 col-md-12 col-12">
                                                         <select name="address" id="state" className="form-control">
                                                             <option disabled="" selected="">State *</option>
                                                             <option>United States (USA)</option>
@@ -150,7 +164,7 @@ const CheckoutSection = ({ cartList }) => {
                                                             <option>Pakisthan</option>
                                                             <option>Canada</option>
                                                         </select>
-                                                    </div>
+                                                    </div> */}
                                                     <div className="col-lg-6 col-md-12 col-12">
                                                         <label>Zip/ Postal code *</label>
                                                         <input type="text" placeholder="Zip/ Postal code *" id="Post2"
@@ -173,14 +187,6 @@ const CheckoutSection = ({ cartList }) => {
                                     </div>
                                 </div>
                                 <div className="col-lg-6 col-12">
-                                    <div className="heading-title">
-                                        <h2>Additional information</h2>
-                                    </div>
-                                    <div className="note-area">
-                                        <label>Order notes (optional)</label>
-                                        <textarea name="massage"
-                                            placeholder="Note about your order, e.g spacial nots for delivery."></textarea>
-                                    </div>
                                     <div className="checkout-order-area">
                                         <h3>Your Order</h3>
                                         <div className="oreder-item">
@@ -205,34 +211,6 @@ const CheckoutSection = ({ cartList }) => {
                                                 <h2>Total<span>${totalPrice(cartList)}</span></h2>
                                             </div>
                                         </div>
-                                        <div className="payment-option">
-                                            <h3>Payment Method</h3>
-                                            <div className="payment-select">
-                                                <ul>
-                                                    <li className="addToggle">
-                                                        <input id="add" type="radio" name="payment"
-                                                            checked="checked" value="30" />
-                                                        <label for="add">Direct Bank Transfer</label>
-                                                    </li>
-                                                    <li className="removeToggle">
-                                                        <input id="remove" type="radio" name="payment"
-                                                            value="30" />
-                                                        <label for="remove">Check payments</label>
-                                                    </li>
-                                                    <li className="getwayToggle">
-                                                        <input id="getway" type="radio" name="payment"
-                                                            value="30" />
-                                                        <label for="getway">Cash on delivery</label>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div className="payment-bottom">
-                                                <p>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.</p>
-                                                <div className="payment-btn">
-                                                    <button className="btn-style-1">Place Order</button>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -242,7 +220,7 @@ const CheckoutSection = ({ cartList }) => {
             </div>
         </Fragment>
     )
-};
+});
 
 
 export default CheckoutSection;

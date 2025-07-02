@@ -5,11 +5,11 @@ import "slick-carousel/slick/slick-theme.css";
 import pimg1 from '/public/images/sponsors/sponsors1.png'
 import pimg2 from '/public/images/sponsors/sponsors2.png'
 import pimg3 from '/public/images/sponsors/sponsors3.png'
-import pimg4 from '/public/images/sponsors/sponsors4.png'
+// import pimg4 from '/public/images/sponsors/sponsors4.png'
 import pimg5 from '/public/images/sponsors/sponsors5.png'
 // import pimg6 from '/public/images/sponsors/sponsors6.png'
 import Image from "next/image";
-
+ 
 const partners = [
     {
         pImg: pimg1,
@@ -21,7 +21,7 @@ const partners = [
         pImg: pimg3,
     },
     {
-        pImg: pimg4,
+        pImg: pimg1,
     },
     {
         pImg: pimg5,
