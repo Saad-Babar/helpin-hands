@@ -66,7 +66,7 @@ If a user donates food for **4 people**, they will earn **40 points** for that d
 
 | Layer      | Tools Used                                                    |
 |------------|--------------------------------------------------------------|
-| Frontend   | Next.js, React, Redux, Bootstrap 5, SCSS, Styled Components  |
+| Frontend   | Next.js, Bootstrap 5, SCSS, Styled Components  |
 | Backend    | Next.js API Routes, MongoDB (Mongoose), bcryptjs             |
 | Auth       | JWT (with HTTP-only Cookies)                                 |
 | File Uploads | Formidable                                                 |
