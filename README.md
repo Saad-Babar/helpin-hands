@@ -140,7 +140,7 @@ For major changes, please open an issue first to discuss what you'd like to impr
 
 **Developed by:** Saad Mubeen  
 🌍 Faisalabad, Pakistan  
-🔗 [saad-mubeen](#www.linkedin.com/in/saad-mubeen)  
+🔗 www.linkedin.com/in/saad-mubeen  
 📧 saadmubeen2004@gmail.com
 
 "Code with purpose. Give with intention. Serve with compassion."
